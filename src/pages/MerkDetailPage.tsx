@@ -9,6 +9,7 @@ import { formatEuro } from "@/lib/utils";
 import { SITE } from "@/lib/site";
 import { brands } from "@/data/brands";
 import { chargers } from "@/data/chargers";
+import { comparisonsForBrand } from "@/lib/relations";
 
 export default function MerkDetailPage() {
   const { slug } = useParams();
@@ -16,6 +17,7 @@ export default function MerkDetailPage() {
   if (!brand) return <NotFoundPage />;
 
   const models = chargers.filter((c) => c.brandSlug === brand.slug);
+  const brandComparisons = comparisonsForBrand(brand.slug);
 
   const ogImage = `${SITE.url}/og/brand/${brand.slug}.svg`;
   usePageMeta({
@@ -107,6 +109,31 @@ export default function MerkDetailPage() {
           ))}
         </div>
       </section>
+
+      {brandComparisons.length > 0 ? (
+        <section className="mt-10">
+          <h2 className="text-xl font-bold tracking-tight">
+            {brand.name} vergeleken met andere merken
+          </h2>
+          <p className="mt-2 text-sm text-muted-foreground">
+            Directe head-to-head reviews waarin een {brand.name} model voorkomt.
+          </p>
+          <div className="mt-4 grid sm:grid-cols-2 gap-3">
+            {brandComparisons.slice(0, 6).map((c) => (
+              <Link
+                key={c.slug}
+                to={`/vergelijken/${c.slug}`}
+                className="p-4 rounded-md border border-border bg-card hover:border-primary/50 transition"
+              >
+                <div className="font-semibold line-clamp-2">{c.title}</div>
+                <div className="text-xs text-muted-foreground mt-1 line-clamp-2">
+                  {c.verdict}
+                </div>
+              </Link>
+            ))}
+          </div>
+        </section>
+      ) : null}
 
       <div className="mt-12">
         <OfferteCta

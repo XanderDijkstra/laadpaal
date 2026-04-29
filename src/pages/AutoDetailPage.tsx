@@ -10,6 +10,10 @@ import { formatEuro } from "@/lib/utils";
 import { SITE } from "@/lib/site";
 import { evModels } from "@/data/evModels";
 import { chargers } from "@/data/chargers";
+import {
+  compatibleChargersForEv,
+  relevantGuidesForEv,
+} from "@/lib/relations";
 
 export default function AutoDetailPage() {
   const { slug } = useParams();
@@ -17,13 +21,8 @@ export default function AutoDetailPage() {
   if (!ev) return <NotFoundPage />;
 
   const recommended = chargers.find((c) => c.slug === ev.recommendedChargerSlug);
-  const alternatives = chargers
-    .filter(
-      (c) =>
-        c.slug !== ev.recommendedChargerSlug &&
-        c.maxKw >= ev.acMaxKw,
-    )
-    .slice(0, 2);
+  const alternatives = compatibleChargersForEv(ev, ev.recommendedChargerSlug, 3);
+  const relatedGuides = relevantGuidesForEv(ev);
 
   usePageMeta({
     title: `Beste laadpaal voor ${ev.brand} ${ev.name} (${ev.year}) | ${SITE.shortName}`,
@@ -90,8 +89,13 @@ export default function AutoDetailPage() {
 
       {alternatives.length > 0 ? (
         <section className="mt-8">
-          <h2 className="text-xl font-bold tracking-tight">Alternatieven</h2>
-          <div className="mt-3 grid sm:grid-cols-2 gap-3">
+          <h2 className="text-xl font-bold tracking-tight">
+            Alternatieven voor de {ev.brand} {ev.name}
+          </h2>
+          <p className="mt-2 text-sm text-muted-foreground">
+            Andere geschikte laadpalen voor deze EV — gesorteerd op prijs.
+          </p>
+          <div className="mt-3 grid sm:grid-cols-3 gap-3">
             {alternatives.map((alt) => (
               <Link
                 key={alt.slug}
@@ -100,6 +104,9 @@ export default function AutoDetailPage() {
               >
                 <div className="text-xs text-muted-foreground">{alt.brand}</div>
                 <div className="font-semibold">{alt.name}</div>
+                <div className="text-xs text-muted-foreground mt-1 font-mono">
+                  {alt.maxKw} kW · {alt.phases}-fase
+                </div>
                 <div className="font-mono text-sm mt-1">
                   vanaf {formatEuro(alt.priceAllInFrom)}
                 </div>
@@ -138,6 +145,31 @@ export default function AutoDetailPage() {
           </tbody>
         </table>
       </section>
+
+      {relatedGuides.length > 0 ? (
+        <section className="mt-10">
+          <h2 className="text-xl font-bold tracking-tight">
+            Voor u relevante gidsen
+          </h2>
+          <div className="mt-4 grid sm:grid-cols-2 gap-3">
+            {relatedGuides.map((g) => (
+              <Link
+                key={g.slug}
+                to={`/gids/${g.slug}`}
+                className="p-4 rounded-md border border-border bg-card hover:border-primary/50"
+              >
+                <Pill tone="muted" className="mb-1.5 text-[10px]">
+                  {g.category}
+                </Pill>
+                <div className="font-semibold line-clamp-2">{g.title}</div>
+                <div className="text-xs text-muted-foreground mt-1 line-clamp-2">
+                  {g.lede}
+                </div>
+              </Link>
+            ))}
+          </div>
+        </section>
+      ) : null}
 
       <div className="mt-12">
         <OfferteCta

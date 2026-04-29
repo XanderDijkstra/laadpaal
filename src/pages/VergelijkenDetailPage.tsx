@@ -9,6 +9,7 @@ import { formatEuro } from "@/lib/utils";
 import { SITE } from "@/lib/site";
 import { comparisons } from "@/data/comparisons";
 import { chargers } from "@/data/chargers";
+import { backgroundGuidesForComparison } from "@/lib/relations";
 
 export default function VergelijkenDetailPage() {
   const { slug } = useParams();
@@ -17,6 +18,7 @@ export default function VergelijkenDetailPage() {
 
   const a = chargers.find((c) => c.slug === cmp.a);
   const b = chargers.find((c) => c.slug === cmp.b);
+  const backgroundGuides = backgroundGuidesForComparison(cmp);
 
   usePageMeta({
     title: `${cmp.title} | ${SITE.shortName}`,
@@ -135,6 +137,34 @@ export default function VergelijkenDetailPage() {
               <div className="text-xs text-muted-foreground">Bekijk volledig</div>
               <div className="font-semibold">{b.name} →</div>
             </Link>
+          </div>
+        </section>
+      ) : null}
+
+      {backgroundGuides.length > 0 ? (
+        <section className="mt-10">
+          <h2 className="text-xl font-bold tracking-tight">
+            Achtergrond bij deze vergelijking
+          </h2>
+          <p className="mt-2 text-sm text-muted-foreground">
+            Wat de keuze tussen deze modellen technisch en financieel betekent.
+          </p>
+          <div className="mt-4 grid sm:grid-cols-2 gap-3">
+            {backgroundGuides.map((guide) => (
+              <Link
+                key={guide.slug}
+                to={`/gids/${guide.slug}`}
+                className="p-4 rounded-md border border-border bg-card hover:border-primary/50"
+              >
+                <Pill tone="muted" className="mb-1.5 text-[10px]">
+                  {guide.category}
+                </Pill>
+                <div className="font-semibold line-clamp-2">{guide.title}</div>
+                <div className="text-xs text-muted-foreground mt-1 line-clamp-2">
+                  {guide.lede}
+                </div>
+              </Link>
+            ))}
           </div>
         </section>
       ) : null}

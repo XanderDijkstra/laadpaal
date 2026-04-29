@@ -10,6 +10,8 @@ import NotFoundPage from "./NotFoundPage";
 import { usePageMeta } from "@/hooks/usePageMeta";
 import { SITE } from "@/lib/site";
 import { guides } from "@/data/guides";
+import { relevantChargersForGuide } from "@/lib/relations";
+import { formatEuro } from "@/lib/utils";
 
 export default function GidsDetailPage() {
   const { slug } = useParams();
@@ -33,6 +35,7 @@ export default function GidsDetailPage() {
     .slice(0, Math.max(0, 3 - explicitRelated.length));
 
   const related = [...explicitRelated, ...filler].slice(0, 4);
+  const relevantChargers = relevantChargersForGuide(guide.slug);
 
   return (
     <PageShell
@@ -90,6 +93,33 @@ export default function GidsDetailPage() {
 
       {guide.faqs && guide.faqs.length > 0 ? (
         <GuideFAQList faqs={guide.faqs} />
+      ) : null}
+
+      {relevantChargers.length > 0 ? (
+        <section className="mt-12">
+          <h2 className="text-xl font-bold tracking-tight">
+            Laadpalen die hierbij passen
+          </h2>
+          <div className="mt-3 grid sm:grid-cols-2 gap-3">
+            {relevantChargers.map((c) => (
+              <Link
+                key={c.slug}
+                to={`/laadpalen/${c.slug}`}
+                className="p-4 rounded-md border border-border bg-card hover:border-primary/50"
+              >
+                <div className="text-xs text-muted-foreground">{c.brand}</div>
+                <div className="font-semibold">{c.name}</div>
+                <div className="text-xs text-muted-foreground mt-1 font-mono">
+                  {c.maxKw} kW · {c.phases}-fase
+                  {c.midMeter ? " · MID" : ""}
+                </div>
+                <div className="font-mono text-sm mt-1">
+                  vanaf {formatEuro(c.priceAllInFrom)}
+                </div>
+              </Link>
+            ))}
+          </div>
+        </section>
       ) : null}
 
       {related.length > 0 ? (

@@ -11,6 +11,10 @@ import { formatEuro } from "@/lib/utils";
 import { SITE } from "@/lib/site";
 import { chargers } from "@/data/chargers";
 import { brands } from "@/data/brands";
+import {
+  relevantGuidesForCharger,
+  compatibleEvsForCharger,
+} from "@/lib/relations";
 
 export default function LaadpaalDetailPage() {
   const { slug } = useParams();
@@ -21,18 +25,32 @@ export default function LaadpaalDetailPage() {
   const alternatives = chargers
     .filter((c) => c.slug !== charger.slug && c.brandSlug !== charger.brandSlug)
     .slice(0, 3);
+  const relatedGuides = relevantGuidesForCharger(charger);
+  const compatibleEvs = compatibleEvsForCharger(charger);
 
-  return <DetailContent charger={charger} brand={brand} alternatives={alternatives} />;
+  return (
+    <DetailContent
+      charger={charger}
+      brand={brand}
+      alternatives={alternatives}
+      relatedGuides={relatedGuides}
+      compatibleEvs={compatibleEvs}
+    />
+  );
 }
 
 function DetailContent({
   charger,
   brand,
   alternatives,
+  relatedGuides,
+  compatibleEvs,
 }: {
   charger: (typeof chargers)[number];
   brand: (typeof brands)[number] | undefined;
   alternatives: typeof chargers;
+  relatedGuides: ReturnType<typeof relevantGuidesForCharger>;
+  compatibleEvs: ReturnType<typeof compatibleEvsForCharger>;
 }) {
   const ogImage = `${SITE.url}/og/charger/${charger.slug}.svg`;
   usePageMeta({
@@ -192,6 +210,61 @@ function DetailContent({
           ))}
         </div>
       </section>
+
+      {compatibleEvs.length > 0 ? (
+        <section className="mt-10">
+          <h2 className="text-xl font-bold tracking-tight">
+            Geschikt voor deze EVs
+          </h2>
+          <p className="mt-2 text-sm text-muted-foreground">
+            De {charger.name} levert {charger.maxKw} kW — voldoende voor deze
+            populaire elektrische auto's.
+          </p>
+          <div className="mt-4 grid sm:grid-cols-2 gap-3">
+            {compatibleEvs.map((ev) => (
+              <Link
+                key={ev.slug}
+                to={`/auto/${ev.slug}`}
+                className="p-4 rounded-md border border-border bg-card hover:border-primary/50 transition"
+              >
+                <div className="text-xs text-muted-foreground">
+                  {ev.brand} · {ev.year}
+                </div>
+                <div className="font-semibold">{ev.name}</div>
+                <div className="text-xs text-muted-foreground mt-1 font-mono">
+                  {ev.batteryKwh} kWh · {ev.acMaxKw} kW AC
+                </div>
+              </Link>
+            ))}
+          </div>
+        </section>
+      ) : null}
+
+      {relatedGuides.length > 0 ? (
+        <section className="mt-10">
+          <h2 className="text-xl font-bold tracking-tight">Relevante gidsen</h2>
+          <p className="mt-2 text-sm text-muted-foreground">
+            Achtergrond bij wat de {charger.name} bijzonder maakt.
+          </p>
+          <div className="mt-4 grid sm:grid-cols-2 gap-3">
+            {relatedGuides.map((g) => (
+              <Link
+                key={g.slug}
+                to={`/gids/${g.slug}`}
+                className="p-4 rounded-md border border-border bg-card hover:border-primary/50 transition"
+              >
+                <Pill tone="muted" className="mb-1.5 text-[10px]">
+                  {g.category}
+                </Pill>
+                <div className="font-semibold line-clamp-2">{g.title}</div>
+                <div className="text-xs text-muted-foreground mt-1 line-clamp-2">
+                  {g.lede}
+                </div>
+              </Link>
+            ))}
+          </div>
+        </section>
+      ) : null}
 
       <div className="mt-12">
         <OfferteCta

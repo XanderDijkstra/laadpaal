@@ -9,6 +9,11 @@ import { usePageMeta } from "@/hooks/usePageMeta";
 import { formatNumber } from "@/lib/utils";
 import { SITE } from "@/lib/site";
 import { gemeenten } from "@/data/gemeenten";
+import {
+  topGuidesForGemeente,
+  recommendedChargersForGemeente,
+} from "@/lib/relations";
+import { formatEuro } from "@/lib/utils";
 
 export default function GemeenteDetailPage() {
   const { slug } = useParams();
@@ -18,6 +23,8 @@ export default function GemeenteDetailPage() {
   const neighbors = gemeenten
     .filter((x) => x.provincie === g.provincie && x.slug !== g.slug)
     .slice(0, 5);
+  const topGuides = topGuidesForGemeente();
+  const recommended = recommendedChargersForGemeente();
 
   usePageMeta({
     title: `Laadpaal installateur ${g.name} — gratis offertes | ${SITE.shortName}`,
@@ -86,6 +93,65 @@ export default function GemeenteDetailPage() {
           contacteren.
         </p>
       </section>
+
+      {recommended.length > 0 ? (
+        <section className="mt-10">
+          <h2 className="text-xl font-bold tracking-tight">
+            Populaire laadpalen in {g.name}
+          </h2>
+          <p className="mt-2 text-sm text-muted-foreground">
+            Drie typische keuzes voor een rijwoning in {g.provincie}: een
+            instapmodel, een midrange en een premium met MID-meter.
+          </p>
+          <div className="mt-4 grid sm:grid-cols-3 gap-3">
+            {recommended.map((c) => (
+              <Link
+                key={c.slug}
+                to={`/laadpalen/${c.slug}`}
+                className="p-4 rounded-md border border-border bg-card hover:border-primary/50 transition"
+              >
+                <div className="text-xs text-muted-foreground">{c.brand}</div>
+                <div className="font-semibold">{c.name}</div>
+                <div className="text-xs text-muted-foreground mt-1 font-mono">
+                  {c.maxKw} kW · {c.phases}-fase
+                </div>
+                <div className="font-mono text-sm mt-1">
+                  vanaf {formatEuro(c.priceAllInFrom)}
+                </div>
+              </Link>
+            ))}
+          </div>
+        </section>
+      ) : null}
+
+      {topGuides.length > 0 ? (
+        <section className="mt-10">
+          <h2 className="text-xl font-bold tracking-tight">
+            Belangrijke gidsen voor inwoners van {g.name}
+          </h2>
+          <p className="mt-2 text-sm text-muted-foreground">
+            Wat u moet weten voordat u een laadpaal in {g.provincie} laat
+            plaatsen.
+          </p>
+          <div className="mt-4 grid sm:grid-cols-3 gap-3">
+            {topGuides.map((guide) => (
+              <Link
+                key={guide.slug}
+                to={`/gids/${guide.slug}`}
+                className="p-4 rounded-md border border-border bg-card hover:border-primary/50 transition"
+              >
+                <Pill tone="muted" className="mb-1.5 text-[10px]">
+                  {guide.category}
+                </Pill>
+                <div className="font-semibold line-clamp-2">{guide.title}</div>
+                <div className="text-xs text-muted-foreground mt-1 line-clamp-2">
+                  {guide.lede}
+                </div>
+              </Link>
+            ))}
+          </div>
+        </section>
+      ) : null}
 
       {neighbors.length > 0 ? (
         <section className="mt-10">
