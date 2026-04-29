@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { SITE } from "@/lib/site";
+import { recordHead } from "@/lib/headStore";
 
 export interface PageMeta {
   title: string;
@@ -8,6 +9,8 @@ export interface PageMeta {
   ogImage?: string;
   noindex?: boolean;
 }
+
+const isServer = typeof window === "undefined";
 
 function setMeta(name: string, content: string) {
   let el = document.querySelector<HTMLMetaElement>(`meta[name="${name}"]`);
@@ -42,6 +45,10 @@ function setLink(rel: string, href: string) {
 }
 
 export function usePageMeta(meta: PageMeta) {
+  if (isServer) {
+    recordHead(meta);
+  }
+
   useEffect(() => {
     document.title = meta.title;
     setMeta("description", meta.description);
@@ -67,4 +74,53 @@ export function usePageMeta(meta: PageMeta) {
     meta.ogImage,
     meta.noindex,
   ]);
+}
+
+export function renderHeadTags(meta: PageMeta): string {
+  const parts: string[] = [];
+  parts.push(`<title>${escapeHtml(meta.title)}</title>`);
+  parts.push(
+    `<meta name="description" content="${escapeAttr(meta.description)}" />`,
+  );
+  parts.push(
+    `<meta property="og:title" content="${escapeAttr(meta.title)}" />`,
+  );
+  parts.push(
+    `<meta property="og:description" content="${escapeAttr(meta.description)}" />`,
+  );
+  parts.push(`<meta property="og:type" content="website" />`);
+  parts.push(
+    `<meta property="og:site_name" content="${escapeAttr(SITE.name)}" />`,
+  );
+  if (meta.canonical) {
+    parts.push(
+      `<link rel="canonical" href="${escapeAttr(meta.canonical)}" />`,
+    );
+    parts.push(
+      `<meta property="og:url" content="${escapeAttr(meta.canonical)}" />`,
+    );
+  }
+  if (meta.ogImage) {
+    parts.push(
+      `<meta property="og:image" content="${escapeAttr(meta.ogImage)}" />`,
+    );
+  }
+  parts.push(
+    `<meta name="robots" content="${meta.noindex ? "noindex,nofollow" : "index,follow"}" />`,
+  );
+  return parts.join("\n    ");
+}
+
+function escapeHtml(s: string) {
+  return s
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
+}
+
+function escapeAttr(s: string) {
+  return s
+    .replace(/&/g, "&amp;")
+    .replace(/"/g, "&quot;")
+    .replace(/</g, "&lt;");
 }

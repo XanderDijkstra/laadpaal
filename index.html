@@ -11,14 +11,10 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-    <title>Laadpaal Vlaanderen — vergelijk en krijg 3 offertes</title>
-    <meta
-      name="description"
-      content="Vergelijk gratis offertes voor een laadpaal van erkende installateurs in jouw gemeente. 6% btw automatisch berekend."
-    />
+    <!--ssr-head-->
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <div id="root"><!--ssr-outlet--></div>
+    <script type="module" src="/src/entry-client.tsx"></script>
   </body>
 </html>

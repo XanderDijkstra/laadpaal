@@ -71,38 +71,37 @@ export function OfferteForm() {
   const [params] = useSearchParams();
   const navigate = useNavigate();
   const [step, setStep] = useState(0);
-  const [state, setState] = useState<FormState>(() => {
-    if (typeof window === "undefined") return DEFAULT_STATE;
+  const [state, setState] = useState<FormState>(DEFAULT_STATE);
+  const [hydrated, setHydrated] = useState(false);
+
+  // Hydrate from localStorage + URL prefills after first render to avoid SSR mismatch
+  useEffect(() => {
+    let next: FormState = DEFAULT_STATE;
     try {
       const stored = window.localStorage.getItem(STORAGE_KEY);
-      if (stored) return { ...DEFAULT_STATE, ...JSON.parse(stored) };
+      if (stored) next = { ...DEFAULT_STATE, ...JSON.parse(stored) };
     } catch {
       /* ignore */
     }
-    return DEFAULT_STATE;
-  });
-
-  // Apply URL prefills (postcode, model)
-  useEffect(() => {
     const pc = params.get("postcode");
     const model = params.get("model");
-    if (pc) setState((s) => ({ ...s, postcode: s.postcode || pc }));
-    if (model)
-      setState((s) => ({
-        ...s,
-        brand_pref: s.brand_pref.length ? s.brand_pref : [model],
-      }));
+    if (pc && !next.postcode) next = { ...next, postcode: pc };
+    if (model && next.brand_pref.length === 0)
+      next = { ...next, brand_pref: [model] };
+    setState(next);
+    setHydrated(true);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // Persist draft
+  // Persist draft (only after hydration so we don't overwrite stored values with the default)
   useEffect(() => {
+    if (!hydrated) return;
     try {
       window.localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
     } catch {
       /* ignore */
     }
-  }, [state]);
+  }, [state, hydrated]);
 
   const postcodeValid = isValidBelgianPostcode(state.postcode);
   const detectedGemeente = useMemo(

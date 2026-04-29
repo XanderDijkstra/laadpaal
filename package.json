@@ -5,11 +5,12 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && node scripts/generate-sitemap.mjs && vite build && vite build --ssr src/entry-server.tsx --outDir dist-ssr && node scripts/prerender.mjs",
+    "build:client": "vite build",
+    "build:server": "vite build --ssr src/entry-server.tsx --outDir dist-ssr",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
-    "lint": "eslint . --ext ts,tsx",
-    "prebuild": "node scripts/generate-sitemap.mjs"
+    "lint": "eslint . --ext ts,tsx"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.0",
