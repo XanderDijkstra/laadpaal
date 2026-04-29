@@ -59,12 +59,32 @@ export interface Gemeente {
   premieDescription?: string;
 }
 
+export type GuideBlock =
+  | { type: "p"; text: string }
+  | { type: "h2"; text: string }
+  | { type: "h3"; text: string }
+  | { type: "ul"; items: string[] }
+  | { type: "ol"; items: string[] }
+  | { type: "callout"; tone?: "info" | "warning" | "success"; title?: string; text: string }
+  | { type: "table"; headers: string[]; rows: string[][] };
+
+export interface GuideFAQ {
+  q: string;
+  a: string;
+}
+
 export interface Guide {
   slug: string;
   title: string;
   lede: string;
   category: "premies" | "kosten" | "techniek" | "praktisch";
   updated: string;
+  /** Optional rich body. If absent, the page renders a stub. */
+  body?: GuideBlock[];
+  /** Article-specific FAQ block. Used for FAQPage schema + accordion. */
+  faqs?: GuideFAQ[];
+  /** Explicit related guide slugs in addition to category-based suggestions. */
+  related?: string[];
 }
 
 export interface InstallationTopic {
