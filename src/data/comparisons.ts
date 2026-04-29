@@ -81,4 +81,76 @@ export const comparisons: Comparison[] = [
     verdict:
       "Smappee als u al een Smappee energiemonitor heeft of geavanceerd zonneladen wilt. Anders is Zaptec Go 2 de meer gestroomlijnde keuze tegen een lagere prijs.",
   },
+  {
+    slug: "abb-terra-ac-vs-alfen-pro-line",
+    a: "abb-terra-ac-w22",
+    b: "alfen-eve-single-pro-line",
+    title: "ABB Terra AC W22 vs Alfen Eve Single Pro-line",
+    verdict:
+      "Beide industriële zwaargewichten met MID en OCPP. Alfen heeft de bredere installateursbasis in de Benelux; ABB scoort iets beter op rapportage en koud-weer prestaties.",
+  },
+  {
+    slug: "keba-p30-vs-zaptec-pro",
+    a: "keba-kecontact-p30",
+    b: "zaptec-pro",
+    title: "KEBA KeContact P30 vs Zaptec Pro",
+    verdict:
+      "Voor multi-user setups met OCPP zijn beide topkeuzes. KEBA heeft langere staat-van-dienst in BE; Zaptec Pro wint op gestroomlijnd cloudbeheer en moderne app.",
+  },
+  {
+    slug: "ohme-home-pro-vs-easee-charge-up",
+    a: "ohme-home-pro",
+    b: "easee-charge-up",
+    title: "Ohme Home Pro vs Easee Charge Up",
+    verdict:
+      "Voor wie een dynamisch energietarief heeft (Bolt, ENGIE Drive) is Ohme superieur door rechtstreekse leverancier-koppeling. Voor flexibel vermogen tot 22 kW: Easee Charge Up.",
+  },
+  {
+    slug: "heidelberg-vs-easee-charge-up",
+    a: "heidelberg-energy-control",
+    b: "easee-charge-up",
+    title: "Heidelberger Energy Control vs Easee Charge Up",
+    verdict:
+      "Heidelberger als u puur wilt laden zonder app of cloud, voor laagste prijs. Easee Charge Up als u smart laden, zonneladen of nachttarief wilt benutten.",
+  },
+  {
+    slug: "go-e-gemini-vs-zaptec-go-2",
+    a: "go-e-charger-gemini-22",
+    b: "zaptec-go-2",
+    title: "go-e Charger Gemini vs Zaptec Go 2",
+    verdict:
+      "go-e voor enthousiastelingen die Home Assistant of EVCC integratie willen. Zaptec Go 2 voor wie een gepolijste consumer-app en bredere lokale support wil.",
+  },
+  {
+    slug: "mennekes-amtron-vs-wallbox-pulsar",
+    a: "mennekes-amtron-compact-2s",
+    b: "wallbox-pulsar-plus",
+    title: "MENNEKES AMTRON Compact 2.0s vs Wallbox Pulsar Plus",
+    verdict:
+      "MENNEKES voor wie 'made in Germany' en lange levensduur prioriteert. Wallbox voor wie strakke designtaal en sterke app belangrijker vindt.",
+  },
+  {
+    slug: "evbox-elvi-vs-easee-charge-core",
+    a: "evbox-elvi",
+    b: "easee-charge-core",
+    title: "EVBox Elvi vs Easee Charge Core",
+    verdict:
+      "Beide Nederlandse aanbiedingen. Elvi heeft modulair design (kabel achteraf upgradebaar) en bredere lokale support. Easee scoort beter op app-ervaring en prijs.",
+  },
+  {
+    slug: "schneider-evlink-vs-easee-charge-up",
+    a: "schneider-evlink-wallbox-g4",
+    b: "easee-charge-up",
+    title: "Schneider EVlink Wallbox G4 vs Easee Charge Up",
+    verdict:
+      "Schneider als uw elektricien al met Schneider materiaal werkt — vlotte integratie. Easee voor de meest gestroomlijnde consumer-ervaring tegen lagere prijs.",
+  },
+  {
+    slug: "webasto-pure-vs-heidelberg",
+    a: "webasto-pure",
+    b: "heidelberg-energy-control",
+    title: "Webasto Pure vs Heidelberger Energy Control",
+    verdict:
+      "Beide budget-no-frills 22 kW chargers zonder app. Webasto wint op afwerking en Belgische distributie; Heidelberger op pure prijs (€100-€150 verschil).",
+  },
 ];

@@ -81,4 +81,104 @@ export const brands: Brand[] = [
       "De Zappi is dé charger voor zonnepaneeleigenaars: laadt uitsluitend met overschot van eigen PV-productie.",
     modelSlugs: ["myenergi-zappi"],
   },
+  {
+    slug: "abb",
+    name: "ABB",
+    country: "Zwitserland",
+    countryFlag: "🇨🇭",
+    founded: 1988,
+    description:
+      "Industriële reus uit Zürich. De Terra AC-reeks is robuust, met OCPP-ondersteuning en een breed bereik aan vermogens — geliefd bij installateurs voor zakelijke en residentiële installaties.",
+    modelSlugs: ["abb-terra-ac-w22", "abb-terra-ac-w11"],
+  },
+  {
+    slug: "schneider",
+    name: "Schneider Electric",
+    country: "Frankrijk",
+    countryFlag: "🇫🇷",
+    founded: 1836,
+    description:
+      "Frans wereldspeler in elektrische installaties. EVlink Wallbox is een betrouwbare standaardkeuze, vaak voorgesteld door installateurs die al met Schneider materiaal werken.",
+    modelSlugs: ["schneider-evlink-wallbox-g4", "schneider-evlink-home"],
+  },
+  {
+    slug: "webasto",
+    name: "Webasto",
+    country: "Duitsland",
+    countryFlag: "🇩🇪",
+    founded: 1901,
+    description:
+      "Duitse fabrikant uit Stockdorf, oorspronkelijk bekend van auto-verwarmingssystemen. Webasto Pure en Live Plus zijn breed verkrijgbaar via Belgische installateurs.",
+    modelSlugs: ["webasto-pure", "webasto-live-plus", "webasto-turbodx"],
+  },
+  {
+    slug: "keba",
+    name: "KEBA",
+    country: "Oostenrijk",
+    countryFlag: "🇦🇹",
+    founded: 1968,
+    description:
+      "Oostenrijks merk met een sterke reputatie in publieke en semi-publieke laders. KeContact P30/P40 wordt vaak gebruikt voor bedrijfsparkings.",
+    modelSlugs: ["keba-kecontact-p30", "keba-kecontact-p40"],
+  },
+  {
+    slug: "mennekes",
+    name: "MENNEKES",
+    country: "Duitsland",
+    countryFlag: "🇩🇪",
+    founded: 1935,
+    description:
+      "Uitvinder van de Type 2-stekker. Amtron-reeks staat bekend om premium afwerking en lange levensduur — een veilige keuze voor wie 'made in Germany' belangrijk vindt.",
+    modelSlugs: ["mennekes-amtron-compact-2s", "mennekes-amtron-charge-control"],
+  },
+  {
+    slug: "evbox",
+    name: "EVBox",
+    country: "Nederland",
+    countryFlag: "🇳🇱",
+    founded: 2010,
+    description:
+      "Een van de grootste laadpaalfabrikanten van Europa, eigendom van ENGIE. Elvi voor thuis, Liviqo voor zakelijke en multi-user setups.",
+    modelSlugs: ["evbox-elvi", "evbox-liviqo"],
+  },
+  {
+    slug: "hager",
+    name: "Hager",
+    country: "Frankrijk",
+    countryFlag: "🇫🇷",
+    founded: 1955,
+    description:
+      "Frans-Duitse groep met Belgische dochter. Witty-reeks integreert vlot in bestaande Hager-meterkasten — populaire keuze bij elektriciens.",
+    modelSlugs: ["hager-witty-start", "hager-witty-park"],
+  },
+  {
+    slug: "heidelberg",
+    name: "Heidelberger",
+    country: "Duitsland",
+    countryFlag: "🇩🇪",
+    founded: 1850,
+    description:
+      "Energy Control en Home Eco zijn budgetvriendelijke chargers met basis-functionaliteit. Geen app, geen wifi — pure laadhardware voor wie kosten wil drukken.",
+    modelSlugs: ["heidelberg-energy-control", "heidelberg-home-eco"],
+  },
+  {
+    slug: "ohme",
+    name: "Ohme",
+    country: "Verenigd Koninkrijk",
+    countryFlag: "🇬🇧",
+    founded: 2017,
+    description:
+      "Britse start-up die zich specialiseert in dynamische tarieven. Home Pro communiceert rechtstreeks met de energieleverancier voor optimaal goedkoop laden.",
+    modelSlugs: ["ohme-home-pro", "ohme-epod"],
+  },
+  {
+    slug: "go-e",
+    name: "go-e",
+    country: "Oostenrijk",
+    countryFlag: "🇦🇹",
+    founded: 2015,
+    description:
+      "Oostenrijkse innovator die zowel mobiele als vaste laders maakt. De Charger Gemini is een populaire enthousiast-keuze met sterke open API.",
+    modelSlugs: ["go-e-charger-gemini-22", "go-e-charger-gemini-flex"],
+  },
 ];
