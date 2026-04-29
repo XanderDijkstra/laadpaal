@@ -6,9 +6,9 @@ const COLS = [
   {
     title: "Laadpalen",
     links: [
+      { label: "Beste laadpaal 2026", href: "/beste-laadpaal" },
       { label: "Alle modellen", href: "/laadpalen" },
       { label: "Alle merken", href: "/merken" },
-      { label: "Vergelijken", href: "/vergelijken/zaptec-go-vs-easee-charge-core" },
       { label: "Per auto", href: "/auto" },
     ],
   },
@@ -31,12 +31,12 @@ const COLS = [
     ],
   },
   {
-    title: "Bedrijf",
+    title: "Tools & gids",
     links: [
+      { label: "Laadkost berekenen", href: "/laadkost-berekenen" },
+      { label: "Gids", href: "/gids" },
       { label: "Over ons", href: "/over-ons" },
       { label: "Voor installateurs", href: "/voor-installateurs" },
-      { label: "Contact", href: "/contact" },
-      { label: "Gids", href: "/gids" },
     ],
   },
 ];

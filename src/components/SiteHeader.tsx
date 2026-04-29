@@ -4,11 +4,11 @@ import { Menu, X, Zap } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const NAV = [
+  { label: "Beste laadpaal", href: "/beste-laadpaal" },
   { label: "Laadpalen", href: "/laadpalen" },
-  { label: "Merken", href: "/merken" },
   { label: "Per auto", href: "/auto" },
-  { label: "Installatie", href: "/installatie" },
   { label: "Per gemeente", href: "/gemeente" },
+  { label: "Laadkost", href: "/laadkost-berekenen" },
   { label: "Gids", href: "/gids" },
 ];
 

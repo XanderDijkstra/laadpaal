@@ -52,6 +52,8 @@ async function main() {
   // Standalone unique pages
   urls.push(urlEntry("/", 1.0, "weekly"));
   urls.push(urlEntry("/offerte", 1.0, "weekly"));
+  urls.push(urlEntry("/beste-laadpaal", 1.0, "monthly"));
+  urls.push(urlEntry("/laadkost-berekenen", 0.9, "monthly"));
   urls.push(urlEntry("/laadpalen", 0.9, "weekly"));
   urls.push(urlEntry("/merken", 0.9, "weekly"));
   urls.push(urlEntry("/auto", 0.9, "weekly"));
@@ -85,7 +87,7 @@ ${urls.join("\n")}
   await fs.writeFile(path.join(outDir, "sitemap.xml"), xml, "utf-8");
 
   const counts = {
-    standalone: 14,
+    standalone: 16,
     chargers: data.chargers.length,
     brands: data.brands.length,
     comparisons: data.comparisons.length,

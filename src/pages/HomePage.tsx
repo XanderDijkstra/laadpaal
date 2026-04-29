@@ -243,6 +243,46 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* CORNERSTONE TOOLS — buying guide + calculator */}
+      <section className="mt-14 md:mt-20 grid md:grid-cols-2 gap-4">
+        <Link
+          to="/beste-laadpaal"
+          className="p-6 rounded-lg border border-border bg-card hover:border-primary/50 transition group"
+        >
+          <div className="text-xs font-semibold tracking-wider text-primary uppercase">
+            Koopgids {new Date().getFullYear()}
+          </div>
+          <h3 className="mt-2 text-xl font-bold tracking-tight">
+            Beste laadpaal van {new Date().getFullYear()}
+          </h3>
+          <p className="mt-2 text-sm text-muted-foreground">
+            36 modellen vergeleken, 8 winnaars per gebruiksprofiel: overall,
+            budget, premium, voor PV, voor bedrijfswagen.
+          </p>
+          <div className="mt-3 inline-flex items-center gap-1 text-primary text-sm font-medium group-hover:underline">
+            Bekijk de winnaars →
+          </div>
+        </Link>
+        <Link
+          to="/laadkost-berekenen"
+          className="p-6 rounded-lg border border-border bg-card hover:border-primary/50 transition group"
+        >
+          <div className="text-xs font-semibold tracking-wider text-primary uppercase">
+            Calculator
+          </div>
+          <h3 className="mt-2 text-xl font-bold tracking-tight">
+            Bereken uw laadkost
+          </h3>
+          <p className="mt-2 text-sm text-muted-foreground">
+            Wat kost u laden per jaar — thuis, publiek of via zonnepanelen?
+            Inclusief vergelijking met een benzineauto.
+          </p>
+          <div className="mt-3 inline-flex items-center gap-1 text-primary text-sm font-medium group-hover:underline">
+            Open calculator →
+          </div>
+        </Link>
+      </section>
+
       {/* VAT CALCULATOR */}
       <section className="mt-14 md:mt-20">
         <VATCalculator />

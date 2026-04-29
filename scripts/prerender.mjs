@@ -37,6 +37,8 @@ async function collectRoutes() {
     "/",
     "/offerte",
     "/offerte/verzonden",
+    "/beste-laadpaal",
+    "/laadkost-berekenen",
     "/laadpalen",
     "/merken",
     "/vergelijken",

@@ -4,6 +4,8 @@ import OffertePage from "@/pages/OffertePage";
 import OfferteVerzondenPage from "@/pages/OfferteVerzondenPage";
 import LaadpalenIndexPage from "@/pages/LaadpalenIndexPage";
 import LaadpaalDetailPage from "@/pages/LaadpaalDetailPage";
+import BesteLaadpaalPage from "@/pages/BesteLaadpaalPage";
+import LaadkostCalculatorPage from "@/pages/LaadkostCalculatorPage";
 import MerkenIndexPage from "@/pages/MerkenIndexPage";
 import MerkDetailPage from "@/pages/MerkDetailPage";
 import VergelijkenDetailPage from "@/pages/VergelijkenDetailPage";
@@ -32,6 +34,8 @@ export default function App() {
       <Route path="/offerte/verzonden" element={<OfferteVerzondenPage />} />
       <Route path="/laadpalen" element={<LaadpalenIndexPage />} />
       <Route path="/laadpalen/:slug" element={<LaadpaalDetailPage />} />
+      <Route path="/beste-laadpaal" element={<BesteLaadpaalPage />} />
+      <Route path="/laadkost-berekenen" element={<LaadkostCalculatorPage />} />
       <Route path="/merken" element={<MerkenIndexPage />} />
       <Route path="/merken/:slug" element={<MerkDetailPage />} />
       <Route path="/vergelijken/:slug" element={<VergelijkenDetailPage />} />
