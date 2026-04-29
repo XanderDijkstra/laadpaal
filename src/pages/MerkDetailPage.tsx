@@ -17,10 +17,12 @@ export default function MerkDetailPage() {
 
   const models = chargers.filter((c) => c.brandSlug === brand.slug);
 
+  const ogImage = `${SITE.url}/og/brand/${brand.slug}.svg`;
   usePageMeta({
     title: `${brand.name} laadpalen in België — alle modellen | ${SITE.shortName}`,
     description: `${brand.name} laadpalen: alle modellen, prijzen en installatie in Vlaanderen. Vergelijk met andere merken.`,
     canonical: `${SITE.url}/merken/${brand.slug}`,
+    ogImage,
   });
 
   return (
@@ -36,11 +38,35 @@ export default function MerkDetailPage() {
         data={[
           {
             "@context": "https://schema.org",
+            "@type": "Brand",
+            "@id": `${SITE.url}/merken/${brand.slug}#brand`,
+            name: brand.name,
+            description: brand.description,
+            logo: ogImage,
+            url: `${SITE.url}/merken/${brand.slug}`,
+          },
+          {
+            "@context": "https://schema.org",
             "@type": "Organization",
             name: brand.name,
             url: `${SITE.url}/merken/${brand.slug}`,
             address: { "@type": "PostalAddress", addressCountry: brand.country },
             foundingDate: brand.founded,
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "CollectionPage",
+            url: `${SITE.url}/merken/${brand.slug}`,
+            name: `${brand.name} laadpalen`,
+            mainEntity: {
+              "@type": "ItemList",
+              itemListElement: models.map((m, i) => ({
+                "@type": "ListItem",
+                position: i + 1,
+                url: `${SITE.url}/laadpalen/${m.slug}`,
+                name: m.name,
+              })),
+            },
           },
         ]}
       />

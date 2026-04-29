@@ -34,11 +34,28 @@ function DetailContent({
   brand: (typeof brands)[number] | undefined;
   alternatives: typeof chargers;
 }) {
+  const ogImage = `${SITE.url}/og/charger/${charger.slug}.svg`;
   usePageMeta({
     title: `${charger.name} review — specs, prijs, ervaringen | ${SITE.shortName}`,
     description: `${charger.name}: ${charger.maxKw} kW, ${charger.shortDescription} Prijs vanaf ${formatEuro(charger.priceAllInFrom)} all-in.`,
     canonical: `${SITE.url}/laadpalen/${charger.slug}`,
+    ogImage,
   });
+
+  const priceValidUntil = `${new Date().getFullYear() + 1}-12-31`;
+  const additionalProperty = [
+    { "@type": "PropertyValue", name: "Maximaal vermogen", value: `${charger.maxKw} kW`, unitText: "kW" },
+    { "@type": "PropertyValue", name: "Aantal fasen", value: `${charger.phases}-fase` },
+    {
+      "@type": "PropertyValue",
+      name: "Kabel",
+      value: charger.cable === "vast" ? "Vaste kabel" : `${charger.socketType ?? "Type 2"} socket`,
+    },
+    { "@type": "PropertyValue", name: "App-bediening", value: charger.app ? "Ja" : "Nee" },
+    { "@type": "PropertyValue", name: "RFID", value: charger.rfid ? "Ja" : "Nee" },
+    { "@type": "PropertyValue", name: "MID-meter", value: charger.midMeter ? "Ja" : "Nee" },
+    { "@type": "PropertyValue", name: "Garantie", value: `${charger.warrantyYears} jaar` },
+  ];
 
   return (
     <PageShell
@@ -54,15 +71,30 @@ function DetailContent({
           {
             "@context": "https://schema.org",
             "@type": "Product",
+            "@id": `${SITE.url}/laadpalen/${charger.slug}#product`,
             name: charger.name,
             brand: { "@type": "Brand", name: charger.brand },
+            manufacturer: { "@type": "Organization", name: charger.brand },
             description: charger.shortDescription,
+            image: ogImage,
+            sku: charger.slug,
+            mpn: charger.name,
+            category: "EV thuislaadpaal",
+            url: `${SITE.url}/laadpalen/${charger.slug}`,
+            additionalProperty,
             offers: {
               "@type": "Offer",
               priceCurrency: "EUR",
               price: charger.priceAllInFrom,
+              priceValidUntil,
               url: `${SITE.url}/laadpalen/${charger.slug}`,
               availability: "https://schema.org/InStock",
+              itemCondition: "https://schema.org/NewCondition",
+              seller: {
+                "@type": "Organization",
+                name: SITE.name,
+                url: SITE.url,
+              },
             },
           },
         ]}

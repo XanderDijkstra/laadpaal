@@ -34,12 +34,37 @@ export default function VergelijkenDetailPage() {
       width="prose"
     >
       <JsonLd
-        data={{
-          "@context": "https://schema.org",
-          "@type": "WebPage",
-          name: cmp.title,
-          url: `${SITE.url}/vergelijken/${cmp.slug}`,
-        }}
+        data={[
+          {
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "@id": `${SITE.url}/vergelijken/${cmp.slug}`,
+            name: cmp.title,
+            url: `${SITE.url}/vergelijken/${cmp.slug}`,
+            description: cmp.verdict,
+          },
+          ...(a && b
+            ? [
+                {
+                  "@context": "https://schema.org",
+                  "@type": "Review",
+                  reviewBody: cmp.verdict,
+                  name: cmp.title,
+                  datePublished: new Date().toISOString().slice(0, 10),
+                  author: {
+                    "@type": "Organization",
+                    name: SITE.name,
+                    url: SITE.url,
+                  },
+                  itemReviewed: {
+                    "@type": "Product",
+                    name: `${a.name} vs ${b.name}`,
+                    description: `Vergelijking tussen ${a.name} (${a.brand}) en ${b.name} (${b.brand}).`,
+                  },
+                },
+              ]
+            : []),
+        ]}
       />
       <header>
         <Pill tone="muted" className="mb-2">

@@ -62,6 +62,12 @@ export function usePageMeta(meta: PageMeta) {
     }
     if (meta.ogImage) {
       setProperty("og:image", meta.ogImage);
+      setProperty("og:image:width", "1200");
+      setProperty("og:image:height", "630");
+      setMeta("twitter:card", "summary_large_image");
+      setMeta("twitter:image", meta.ogImage);
+      setMeta("twitter:title", meta.title);
+      setMeta("twitter:description", meta.description);
     }
     setMeta(
       "robots",
@@ -103,6 +109,18 @@ export function renderHeadTags(meta: PageMeta): string {
   if (meta.ogImage) {
     parts.push(
       `<meta property="og:image" content="${escapeAttr(meta.ogImage)}" />`,
+    );
+    parts.push(`<meta property="og:image:width" content="1200" />`);
+    parts.push(`<meta property="og:image:height" content="630" />`);
+    parts.push(`<meta name="twitter:card" content="summary_large_image" />`);
+    parts.push(
+      `<meta name="twitter:image" content="${escapeAttr(meta.ogImage)}" />`,
+    );
+    parts.push(
+      `<meta name="twitter:title" content="${escapeAttr(meta.title)}" />`,
+    );
+    parts.push(
+      `<meta name="twitter:description" content="${escapeAttr(meta.description)}" />`,
     );
   }
   parts.push(
