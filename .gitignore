@@ -1,0 +1,29 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editors
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Env
+.env
+.env.local
+.env.*.local
+
+# Generated
+public/sitemap.xml
+*.tsbuildinfo
