@@ -10,7 +10,8 @@
     "build:server": "vite build --ssr src/entry-server.tsx --outDir dist-ssr",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
-    "lint": "eslint . --ext ts,tsx"
+    "lint": "eslint . --ext ts,tsx",
+    "fetch:laadpunten": "node scripts/fetch-laadpunten.mjs"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.0",

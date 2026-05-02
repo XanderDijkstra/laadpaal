@@ -59,6 +59,31 @@ export interface Gemeente {
   premieDescription?: string;
 }
 
+export interface ChargingStation {
+  id: string;            // unique slug e.g. "antwerpen-grote-markt-1"
+  name: string;          // human-readable location name
+  operator: string;      // operator slug, see operatorTariffs.ts
+  address: string;
+  postcode: string;
+  gemeenteSlug: string;
+  lat: number;
+  lng: number;
+  maxKw: number;         // highest power available at this station
+  connectors: number;    // number of plugs
+  type: "AC" | "DC" | "AC+DC";
+  source: "ocm" | "fluvius" | "seed";
+}
+
+export interface OperatorTariff {
+  slug: string;
+  name: string;
+  acPrice: number | null;   // €/kWh AC
+  dcPrice: number | null;   // €/kWh DC
+  startFee: number | null;  // €/sessie
+  notes?: string;
+  url?: string;
+}
+
 export type GuideBlock =
   | { type: "p"; text: string }
   | { type: "h2"; text: string }

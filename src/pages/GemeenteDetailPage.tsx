@@ -14,6 +14,7 @@ import {
   recommendedChargersForGemeente,
 } from "@/lib/relations";
 import { formatEuro } from "@/lib/utils";
+import { laadpunten } from "@/data/laadpunten";
 
 export default function GemeenteDetailPage() {
   const { slug } = useParams();
@@ -25,6 +26,9 @@ export default function GemeenteDetailPage() {
     .slice(0, 5);
   const topGuides = topGuidesForGemeente();
   const recommended = recommendedChargersForGemeente();
+  const publicStationCount = laadpunten.filter(
+    (p) => p.gemeenteSlug === g.slug,
+  ).length;
 
   usePageMeta({
     title: `Laadpaal installateur ${g.name} — gratis offertes | ${SITE.shortName}`,
@@ -93,6 +97,25 @@ export default function GemeenteDetailPage() {
           contacteren.
         </p>
       </section>
+
+      {publicStationCount > 0 ? (
+        <section className="mt-10">
+          <Link
+            to={`/laadpunten/${g.slug}`}
+            className="block p-5 rounded-md border border-primary/30 bg-primary/5 hover:border-primary/60 transition"
+          >
+            <div className="text-xs text-primary font-semibold uppercase tracking-wide">
+              Publiek laden
+            </div>
+            <div className="mt-1 text-lg font-bold tracking-tight">
+              {publicStationCount} publieke laadpalen in {g.name}
+            </div>
+            <div className="text-sm text-muted-foreground mt-1">
+              Bekijk alle stations met postcode-afstand en operator-tarief →
+            </div>
+          </Link>
+        </section>
+      ) : null}
 
       {recommended.length > 0 ? (
         <section className="mt-10">

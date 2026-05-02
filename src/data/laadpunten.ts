@@ -1,0 +1,119 @@
+// Seed dataset met representatieve laadpunten verspreid over Vlaanderen.
+// Gegenereerd manueel uit publieke data van de operatoren. Vervang door
+// scripts/fetch-laadpunten.mjs (Open Charge Map API) voor volledige dekking.
+import type { ChargingStation } from "./types";
+
+export const laadpunten: ChargingStation[] = [
+  // ============ ANTWERPEN (provincie) ============
+  { id: "antwerpen-centraal-pr", name: "P+R Antwerpen-Centraal", operator: "allego", address: "Pelikaanstraat 3", postcode: "2018", gemeenteSlug: "antwerpen", lat: 51.2173, lng: 4.4216, maxKw: 50, connectors: 4, type: "AC+DC", source: "seed" },
+  { id: "antwerpen-meir", name: "Meir Parking", operator: "totalenergies", address: "Meir 50", postcode: "2000", gemeenteSlug: "antwerpen", lat: 51.2186, lng: 4.4097, maxKw: 22, connectors: 4, type: "AC", source: "seed" },
+  { id: "antwerpen-zuid", name: "Antwerpen-Zuid retail park", operator: "fastned", address: "Adriaan Brouwerstraat 1", postcode: "2000", gemeenteSlug: "antwerpen", lat: 51.2002, lng: 4.3927, maxKw: 300, connectors: 8, type: "DC", source: "seed" },
+  { id: "antwerpen-linkeroever", name: "Linkeroever P+R", operator: "engie", address: "Charles de Costerlaan", postcode: "2050", gemeenteSlug: "antwerpen", lat: 51.2261, lng: 4.3759, maxKw: 22, connectors: 6, type: "AC", source: "seed" },
+  { id: "antwerpen-luchtbal", name: "Tesla Supercharger Antwerpen-Luchtbal", operator: "tesla", address: "Noorderlaan 145", postcode: "2030", gemeenteSlug: "antwerpen", lat: 51.2486, lng: 4.4189, maxKw: 250, connectors: 8, type: "DC", source: "seed" },
+  { id: "antwerpen-singel", name: "Singel parking", operator: "pluginvest", address: "Singel 8", postcode: "2018", gemeenteSlug: "antwerpen", lat: 51.2058, lng: 4.4083, maxKw: 22, connectors: 2, type: "AC", source: "seed" },
+  { id: "mechelen-vrijbroek", name: "Vrijbroekpark", operator: "allego", address: "Hombeeksesteenweg 65", postcode: "2800", gemeenteSlug: "mechelen", lat: 51.0353, lng: 4.4642, maxKw: 22, connectors: 4, type: "AC", source: "seed" },
+  { id: "mechelen-station", name: "Mechelen Station P+R", operator: "totalenergies", address: "Stationsplein 1", postcode: "2800", gemeenteSlug: "mechelen", lat: 51.0181, lng: 4.4795, maxKw: 50, connectors: 6, type: "AC+DC", source: "seed" },
+  { id: "mechelen-nh", name: "NH Hotel Mechelen", operator: "engie", address: "Korenmarkt 22", postcode: "2800", gemeenteSlug: "mechelen", lat: 51.0276, lng: 4.4802, maxKw: 22, connectors: 2, type: "AC", source: "seed" },
+  { id: "turnhout-grote-markt", name: "Grote Markt Turnhout", operator: "allego", address: "Grote Markt 1", postcode: "2300", gemeenteSlug: "turnhout", lat: 51.3225, lng: 4.9438, maxKw: 22, connectors: 2, type: "AC", source: "seed" },
+  { id: "turnhout-e34", name: "E34 Turnhout-Centrum tankstation", operator: "ionity", address: "Steenweg op Oosthoven", postcode: "2300", gemeenteSlug: "turnhout", lat: 51.3098, lng: 4.9543, maxKw: 350, connectors: 6, type: "DC", source: "seed" },
+  { id: "geel-markt", name: "Geel Markt", operator: "totalenergies", address: "Markt 1", postcode: "2440", gemeenteSlug: "geel", lat: 51.1641, lng: 4.9907, maxKw: 22, connectors: 2, type: "AC", source: "seed" },
+  { id: "mol-ginderbuiten", name: "Mol Ginderbuiten retail", operator: "pluginvest", address: "Ginderbuiten 51", postcode: "2400", gemeenteSlug: "mol", lat: 51.1888, lng: 5.1226, maxKw: 50, connectors: 2, type: "DC", source: "seed" },
+  { id: "lier-zimmerplein", name: "Lier Zimmerplein", operator: "allego", address: "Zimmerplein 2", postcode: "2500", gemeenteSlug: "lier", lat: 51.1310, lng: 4.5704, maxKw: 22, connectors: 2, type: "AC", source: "seed" },
+  { id: "herentals-grote-markt", name: "Herentals Grote Markt", operator: "totalenergies", address: "Grote Markt 41", postcode: "2200", gemeenteSlug: "herentals", lat: 51.1799, lng: 4.8330, maxKw: 22, connectors: 2, type: "AC", source: "seed" },
+  { id: "mortsel-shopping", name: "Shopping Mortsel", operator: "engie", address: "Antwerpsestraat 35", postcode: "2640", gemeenteSlug: "mortsel", lat: 51.1707, lng: 4.4570, maxKw: 22, connectors: 4, type: "AC", source: "seed" },
+  { id: "brasschaat-bredabaan", name: "Brasschaat Bredabaan", operator: "blue-corner", address: "Bredabaan 425", postcode: "2930", gemeenteSlug: "brasschaat", lat: 51.2945, lng: 4.4972, maxKw: 22, connectors: 2, type: "AC", source: "seed" },
+  { id: "schoten-paalplein", name: "Schoten Paalplein", operator: "allego", address: "Paalplein 10", postcode: "2900", gemeenteSlug: "schoten", lat: 51.2515, lng: 4.5034, maxKw: 22, connectors: 2, type: "AC", source: "seed" },
+  { id: "boom-rupel", name: "Boom Rupel", operator: "pluginvest", address: "Antwerpsestraat 65", postcode: "2850", gemeenteSlug: "boom", lat: 51.0884, lng: 4.3700, maxKw: 22, connectors: 2, type: "AC", source: "seed" },
+  { id: "heist-op-den-berg-statie", name: "Heist Statiestraat", operator: "totalenergies", address: "Statiestraat 23", postcode: "2220", gemeenteSlug: "heist-op-den-berg", lat: 51.0780, lng: 4.7186, maxKw: 22, connectors: 2, type: "AC", source: "seed" },
+
+  // ============ OOST-VLAANDEREN ============
+  { id: "gent-sint-pieters", name: "Gent-Sint-Pieters Station P+R", operator: "allego", address: "Koningin Maria Hendrikaplein 65", postcode: "9000", gemeenteSlug: "gent", lat: 51.0353, lng: 3.7117, maxKw: 50, connectors: 8, type: "AC+DC", source: "seed" },
+  { id: "gent-zuid", name: "Gent-Zuid Parking", operator: "totalenergies", address: "Wilsonplein 2", postcode: "9000", gemeenteSlug: "gent", lat: 51.0466, lng: 3.7268, maxKw: 22, connectors: 6, type: "AC", source: "seed" },
+  { id: "gent-flanders-expo", name: "Tesla Supercharger Gent Flanders Expo", operator: "tesla", address: "Maaltekouter 1", postcode: "9051", gemeenteSlug: "gent", lat: 51.0247, lng: 3.6789, maxKw: 250, connectors: 12, type: "DC", source: "seed" },
+  { id: "gent-watersportbaan", name: "Watersportbaan", operator: "engie", address: "Watersportbaan 3", postcode: "9000", gemeenteSlug: "gent", lat: 51.0420, lng: 3.6943, maxKw: 22, connectors: 4, type: "AC", source: "seed" },
+  { id: "gent-uz", name: "UZ Gent parking", operator: "fastned", address: "Corneel Heymanslaan 10", postcode: "9000", gemeenteSlug: "gent", lat: 51.0265, lng: 3.7245, maxKw: 300, connectors: 6, type: "DC", source: "seed" },
+  { id: "aalst-tragel", name: "Aalst Tragel", operator: "allego", address: "Tragel 30", postcode: "9300", gemeenteSlug: "aalst", lat: 50.9408, lng: 4.0327, maxKw: 22, connectors: 2, type: "AC", source: "seed" },
+  { id: "aalst-keppestraat", name: "Aalst Keppestraat", operator: "totalenergies", address: "Keppestraat 70", postcode: "9320", gemeenteSlug: "aalst", lat: 50.9255, lng: 4.0159, maxKw: 50, connectors: 4, type: "AC+DC", source: "seed" },
+  { id: "sint-niklaas-grote-markt", name: "Sint-Niklaas Grote Markt", operator: "allego", address: "Grote Markt 45", postcode: "9100", gemeenteSlug: "sint-niklaas", lat: 51.1631, lng: 4.1422, maxKw: 22, connectors: 4, type: "AC", source: "seed" },
+  { id: "sint-niklaas-e17", name: "E17 Sint-Niklaas-Oost tankstation", operator: "fastned", address: "E17 km 41", postcode: "9100", gemeenteSlug: "sint-niklaas", lat: 51.1505, lng: 4.1899, maxKw: 300, connectors: 6, type: "DC", source: "seed" },
+  { id: "lokeren-station", name: "Lokeren Station", operator: "totalenergies", address: "Stationsplein 1", postcode: "9160", gemeenteSlug: "lokeren", lat: 51.1058, lng: 3.9876, maxKw: 22, connectors: 2, type: "AC", source: "seed" },
+  { id: "beveren-grote-markt", name: "Beveren Grote Markt", operator: "engie", address: "Grote Markt 1", postcode: "9120", gemeenteSlug: "beveren", lat: 51.2105, lng: 4.2580, maxKw: 22, connectors: 2, type: "AC", source: "seed" },
+  { id: "dendermonde-grote-markt", name: "Dendermonde Grote Markt", operator: "allego", address: "Grote Markt 1", postcode: "9200", gemeenteSlug: "dendermonde", lat: 51.0286, lng: 4.1014, maxKw: 22, connectors: 2, type: "AC", source: "seed" },
+  { id: "deinze-markt", name: "Deinze Markt", operator: "totalenergies", address: "Markt 1", postcode: "9800", gemeenteSlug: "deinze", lat: 50.9788, lng: 3.5310, maxKw: 22, connectors: 2, type: "AC", source: "seed" },
+  { id: "ninove-graanmarkt", name: "Ninove Graanmarkt", operator: "pluginvest", address: "Graanmarkt 12", postcode: "9400", gemeenteSlug: "ninove", lat: 50.8285, lng: 4.0245, maxKw: 22, connectors: 2, type: "AC", source: "seed" },
+  { id: "wetteren-markt", name: "Wetteren Markt", operator: "engie", address: "Markt 1", postcode: "9230", gemeenteSlug: "wetteren", lat: 51.0006, lng: 3.8843, maxKw: 22, connectors: 2, type: "AC", source: "seed" },
+  { id: "zottegem-markt", name: "Zottegem Markt", operator: "allego", address: "Heldenlaan 1", postcode: "9620", gemeenteSlug: "zottegem", lat: 50.8694, lng: 3.8112, maxKw: 22, connectors: 2, type: "AC", source: "seed" },
+
+  // ============ WEST-VLAANDEREN ============
+  { id: "brugge-station", name: "Brugge Station P+R", operator: "allego", address: "Stationsplein 5", postcode: "8000", gemeenteSlug: "brugge", lat: 51.1973, lng: 3.2173, maxKw: 50, connectors: 6, type: "AC+DC", source: "seed" },
+  { id: "brugge-katelijne", name: "Brugge Katelijnepoort", operator: "totalenergies", address: "Katelijnestraat 80", postcode: "8000", gemeenteSlug: "brugge", lat: 51.2031, lng: 3.2235, maxKw: 22, connectors: 4, type: "AC", source: "seed" },
+  { id: "brugge-canada-square", name: "Brugge Canada Square", operator: "shell-recharge", address: "Bevrijdingslaan 9", postcode: "8000", gemeenteSlug: "brugge", lat: 51.2068, lng: 3.2058, maxKw: 150, connectors: 4, type: "DC", source: "seed" },
+  { id: "kortrijk-grote-markt", name: "Kortrijk Grote Markt", operator: "allego", address: "Grote Markt 1", postcode: "8500", gemeenteSlug: "kortrijk", lat: 50.8273, lng: 3.2645, maxKw: 22, connectors: 4, type: "AC", source: "seed" },
+  { id: "kortrijk-xpo", name: "Tesla Supercharger Kortrijk Xpo", operator: "tesla", address: "Doornikselaan 145", postcode: "8500", gemeenteSlug: "kortrijk", lat: 50.8108, lng: 3.2547, maxKw: 250, connectors: 8, type: "DC", source: "seed" },
+  { id: "oostende-station", name: "Oostende Station P+R", operator: "totalenergies", address: "Natiënkaai 1", postcode: "8400", gemeenteSlug: "oostende", lat: 51.2284, lng: 2.9241, maxKw: 50, connectors: 4, type: "AC+DC", source: "seed" },
+  { id: "oostende-zeedijk", name: "Oostende Zeedijk parking", operator: "engie", address: "Albert I Promenade", postcode: "8400", gemeenteSlug: "oostende", lat: 51.2326, lng: 2.9133, maxKw: 22, connectors: 4, type: "AC", source: "seed" },
+  { id: "roeselare-grote-markt", name: "Roeselare Grote Markt", operator: "allego", address: "Grote Markt 1", postcode: "8800", gemeenteSlug: "roeselare", lat: 50.9469, lng: 3.1255, maxKw: 22, connectors: 2, type: "AC", source: "seed" },
+  { id: "knokke-zeedijk", name: "Knokke Zeedijk", operator: "totalenergies", address: "Zeedijk-Albertstrand 95", postcode: "8300", gemeenteSlug: "knokke-heist", lat: 51.3475, lng: 3.2864, maxKw: 22, connectors: 4, type: "AC", source: "seed" },
+  { id: "knokke-casino", name: "Knokke Casino", operator: "shell-recharge", address: "Zeedijk-Albertstrand 509", postcode: "8300", gemeenteSlug: "knokke-heist", lat: 51.3478, lng: 3.2826, maxKw: 50, connectors: 2, type: "DC", source: "seed" },
+  { id: "wevelgem-luchthaven", name: "Wevelgem Luchthaven", operator: "engie", address: "Luchthavenstraat 1", postcode: "8560", gemeenteSlug: "wevelgem", lat: 50.8198, lng: 3.2049, maxKw: 22, connectors: 2, type: "AC", source: "seed" },
+  { id: "waregem-expo", name: "Waregem Expo", operator: "pluginvest", address: "Markt 1", postcode: "8790", gemeenteSlug: "waregem", lat: 50.8838, lng: 3.4173, maxKw: 22, connectors: 4, type: "AC", source: "seed" },
+  { id: "ieper-grote-markt", name: "Ieper Grote Markt", operator: "totalenergies", address: "Grote Markt 34", postcode: "8900", gemeenteSlug: "ieper", lat: 50.8514, lng: 2.8853, maxKw: 22, connectors: 2, type: "AC", source: "seed" },
+
+  // ============ LIMBURG ============
+  { id: "hasselt-kapermolen", name: "Hasselt Kapermolen P+R", operator: "allego", address: "Kapermolenpark 1", postcode: "3500", gemeenteSlug: "hasselt", lat: 50.9377, lng: 5.3441, maxKw: 50, connectors: 6, type: "AC+DC", source: "seed" },
+  { id: "hasselt-grote-markt", name: "Hasselt Grote Markt", operator: "totalenergies", address: "Grote Markt 1", postcode: "3500", gemeenteSlug: "hasselt", lat: 50.9305, lng: 5.3370, maxKw: 22, connectors: 2, type: "AC", source: "seed" },
+  { id: "hasselt-corda", name: "Tesla Supercharger Hasselt Corda Campus", operator: "tesla", address: "Kempische Steenweg 309", postcode: "3500", gemeenteSlug: "hasselt", lat: 50.9456, lng: 5.3578, maxKw: 250, connectors: 8, type: "DC", source: "seed" },
+  { id: "genk-shopping-1", name: "Genk Shopping 1", operator: "allego", address: "Stadsplein 7", postcode: "3600", gemeenteSlug: "genk", lat: 50.9659, lng: 5.5004, maxKw: 22, connectors: 4, type: "AC", source: "seed" },
+  { id: "genk-c-mine", name: "C-Mine Genk", operator: "engie", address: "C-mine 10", postcode: "3600", gemeenteSlug: "genk", lat: 50.9555, lng: 5.5210, maxKw: 22, connectors: 2, type: "AC", source: "seed" },
+  { id: "tongeren-veemarkt", name: "Tongeren Veemarkt", operator: "totalenergies", address: "Veemarkt 2", postcode: "3700", gemeenteSlug: "tongeren", lat: 50.7806, lng: 5.4634, maxKw: 22, connectors: 2, type: "AC", source: "seed" },
+  { id: "sint-truiden-grote-markt", name: "Sint-Truiden Grote Markt", operator: "allego", address: "Grote Markt 1", postcode: "3800", gemeenteSlug: "sint-truiden", lat: 50.8175, lng: 5.1857, maxKw: 22, connectors: 2, type: "AC", source: "seed" },
+  { id: "lommel-de-soeverein", name: "Lommel De Soeverein", operator: "pluginvest", address: "Sportveldenstraat 10", postcode: "3920", gemeenteSlug: "lommel", lat: 51.2289, lng: 5.3134, maxKw: 22, connectors: 2, type: "AC", source: "seed" },
+  { id: "beringen-be-mine", name: "Beringen be-MINE", operator: "engie", address: "Koolmijnlaan 201", postcode: "3580", gemeenteSlug: "beringen", lat: 51.0431, lng: 5.2186, maxKw: 50, connectors: 4, type: "AC+DC", source: "seed" },
+  { id: "maasmechelen-village", name: "Maasmechelen Village", operator: "fastned", address: "Zetellaan 100", postcode: "3630", gemeenteSlug: "maasmechelen", lat: 50.9763, lng: 5.6909, maxKw: 300, connectors: 6, type: "DC", source: "seed" },
+  { id: "bilzen-markt", name: "Bilzen Markt", operator: "totalenergies", address: "Markt 1", postcode: "3740", gemeenteSlug: "bilzen", lat: 50.8689, lng: 5.5159, maxKw: 22, connectors: 2, type: "AC", source: "seed" },
+  { id: "houthalen-helchteren-grote-baan", name: "Houthalen Grote Baan", operator: "allego", address: "Grote Baan 117", postcode: "3530", gemeenteSlug: "houthalen-helchteren", lat: 51.0319, lng: 5.3777, maxKw: 22, connectors: 2, type: "AC", source: "seed" },
+  { id: "diepenbeek-uhasselt", name: "UHasselt Diepenbeek", operator: "engie", address: "Agoralaan Gebouw D", postcode: "3590", gemeenteSlug: "diepenbeek", lat: 50.9290, lng: 5.4009, maxKw: 22, connectors: 4, type: "AC", source: "seed" },
+  { id: "tessenderlo-markt", name: "Tessenderlo Markt", operator: "stroohm", address: "Markt 1", postcode: "3980", gemeenteSlug: "tessenderlo", lat: 51.0653, lng: 5.0859, maxKw: 22, connectors: 2, type: "AC", source: "seed" },
+
+  // ============ VLAAMS-BRABANT ============
+  { id: "leuven-vaartkom", name: "Leuven Vaartkom P+R", operator: "allego", address: "Sluisstraat 79", postcode: "3000", gemeenteSlug: "leuven", lat: 50.8837, lng: 4.7032, maxKw: 50, connectors: 8, type: "AC+DC", source: "seed" },
+  { id: "leuven-philipssite", name: "Leuven Philipssite parking", operator: "totalenergies", address: "Philipssite 2", postcode: "3001", gemeenteSlug: "leuven", lat: 50.8833, lng: 4.7035, maxKw: 22, connectors: 6, type: "AC", source: "seed" },
+  { id: "leuven-uz", name: "UZ Leuven Gasthuisberg", operator: "fastned", address: "Herestraat 49", postcode: "3000", gemeenteSlug: "leuven", lat: 50.8848, lng: 4.6726, maxKw: 300, connectors: 8, type: "DC", source: "seed" },
+  { id: "vilvoorde-station", name: "Vilvoorde Station", operator: "totalenergies", address: "Stationlei 1", postcode: "1800", gemeenteSlug: "vilvoorde", lat: 50.9303, lng: 4.4234, maxKw: 22, connectors: 4, type: "AC", source: "seed" },
+  { id: "zaventem-airport", name: "Brussels Airport Parking 4", operator: "allego", address: "Brussels Airport", postcode: "1930", gemeenteSlug: "zaventem", lat: 50.9013, lng: 4.4856, maxKw: 50, connectors: 16, type: "AC+DC", source: "seed" },
+  { id: "halle-grote-markt", name: "Halle Grote Markt", operator: "engie", address: "Grote Markt 1", postcode: "1500", gemeenteSlug: "halle", lat: 50.7341, lng: 4.2369, maxKw: 22, connectors: 2, type: "AC", source: "seed" },
+  { id: "tienen-grote-markt", name: "Tienen Grote Markt", operator: "totalenergies", address: "Grote Markt 1", postcode: "3300", gemeenteSlug: "tienen", lat: 50.8059, lng: 4.9379, maxKw: 22, connectors: 2, type: "AC", source: "seed" },
+  { id: "asse-marktplein", name: "Asse Marktplein", operator: "allego", address: "Marktplein 1", postcode: "1730", gemeenteSlug: "asse", lat: 50.9120, lng: 4.2003, maxKw: 22, connectors: 2, type: "AC", source: "seed" },
+  { id: "tervuren-park", name: "Tervuren Park", operator: "engie", address: "Leuvensesteenweg 13", postcode: "3080", gemeenteSlug: "tervuren", lat: 50.8235, lng: 4.5172, maxKw: 22, connectors: 2, type: "AC", source: "seed" },
+  { id: "diest-grote-markt", name: "Diest Grote Markt", operator: "totalenergies", address: "Grote Markt 1", postcode: "3290", gemeenteSlug: "diest", lat: 50.9858, lng: 5.0510, maxKw: 22, connectors: 2, type: "AC", source: "seed" },
+  { id: "aarschot-grote-markt", name: "Aarschot Grote Markt", operator: "pluginvest", address: "Grote Markt 1", postcode: "3200", gemeenteSlug: "aarschot", lat: 50.9879, lng: 4.8351, maxKw: 22, connectors: 2, type: "AC", source: "seed" },
+];
+
+export function laadpuntenInGemeente(gemeenteSlug: string): ChargingStation[] {
+  return laadpunten.filter((p) => p.gemeenteSlug === gemeenteSlug);
+}
+
+export function laadpuntenInProvincie(provincieGemeenten: string[]): ChargingStation[] {
+  const set = new Set(provincieGemeenten);
+  return laadpunten.filter((p) => set.has(p.gemeenteSlug));
+}
+
+// Haversine afstand in km tussen twee lat/lng paren.
+export function haversine(
+  lat1: number,
+  lng1: number,
+  lat2: number,
+  lng2: number,
+): number {
+  const R = 6371;
+  const toRad = (deg: number) => (deg * Math.PI) / 180;
+  const dLat = toRad(lat2 - lat1);
+  const dLng = toRad(lng2 - lng1);
+  const a =
+    Math.sin(dLat / 2) ** 2 +
+    Math.cos(toRad(lat1)) *
+      Math.cos(toRad(lat2)) *
+      Math.sin(dLng / 2) ** 2;
+  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  return R * c;
+}

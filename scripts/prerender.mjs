@@ -39,6 +39,7 @@ async function collectRoutes() {
     "/offerte/verzonden",
     "/beste-laadpaal",
     "/laadkost-berekenen",
+    "/laadpunten",
     "/laadpalen",
     "/merken",
     "/vergelijken",
@@ -60,6 +61,7 @@ async function collectRoutes() {
   for (const s of evModels) routes.push(`/auto/${s}`);
   for (const s of installationTopics) routes.push(`/installatie/${s}`);
   for (const s of gemeenten) routes.push(`/gemeente/${s}`);
+  for (const s of gemeenten) routes.push(`/laadpunten/${s}`);
   for (const s of guides) routes.push(`/gids/${s}`);
   for (const s of glossary) routes.push(`/woordenlijst/${s}`);
 

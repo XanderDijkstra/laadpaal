@@ -24,10 +24,10 @@ const COLS = [
   {
     title: "Vlaanderen",
     links: [
+      { label: "Publieke laadpalen", href: "/laadpunten" },
       { label: "Alle gemeenten", href: "/gemeente" },
       { label: "Antwerpen", href: "/gemeente/antwerpen" },
       { label: "Gent", href: "/gemeente/gent" },
-      { label: "Leuven", href: "/gemeente/leuven" },
     ],
   },
   {

@@ -54,6 +54,7 @@ async function main() {
   urls.push(urlEntry("/offerte", 1.0, "weekly"));
   urls.push(urlEntry("/beste-laadpaal", 1.0, "monthly"));
   urls.push(urlEntry("/laadkost-berekenen", 0.9, "monthly"));
+  urls.push(urlEntry("/laadpunten", 0.9, "weekly"));
   urls.push(urlEntry("/laadpalen", 0.9, "weekly"));
   urls.push(urlEntry("/merken", 0.9, "weekly"));
   urls.push(urlEntry("/auto", 0.9, "weekly"));
@@ -73,6 +74,7 @@ async function main() {
   for (const slug of data.evModels) urls.push(urlEntry(`/auto/${slug}`, 0.8, "monthly"));
   for (const slug of data.installationTopics) urls.push(urlEntry(`/installatie/${slug}`, 0.7, "monthly"));
   for (const slug of data.gemeenten) urls.push(urlEntry(`/gemeente/${slug}`, 0.8, "monthly"));
+  for (const slug of data.gemeenten) urls.push(urlEntry(`/laadpunten/${slug}`, 0.8, "weekly"));
   for (const slug of data.guides) urls.push(urlEntry(`/gids/${slug}`, 0.7, "monthly"));
   for (const slug of data.glossary) urls.push(urlEntry(`/woordenlijst/${slug}`, 0.5, "monthly"));
 
@@ -87,7 +89,7 @@ ${urls.join("\n")}
   await fs.writeFile(path.join(outDir, "sitemap.xml"), xml, "utf-8");
 
   const counts = {
-    standalone: 16,
+    standalone: 17,
     chargers: data.chargers.length,
     brands: data.brands.length,
     comparisons: data.comparisons.length,

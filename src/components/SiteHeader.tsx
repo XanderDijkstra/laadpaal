@@ -6,8 +6,8 @@ import { cn } from "@/lib/utils";
 const NAV = [
   { label: "Beste laadpaal", href: "/beste-laadpaal" },
   { label: "Laadpalen", href: "/laadpalen" },
+  { label: "Laadpunten", href: "/laadpunten" },
   { label: "Per auto", href: "/auto" },
-  { label: "Per gemeente", href: "/gemeente" },
   { label: "Laadkost", href: "/laadkost-berekenen" },
   { label: "Gids", href: "/gids" },
 ];
