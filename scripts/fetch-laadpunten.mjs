@@ -13,11 +13,16 @@ const __dirname = path.dirname(__filename);
 const ROOT = path.resolve(__dirname, "..");
 
 const OCM_KEY = process.env.OCM_API_KEY;
+const REQUIRE_KEY = process.env.OCM_REQUIRE_KEY === "1";
 if (!OCM_KEY) {
-  console.error(
-    "FATAL: set OCM_API_KEY env var. Register at https://openchargemap.org/",
-  );
-  process.exit(1);
+  const msg =
+    "[fetch-laadpunten] no OCM_API_KEY env var — keeping existing seed data";
+  if (REQUIRE_KEY) {
+    console.error(msg);
+    process.exit(1);
+  }
+  console.warn(msg);
+  process.exit(0);
 }
 
 const VLAAMS_PROVINCIES = new Set([
@@ -256,6 +261,8 @@ export function haversine(
 }
 
 main().catch((err) => {
-  console.error(err);
-  process.exit(1);
+  console.error("[fetch-laadpunten] failed:", err?.message ?? err);
+  if (REQUIRE_KEY) process.exit(1);
+  console.warn("[fetch-laadpunten] keeping existing seed data, build continues");
+  process.exit(0);
 });
