@@ -6,7 +6,7 @@ import { CheckCircle2 } from "lucide-react";
 export default function VoorInstallateursPage() {
   return (
     <PlaceholderPage
-      pageTitle="Krijg gekwalificeerde laadpaal-leads in uw werkgebied"
+      pageTitle="Voor installateurs — gekwalificeerde laadpaal-leads"
       metaDescription="Geen Solvari-stijl gedeelde leads. Post-form-scoring, geografische exclusiviteit, transparante pricing voor laadpaal-installateurs in Vlaanderen."
       canonicalPath="/voor-installateurs"
       breadcrumbs={[{ label: "Home", href: "/" }, { label: "Voor installateurs" }]}

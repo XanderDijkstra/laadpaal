@@ -13,10 +13,9 @@ import { operatorTariffs } from "@/data/operatorTariffs";
 
 export default function LaadpuntenIndexPage() {
   usePageMeta({
-    title: `Publieke laadpalen Vlaanderen — ${laadpunten.length} stations met afstand & tarief | ${SITE.shortName}`,
+    title: `Publieke laadpalen Vlaanderen — ${laadpunten.length} stations`,
     description: `Alle publieke laadpalen in Vlaanderen op één pagina. Vul uw postcode in en zie de afstand tot het dichtstbijzijnde laadpunt. Tarief per kWh per operator inbegrepen.`,
     canonical: `${SITE.url}/laadpunten`,
-    ogImage: `${SITE.url}/og/default.svg`,
   });
 
   // Aantal per provincie

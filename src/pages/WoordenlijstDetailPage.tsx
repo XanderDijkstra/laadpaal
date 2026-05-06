@@ -12,9 +12,13 @@ export default function WoordenlijstDetailPage() {
   const term = glossary.find((g) => g.slug === slug);
   if (!term) return <NotFoundPage />;
 
+  const desc =
+    term.short.length >= 70
+      ? term.short.slice(0, 165)
+      : `${term.short} Lees meer in onze laadpaal-woordenlijst voor Vlaanderen.`.slice(0, 165);
   usePageMeta({
-    title: `${term.term} — definitie | ${SITE.shortName}`,
-    description: term.short,
+    title: `${term.term} — definitie laadpaal-woordenlijst`,
+    description: desc,
     canonical: `${SITE.url}/woordenlijst/${term.slug}`,
   });
 

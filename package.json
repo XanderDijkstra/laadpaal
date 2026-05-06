@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "node scripts/fetch-laadpunten.mjs && tsc -b && node scripts/generate-og-images.mjs && node scripts/generate-sitemap.mjs && vite build && vite build --ssr src/entry-server.tsx --outDir dist-ssr && node scripts/prerender.mjs",
+    "build": "node scripts/fetch-laadpunten.mjs && tsc -b && node scripts/generate-og-images.mjs && node scripts/generate-sitemap.mjs && vite build && vite build --ssr src/entry-server.tsx --outDir dist-ssr && node scripts/prerender.mjs && node scripts/seo-audit.mjs",
+    "audit:seo": "node scripts/seo-audit.mjs",
     "build:client": "vite build",
     "build:server": "vite build --ssr src/entry-server.tsx --outDir dist-ssr",
     "preview": "vite preview",

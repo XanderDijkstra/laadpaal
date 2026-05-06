@@ -53,9 +53,10 @@ function DetailContent({
   compatibleEvs: ReturnType<typeof compatibleEvsForCharger>;
 }) {
   const ogImage = `${SITE.url}/og/charger/${charger.slug}.svg`;
+  const desc = `${charger.name} (${charger.maxKw} kW): ${charger.shortDescription} Prijs vanaf ${formatEuro(charger.priceAllInFrom)} all-in incl. 6% btw.`.slice(0, 160);
   usePageMeta({
-    title: `${charger.name} review — specs, prijs, ervaringen | ${SITE.shortName}`,
-    description: `${charger.name}: ${charger.maxKw} kW, ${charger.shortDescription} Prijs vanaf ${formatEuro(charger.priceAllInFrom)} all-in.`,
+    title: `${charger.name} review — specs en prijs ${new Date().getFullYear()}`,
+    description: desc,
     canonical: `${SITE.url}/laadpalen/${charger.slug}`,
     ogImage,
   });

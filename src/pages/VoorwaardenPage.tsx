@@ -3,8 +3,8 @@ import { PlaceholderPage } from "@/components/PlaceholderPage";
 export default function VoorwaardenPage() {
   return (
     <PlaceholderPage
-      pageTitle="Algemene voorwaarden"
-      metaDescription="Algemene voorwaarden voor het gebruik van laadpaal.vlaanderen."
+      pageTitle="Algemene voorwaarden laadpaal.vlaanderen"
+      metaDescription="Algemene voorwaarden voor het gebruik van laadpaal.vlaanderen — gebruiksvoorwaarden, aansprakelijkheid, intellectuele eigendom en geschillenbeslechting."
       canonicalPath="/voorwaarden"
       breadcrumbs={[{ label: "Home", href: "/" }, { label: "Voorwaarden" }]}
       lede="Algemene voorwaarden voor het gebruik van dit platform."

@@ -31,8 +31,8 @@ export default function GemeenteDetailPage() {
   ).length;
 
   usePageMeta({
-    title: `Laadpaal installateur ${g.name} — gratis offertes | ${SITE.shortName}`,
-    description: `Erkende laadpaal-installateurs in ${g.name}. Vergelijk 3 offertes, profiteer van 6% btw en eventuele lokale premies.`,
+    title: `Laadpaal installateur ${g.name} — gratis offertes`,
+    description: `Erkende laadpaal-installateurs in ${g.name} (${g.provincie}). Vergelijk gratis 3 offertes, profiteer van 6% btw en eventuele lokale premies.`,
     canonical: `${SITE.url}/gemeente/${g.slug}`,
   });
 

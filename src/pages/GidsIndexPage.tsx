@@ -9,7 +9,7 @@ import { guides } from "@/data/guides";
 
 export default function GidsIndexPage() {
   usePageMeta({
-    title: `Gids — eerlijke uitleg over laadpalen in Vlaanderen | ${SITE.shortName}`,
+    title: `Laadpaal-gids Vlaanderen — eerlijke uitleg, geen marketing`,
     description:
       "Actuele gidsen over premies, kosten, AREI, fasen, MID-meter en meer. Geen marketingpraat, wel cijfers.",
     canonical: `${SITE.url}/gids`,

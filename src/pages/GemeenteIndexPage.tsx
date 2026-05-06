@@ -16,9 +16,9 @@ const PROVINCIES = [
 
 export default function GemeenteIndexPage() {
   usePageMeta({
-    title: `Laadpaal-installateurs per gemeente in Vlaanderen | ${SITE.shortName}`,
+    title: `Laadpaal-installateurs per gemeente in Vlaanderen`,
     description:
-      "Erkende laadpaal-installateurs in 50+ Vlaamse gemeenten. Vergelijk offertes en profiteer van 6% btw.",
+      "Erkende laadpaal-installateurs in 50+ Vlaamse gemeenten — Antwerpen, Gent, Brugge, Leuven, Hasselt en meer. Vergelijk gratis 3 offertes en profiteer van 6% btw.",
     canonical: `${SITE.url}/gemeente`,
   });
 

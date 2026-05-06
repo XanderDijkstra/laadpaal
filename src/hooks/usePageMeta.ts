@@ -45,40 +45,41 @@ function setLink(rel: string, href: string) {
 }
 
 export function usePageMeta(meta: PageMeta) {
+  const ogImage = meta.ogImage ?? `${SITE.url}/og/default.svg`;
+  const enriched: PageMeta = { ...meta, ogImage };
+
   if (isServer) {
-    recordHead(meta);
+    recordHead(enriched);
   }
 
   useEffect(() => {
-    document.title = meta.title;
-    setMeta("description", meta.description);
-    setProperty("og:title", meta.title);
-    setProperty("og:description", meta.description);
+    document.title = enriched.title;
+    setMeta("description", enriched.description);
+    setProperty("og:title", enriched.title);
+    setProperty("og:description", enriched.description);
     setProperty("og:type", "website");
     setProperty("og:site_name", SITE.name);
-    if (meta.canonical) {
-      setLink("canonical", meta.canonical);
-      setProperty("og:url", meta.canonical);
+    if (enriched.canonical) {
+      setLink("canonical", enriched.canonical);
+      setProperty("og:url", enriched.canonical);
     }
-    if (meta.ogImage) {
-      setProperty("og:image", meta.ogImage);
-      setProperty("og:image:width", "1200");
-      setProperty("og:image:height", "630");
-      setMeta("twitter:card", "summary_large_image");
-      setMeta("twitter:image", meta.ogImage);
-      setMeta("twitter:title", meta.title);
-      setMeta("twitter:description", meta.description);
-    }
+    setProperty("og:image", enriched.ogImage!);
+    setProperty("og:image:width", "1200");
+    setProperty("og:image:height", "630");
+    setMeta("twitter:card", "summary_large_image");
+    setMeta("twitter:image", enriched.ogImage!);
+    setMeta("twitter:title", enriched.title);
+    setMeta("twitter:description", enriched.description);
     setMeta(
       "robots",
-      meta.noindex ? "noindex,nofollow" : "index,follow",
+      enriched.noindex ? "noindex,nofollow" : "index,follow",
     );
   }, [
-    meta.title,
-    meta.description,
-    meta.canonical,
-    meta.ogImage,
-    meta.noindex,
+    enriched.title,
+    enriched.description,
+    enriched.canonical,
+    enriched.ogImage,
+    enriched.noindex,
   ]);
 }
 
@@ -106,23 +107,22 @@ export function renderHeadTags(meta: PageMeta): string {
       `<meta property="og:url" content="${escapeAttr(meta.canonical)}" />`,
     );
   }
-  if (meta.ogImage) {
-    parts.push(
-      `<meta property="og:image" content="${escapeAttr(meta.ogImage)}" />`,
-    );
-    parts.push(`<meta property="og:image:width" content="1200" />`);
-    parts.push(`<meta property="og:image:height" content="630" />`);
-    parts.push(`<meta name="twitter:card" content="summary_large_image" />`);
-    parts.push(
-      `<meta name="twitter:image" content="${escapeAttr(meta.ogImage)}" />`,
-    );
-    parts.push(
-      `<meta name="twitter:title" content="${escapeAttr(meta.title)}" />`,
-    );
-    parts.push(
-      `<meta name="twitter:description" content="${escapeAttr(meta.description)}" />`,
-    );
-  }
+  const ogImage = meta.ogImage ?? `${SITE.url}/og/default.svg`;
+  parts.push(
+    `<meta property="og:image" content="${escapeAttr(ogImage)}" />`,
+  );
+  parts.push(`<meta property="og:image:width" content="1200" />`);
+  parts.push(`<meta property="og:image:height" content="630" />`);
+  parts.push(`<meta name="twitter:card" content="summary_large_image" />`);
+  parts.push(
+    `<meta name="twitter:image" content="${escapeAttr(ogImage)}" />`,
+  );
+  parts.push(
+    `<meta name="twitter:title" content="${escapeAttr(meta.title)}" />`,
+  );
+  parts.push(
+    `<meta name="twitter:description" content="${escapeAttr(meta.description)}" />`,
+  );
   parts.push(
     `<meta name="robots" content="${meta.noindex ? "noindex,nofollow" : "index,follow"}" />`,
   );

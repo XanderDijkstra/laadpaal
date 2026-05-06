@@ -22,10 +22,9 @@ export default function LaadpuntenGemeentePage() {
   const maxPower = stations.reduce((m, s) => Math.max(m, s.maxKw), 0);
 
   usePageMeta({
-    title: `Publieke laadpalen in ${g.name} (${g.provincie}) — ${stations.length} stations met afstand & tarief | ${SITE.shortName}`,
-    description: `${stations.length} publieke laadpalen in ${g.name}. Vul uw postcode in en zie de dichtstbijzijnde laadpaal, met operator-tarief per kWh. Of laat een eigen laadpaal plaatsen.`,
+    title: `Publieke laadpalen ${g.name} — ${stations.length} stations met tarief`,
+    description: `${stations.length} publieke laadpalen in ${g.name} (${g.provincie}). Vul uw postcode in voor afstand tot het dichtstbijzijnde laadpunt, inclusief tarief per kWh per operator.`,
     canonical: `${SITE.url}/laadpunten/${g.slug}`,
-    ogImage: `${SITE.url}/og/default.svg`,
   });
 
   const neighbors = gemeenten

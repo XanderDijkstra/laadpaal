@@ -18,8 +18,8 @@ type PhaseFilter = "all" | "1" | "3";
 
 export default function LaadpalenIndexPage() {
   usePageMeta({
-    title: `Alle laadpalen voor thuis — vergelijk ${chargers.length} modellen | ${SITE.shortName}`,
-    description: `${chargers.length} modellen van ${brands.length} merken. Filter op vermogen, kabel, MID en budget. Inclusief 6% btw-prijzen.`,
+    title: `Alle ${chargers.length} laadpalen voor thuis vergeleken`,
+    description: `Vergelijk ${chargers.length} thuislaadpalen van ${brands.length} merken. Filter op vermogen, kabel, MID-meter, app en budget. Alle prijzen inclusief 6% btw.`,
     canonical: `${SITE.url}/laadpalen`,
   });
 

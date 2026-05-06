@@ -20,7 +20,7 @@ const FUEL_CONS = 6.5;        // L/100km benzineauto
 
 export default function LaadkostCalculatorPage() {
   usePageMeta({
-    title: `Laadkost berekenen — wat kost het laden van uw EV in 2026? | ${SITE.shortName}`,
+    title: `Laadkost berekenen — wat kost EV-laden in ${new Date().getFullYear()}?`,
     description:
       "Bereken uw jaarlijkse laadkost: thuis, publiek of via zonnepanelen. Inclusief vergelijking met een benzineauto en realistische CREG-tarieven 2026.",
     canonical: `${SITE.url}/laadkost-berekenen`,

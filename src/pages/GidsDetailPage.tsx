@@ -19,8 +19,8 @@ export default function GidsDetailPage() {
   if (!guide) return <NotFoundPage />;
 
   usePageMeta({
-    title: `${guide.title} | ${SITE.shortName}`,
-    description: guide.lede,
+    title: guide.title,
+    description: guide.lede.slice(0, 165),
     canonical: `${SITE.url}/gids/${guide.slug}`,
   });
 

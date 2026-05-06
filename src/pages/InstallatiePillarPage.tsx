@@ -9,7 +9,7 @@ import { installationTopics } from "@/data/installationTopics";
 
 export default function InstallatiePillarPage() {
   usePageMeta({
-    title: `Laadpaal installeren in Vlaanderen — Complete gids 2026 | ${SITE.shortName}`,
+    title: `Laadpaal installeren in Vlaanderen — complete gids`,
     description:
       "Alles wat u moet weten over de installatie van een laadpaal in Vlaanderen: kosten, AREI-keuring, fasen, Fluvius en meer.",
     canonical: `${SITE.url}/installatie`,

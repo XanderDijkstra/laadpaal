@@ -3,8 +3,8 @@ import { PlaceholderPage } from "@/components/PlaceholderPage";
 export default function ContactPage() {
   return (
     <PlaceholderPage
-      pageTitle="Contact"
-      metaDescription="Heeft u een vraag of feedback? We zijn bereikbaar via e-mail."
+      pageTitle="Contact — laadpaal.vlaanderen"
+      metaDescription="Heeft u een vraag of feedback over laadpalen, een correctie op een artikel of pers-aanvraag? We zijn bereikbaar via e-mail."
       canonicalPath="/contact"
       breadcrumbs={[{ label: "Home", href: "/" }, { label: "Contact" }]}
       lede="Heeft u een vraag, feedback of een correctie op een artikel? We horen het graag."

@@ -79,7 +79,7 @@ export function OfferteCta({
         className,
       )}
     >
-      <h3 className="text-xl md:text-2xl font-bold tracking-tight">{title}</h3>
+      <h2 className="text-xl md:text-2xl font-bold tracking-tight">{title}</h2>
       <p className="text-muted-foreground mt-2 max-w-prose">{subtitle}</p>
       <Link
         to={href}

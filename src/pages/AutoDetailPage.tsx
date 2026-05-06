@@ -25,8 +25,8 @@ export default function AutoDetailPage() {
   const relatedGuides = relevantGuidesForEv(ev);
 
   usePageMeta({
-    title: `Beste laadpaal voor ${ev.brand} ${ev.name} (${ev.year}) | ${SITE.shortName}`,
-    description: `Welke laadpaal past bij uw ${ev.brand} ${ev.name}? Aanbevelingen op basis van AC-laadvermogen (${ev.acMaxKw} kW) en eigenaar-feedback.`,
+    title: `Beste laadpaal voor ${ev.brand} ${ev.name} (${ev.year})`,
+    description: `Welke laadpaal past bij uw ${ev.brand} ${ev.name}? Aanbevelingen op basis van AC-laadvermogen (${ev.acMaxKw} kW), batterij (${ev.batteryKwh} kWh) en eigenaar-feedback.`,
     canonical: `${SITE.url}/auto/${ev.slug}`,
   });
 

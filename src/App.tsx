@@ -10,6 +10,7 @@ import LaadpuntenIndexPage from "@/pages/LaadpuntenIndexPage";
 import LaadpuntenGemeentePage from "@/pages/LaadpuntenGemeentePage";
 import MerkenIndexPage from "@/pages/MerkenIndexPage";
 import MerkDetailPage from "@/pages/MerkDetailPage";
+import VergelijkenIndexPage from "@/pages/VergelijkenIndexPage";
 import VergelijkenDetailPage from "@/pages/VergelijkenDetailPage";
 import AutoIndexPage from "@/pages/AutoIndexPage";
 import AutoDetailPage from "@/pages/AutoDetailPage";
@@ -42,6 +43,7 @@ export default function App() {
       <Route path="/laadpunten/:slug" element={<LaadpuntenGemeentePage />} />
       <Route path="/merken" element={<MerkenIndexPage />} />
       <Route path="/merken/:slug" element={<MerkDetailPage />} />
+      <Route path="/vergelijken" element={<VergelijkenIndexPage />} />
       <Route path="/vergelijken/:slug" element={<VergelijkenDetailPage />} />
       <Route path="/auto" element={<AutoIndexPage />} />
       <Route path="/auto/:slug" element={<AutoDetailPage />} />

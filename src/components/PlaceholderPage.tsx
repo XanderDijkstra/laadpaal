@@ -25,7 +25,7 @@ export function PlaceholderPage({
   hideOfferteCta,
 }: PlaceholderPageProps) {
   usePageMeta({
-    title: `${pageTitle} | ${SITE.shortName}`,
+    title: pageTitle,
     description: metaDescription,
     canonical: `${SITE.url}${canonicalPath}`,
   });

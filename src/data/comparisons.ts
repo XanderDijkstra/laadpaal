@@ -125,7 +125,7 @@ export const comparisons: Comparison[] = [
     slug: "mennekes-amtron-vs-wallbox-pulsar",
     a: "mennekes-amtron-compact-2s",
     b: "wallbox-pulsar-plus",
-    title: "MENNEKES AMTRON Compact 2.0s vs Wallbox Pulsar Plus",
+    title: "MENNEKES AMTRON 2.0s vs Wallbox Pulsar Plus",
     verdict:
       "MENNEKES voor wie 'made in Germany' en lange levensduur prioriteert. Wallbox voor wie strakke designtaal en sterke app belangrijker vindt.",
   },

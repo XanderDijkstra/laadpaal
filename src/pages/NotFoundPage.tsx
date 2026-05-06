@@ -1,18 +1,29 @@
 import { Link } from "react-router-dom";
 import { PageShell } from "@/components/PageShell";
+import { JsonLd } from "@/components/JsonLd";
 import { usePageMeta } from "@/hooks/usePageMeta";
 import { SITE } from "@/lib/site";
 
 export default function NotFoundPage() {
   usePageMeta({
-    title: `Pagina niet gevonden | ${SITE.shortName}`,
-    description: "De pagina die u zoekt bestaat niet of is verplaatst.",
+    title: `Pagina niet gevonden — laadpaal.vlaanderen`,
+    description:
+      "De pagina die u zoekt bestaat niet of is verplaatst. Bekijk onze laadpaal-vergelijker, gids of vraag direct gratis offertes aan.",
     canonical: `${SITE.url}/404`,
     noindex: true,
   });
 
   return (
     <PageShell width="prose">
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          name: "Pagina niet gevonden",
+          url: `${SITE.url}/404`,
+          isPartOf: { "@type": "WebSite", name: SITE.name, url: SITE.url },
+        }}
+      />
       <div className="py-16">
         <div className="font-mono text-primary text-sm">404</div>
         <h1 className="font-heading text-3xl md:text-5xl font-bold tracking-tight mt-2">

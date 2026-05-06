@@ -56,6 +56,7 @@ async function main() {
   urls.push(urlEntry("/laadkost-berekenen", 0.9, "monthly"));
   urls.push(urlEntry("/laadpunten", 0.9, "weekly"));
   urls.push(urlEntry("/laadpalen", 0.9, "weekly"));
+  urls.push(urlEntry("/vergelijken", 0.8, "monthly"));
   urls.push(urlEntry("/merken", 0.9, "weekly"));
   urls.push(urlEntry("/auto", 0.9, "weekly"));
   urls.push(urlEntry("/installatie", 0.9, "weekly"));
@@ -89,7 +90,7 @@ ${urls.join("\n")}
   await fs.writeFile(path.join(outDir, "sitemap.xml"), xml, "utf-8");
 
   const counts = {
-    standalone: 17,
+    standalone: 18,
     chargers: data.chargers.length,
     brands: data.brands.length,
     comparisons: data.comparisons.length,

@@ -80,7 +80,7 @@ const PICKS: Pick[] = [
 export default function BesteLaadpaalPage() {
   const year = new Date().getFullYear();
   usePageMeta({
-    title: `Beste laadpaal ${year}: onze 8 winnaars per categorie | ${SITE.shortName}`,
+    title: `Beste laadpaal ${year}: 8 winnaars per categorie`,
     description: `Onafhankelijke koopgids ${year}: de beste laadpaal voor thuis, voor bedrijfswagens, voor zonnepanelen en voor budget. 36 modellen vergeleken, 8 winnaars.`,
     canonical: `${SITE.url}/beste-laadpaal`,
     ogImage: `${SITE.url}/og/default.svg`,

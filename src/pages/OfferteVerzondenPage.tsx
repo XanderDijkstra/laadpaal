@@ -1,6 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { CheckCircle2, ArrowRight } from "lucide-react";
 import { PageShell } from "@/components/PageShell";
+import { JsonLd } from "@/components/JsonLd";
 import { Card } from "@/components/ui/Card";
 import { usePageMeta } from "@/hooks/usePageMeta";
 import { SITE } from "@/lib/site";
@@ -12,14 +13,24 @@ export default function OfferteVerzondenPage() {
     (location.state as { gemeente?: string | null } | null)?.gemeente ?? null;
 
   usePageMeta({
-    title: `Aanvraag verzonden | ${SITE.shortName}`,
-    description: "Uw offerte-aanvraag is ontvangen. U hoort binnen 24 uur van erkende installateurs.",
+    title: `Aanvraag verzonden — bedankt voor uw offerte`,
+    description:
+      "Uw offerte-aanvraag is ontvangen. U hoort binnen 24 uur van erkende installateurs in uw gemeente, gratis en zonder verplichtingen.",
     canonical: `${SITE.url}/offerte/verzonden`,
     noindex: true,
   });
 
   return (
     <PageShell width="prose">
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          name: "Aanvraag verzonden",
+          url: `${SITE.url}/offerte/verzonden`,
+          isPartOf: { "@type": "WebSite", name: SITE.name, url: SITE.url },
+        }}
+      />
       <Card className="p-8 mt-4">
         <div className="flex items-center gap-3">
           <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-success/10 text-success">

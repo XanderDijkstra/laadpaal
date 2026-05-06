@@ -12,9 +12,17 @@ export default function InstallatieDetailPage() {
   const topic = installationTopics.find((t) => t.slug === slug);
   if (!topic) return <NotFoundPage />;
 
+  const desc =
+    topic.lede.length >= 70
+      ? topic.lede.slice(0, 165)
+      : `${topic.lede} Lees onze installatiegids voor Vlaanderen — kosten, AREI-keuring, fasen en eventuele verzwaring.`.slice(0, 165);
+  const title =
+    topic.title.length >= 30
+      ? topic.title
+      : `${topic.title} — laadpaal-installatie Vlaanderen`;
   usePageMeta({
-    title: `${topic.title} | ${SITE.shortName}`,
-    description: topic.lede,
+    title,
+    description: desc,
     canonical: `${SITE.url}/installatie/${topic.slug}`,
   });
 

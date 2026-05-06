@@ -21,8 +21,8 @@ export default function MerkDetailPage() {
 
   const ogImage = `${SITE.url}/og/brand/${brand.slug}.svg`;
   usePageMeta({
-    title: `${brand.name} laadpalen in België — alle modellen | ${SITE.shortName}`,
-    description: `${brand.name} laadpalen: alle modellen, prijzen en installatie in Vlaanderen. Vergelijk met andere merken.`,
+    title: `${brand.name} laadpalen in België — alle modellen`,
+    description: `${brand.name} laadpalen: ${models.length} modellen vergeleken op vermogen, MID-meter, app-bediening en prijs. Inclusief installatie in Vlaanderen.`,
     canonical: `${SITE.url}/merken/${brand.slug}`,
     ogImage,
   });
