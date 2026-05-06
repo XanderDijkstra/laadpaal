@@ -8,7 +8,7 @@ const __dirname = path.dirname(__filename);
 const ROOT = path.resolve(__dirname, "..");
 
 const SITE_URL =
-  process.env.SITE_URL ?? "https://laadpaal.vlaanderen";
+  process.env.SITE_URL ?? "https://laadthuis.be";
 
 async function loadData() {
   // Light TS-stripping: read each data file as text and strip type imports.

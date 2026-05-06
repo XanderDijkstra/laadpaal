@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://laadpaal.vlaanderen/sitemap.xml
+Sitemap: https://laadthuis.be/sitemap.xml

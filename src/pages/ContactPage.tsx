@@ -3,7 +3,7 @@ import { PlaceholderPage } from "@/components/PlaceholderPage";
 export default function ContactPage() {
   return (
     <PlaceholderPage
-      pageTitle="Contact — laadpaal.vlaanderen"
+      pageTitle="Contact — Laadthuis, laadpaal vergelijken"
       metaDescription="Heeft u een vraag of feedback over laadpalen, een correctie op een artikel of pers-aanvraag? We zijn bereikbaar via e-mail."
       canonicalPath="/contact"
       breadcrumbs={[{ label: "Home", href: "/" }, { label: "Contact" }]}
@@ -13,16 +13,16 @@ export default function ContactPage() {
       <section>
         <h2 className="text-xl font-bold tracking-tight">E-mail</h2>
         <p className="mt-2">
-          <a className="text-primary underline" href="mailto:hello@laadpaal.vlaanderen">
-            hello@laadpaal.vlaanderen
+          <a className="text-primary underline" href="mailto:hello@laadthuis.be">
+            hello@laadthuis.be
           </a>
         </p>
       </section>
       <section>
         <h2 className="text-xl font-bold tracking-tight">Voor installateurs</h2>
         <p className="mt-2">
-          <a className="text-primary underline" href="mailto:partners@laadpaal.vlaanderen">
-            partners@laadpaal.vlaanderen
+          <a className="text-primary underline" href="mailto:partners@laadthuis.be">
+            partners@laadthuis.be
           </a>
         </p>
       </section>

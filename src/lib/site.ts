@@ -1,9 +1,9 @@
 export const SITE = {
-  name: "Laadpaal Vlaanderen",
-  shortName: "Laadpaal.vlaanderen",
-  domain: "laadpaal.vlaanderen",
-  url: "https://laadpaal.vlaanderen",
-  defaultTitle: "Laadpaal Vlaanderen — vergelijk en krijg 3 offertes",
+  name: "Laadthuis",
+  shortName: "Laadthuis.be",
+  domain: "laadthuis.be",
+  url: "https://laadthuis.be",
+  defaultTitle: "Laadthuis — laadpaal vergelijken in Vlaanderen, 3 gratis offertes",
   defaultDescription:
     "Vergelijk gratis offertes voor een laadpaal van erkende installateurs in jouw gemeente. 6% btw automatisch berekend.",
 } as const;

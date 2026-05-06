@@ -118,7 +118,7 @@ async function fetchPage(offset, limit, country = "BE") {
   url.searchParams.set("key", OCM_KEY);
 
   const res = await fetch(url, {
-    headers: { "User-Agent": "laadpaal-vlaanderen/0.1 (build script)" },
+    headers: { "User-Agent": "laadthuis.be/0.1 (build script)" },
   });
   if (!res.ok) {
     throw new Error(`OCM fetch failed: ${res.status} ${res.statusText}`);

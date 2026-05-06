@@ -3,7 +3,7 @@ import { PlaceholderPage } from "@/components/PlaceholderPage";
 export default function OverOnsPage() {
   return (
     <PlaceholderPage
-      pageTitle="Over laadpaal.vlaanderen — onafhankelijk en eerlijk"
+      pageTitle="Over Laadthuis.be — onafhankelijk en eerlijk"
       metaDescription="Onafhankelijk vergelijkingsplatform voor laadpalen in Vlaanderen. Wij verkopen geen hardware — wij matchen u met erkende installateurs."
       canonicalPath="/over-ons"
       breadcrumbs={[{ label: "Home", href: "/" }, { label: "Over ons" }]}

@@ -6,7 +6,7 @@ import { SITE } from "@/lib/site";
 
 export default function NotFoundPage() {
   usePageMeta({
-    title: `Pagina niet gevonden — laadpaal.vlaanderen`,
+    title: `Pagina niet gevonden — Laadthuis.be`,
     description:
       "De pagina die u zoekt bestaat niet of is verplaatst. Bekijk onze laadpaal-vergelijker, gids of vraag direct gratis offertes aan.",
     canonical: `${SITE.url}/404`,

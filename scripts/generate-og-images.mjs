@@ -56,7 +56,7 @@ function ogSvg({ kicker, title, line2, line3, badge }) {
   </g>
   <g transform="translate(80 555)">
     <rect width="14" height="32" rx="2" fill="${PRIMARY}"/>
-    <text x="28" y="24" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="22" font-weight="700" fill="white">laadpaal.vlaanderen</text>
+    <text x="28" y="24" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="22" font-weight="700" fill="white">laadthuis.be</text>
   </g>
   ${
     safeBadge
@@ -141,7 +141,7 @@ async function main() {
   await fs.writeFile(
     path.join(baseDir, "default.svg"),
     ogSvg({
-      kicker: "Laadpaal Vlaanderen",
+      kicker: "Laadthuis.be",
       title: "Vergelijk en krijg 3 offertes",
       line2: "36 modellen · 18 merken · alle Vlaamse gemeenten",
       line3: "Inclusief 6% btw · gratis en vrijblijvend",

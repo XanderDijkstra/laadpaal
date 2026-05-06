@@ -8,14 +8,14 @@
   <rect width="1200" height="630" fill="url(#bg)"/>
   <rect x="0" y="0" width="12" height="630" fill="#16A34A"/>
   <g font-family="Inter, system-ui, -apple-system, sans-serif" fill="white">
-    <text x="80" y="160" font-size="28" font-weight="500" fill="#FCD34D" letter-spacing="2">LAADPAAL VLAANDEREN</text>
+    <text x="80" y="160" font-size="28" font-weight="500" fill="#FCD34D" letter-spacing="2">LAADTHUIS.BE</text>
     <text x="80" y="290" font-size="76" font-weight="800" letter-spacing="-2"><tspan x="80" dy="0">Vergelijk en krijg 3</tspan><tspan x="80" dy="80">offertes</tspan></text>
     <text x="80" y="465" font-size="32" font-weight="500" opacity="0.85">36 modellen · 18 merken · alle Vlaamse gemeenten</text>
     <text x="80" y="510" font-size="26" font-weight="400" opacity="0.65">Inclusief 6% btw · gratis en vrijblijvend</text>
   </g>
   <g transform="translate(80 555)">
     <rect width="14" height="32" rx="2" fill="#16A34A"/>
-    <text x="28" y="24" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="22" font-weight="700" fill="white">laadpaal.vlaanderen</text>
+    <text x="28" y="24" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="22" font-weight="700" fill="white">laadthuis.be</text>
   </g>
   
 </svg>

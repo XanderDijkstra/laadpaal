@@ -58,8 +58,8 @@ export default function VoorInstallateursPage() {
         <h2 className="text-xl font-bold tracking-tight">Geïnteresseerd?</h2>
         <p className="mt-2 text-muted-foreground">
           Stuur een mail naar{" "}
-          <a className="text-primary underline" href="mailto:partners@laadpaal.vlaanderen">
-            partners@laadpaal.vlaanderen
+          <a className="text-primary underline" href="mailto:partners@laadthuis.be">
+            partners@laadthuis.be
           </a>{" "}
           met uw gemeentenlijst en het tier dat u interesseert. We plannen een
           intake-gesprek binnen de week.

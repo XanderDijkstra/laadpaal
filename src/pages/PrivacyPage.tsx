@@ -3,8 +3,8 @@ import { PlaceholderPage } from "@/components/PlaceholderPage";
 export default function PrivacyPage() {
   return (
     <PlaceholderPage
-      pageTitle="Privacybeleid laadpaal.vlaanderen"
-      metaDescription="Hoe laadpaal.vlaanderen omgaat met uw persoonsgegevens — kort, duidelijk en GDPR-conform. Geen verkoop aan derden, geen tracking-cookies."
+      pageTitle="Privacybeleid Laadthuis.be"
+      metaDescription="Hoe laadthuis.be omgaat met uw persoonsgegevens — kort, duidelijk en GDPR-conform. Geen verkoop aan derden, geen tracking-cookies."
       canonicalPath="/privacy"
       breadcrumbs={[{ label: "Home", href: "/" }, { label: "Privacy" }]}
       lede="Kort en duidelijk: welke gegevens we verzamelen, waarvoor we ze gebruiken, en wat uw rechten zijn."
@@ -35,8 +35,8 @@ export default function PrivacyPage() {
         <h2 className="text-xl font-bold tracking-tight">Uw rechten</h2>
         <p className="mt-2 text-muted-foreground">
           U kunt op elk moment inzage, correctie of verwijdering vragen via{" "}
-          <a className="text-primary underline" href="mailto:privacy@laadpaal.vlaanderen">
-            privacy@laadpaal.vlaanderen
+          <a className="text-primary underline" href="mailto:privacy@laadthuis.be">
+            privacy@laadthuis.be
           </a>
           .
         </p>
