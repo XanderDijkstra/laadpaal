@@ -10,6 +10,9 @@ import { SITE } from "@/lib/site";
 import { brands } from "@/data/brands";
 import { chargers } from "@/data/chargers";
 import { comparisonsForBrand } from "@/lib/relations";
+import { pairSlug } from "@/lib/brandPairs";
+
+const POPULAR_PEERS = ["easee", "zaptec", "wallbox", "alfen", "tesla", "myenergi"];
 
 export default function MerkDetailPage() {
   const { slug } = useParams();
@@ -18,6 +21,10 @@ export default function MerkDetailPage() {
 
   const models = chargers.filter((c) => c.brandSlug === brand.slug);
   const brandComparisons = comparisonsForBrand(brand.slug);
+  const peerBrands = brands
+    .filter((b) => b.slug !== brand.slug)
+    .filter((b) => POPULAR_PEERS.includes(b.slug) || POPULAR_PEERS.includes(brand.slug))
+    .slice(0, 6);
 
   const ogImage = `${SITE.url}/og/brand/${brand.slug}.svg`;
   usePageMeta({
@@ -129,6 +136,32 @@ export default function MerkDetailPage() {
                 <div className="text-xs text-muted-foreground mt-1 line-clamp-2">
                   {c.verdict}
                 </div>
+              </Link>
+            ))}
+          </div>
+        </section>
+      ) : null}
+
+      {peerBrands.length > 0 ? (
+        <section className="mt-10">
+          <h2 className="text-xl font-bold tracking-tight">
+            {brand.name} vergelijken met andere merken
+          </h2>
+          <p className="mt-2 text-sm text-muted-foreground">
+            Side-by-side overzicht van prijs, MID-meter en garantie tussen {brand.name} en populaire alternatieven.
+          </p>
+          <div className="mt-4 grid grid-cols-2 sm:grid-cols-3 gap-2">
+            {peerBrands.map((peer) => (
+              <Link
+                key={peer.slug}
+                to={`/merken-vergelijken/${pairSlug(brand.slug, peer.slug)}`}
+                className="p-3 rounded-md border border-border bg-card hover:border-primary/50 transition text-sm flex items-center justify-between"
+              >
+                <span>
+                  {brand.name}{" "}
+                  <span className="text-muted-foreground">vs</span>{" "}
+                  {peer.name}
+                </span>
               </Link>
             ))}
           </div>

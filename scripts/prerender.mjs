@@ -58,6 +58,13 @@ async function collectRoutes() {
   for (const s of chargers) routes.push(`/laadpalen/${s}`);
   for (const s of brands) routes.push(`/merken/${s}`);
   for (const s of comparisons) routes.push(`/vergelijken/${s}`);
+  // Brand-vs-brand pairs (alphabetical canonical), C(N, 2) routes
+  const sortedBrands = [...brands].sort();
+  for (let i = 0; i < sortedBrands.length; i++) {
+    for (let j = i + 1; j < sortedBrands.length; j++) {
+      routes.push(`/merken-vergelijken/${sortedBrands[i]}-vs-${sortedBrands[j]}`);
+    }
+  }
   for (const s of evModels) routes.push(`/auto/${s}`);
   for (const s of installationTopics) routes.push(`/installatie/${s}`);
   for (const s of gemeenten) routes.push(`/gemeente/${s}`);

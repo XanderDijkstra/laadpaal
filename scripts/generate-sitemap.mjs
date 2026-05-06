@@ -72,6 +72,19 @@ async function main() {
   for (const slug of data.chargers) urls.push(urlEntry(`/laadpalen/${slug}`, 0.8, "monthly"));
   for (const slug of data.brands) urls.push(urlEntry(`/merken/${slug}`, 0.8, "monthly"));
   for (const slug of data.comparisons) urls.push(urlEntry(`/vergelijken/${slug}`, 0.7, "monthly"));
+  // Brand-vs-brand: alphabetical canonical slug, C(N, 2) combinations
+  const sortedBrandSlugs = [...data.brands].sort();
+  for (let i = 0; i < sortedBrandSlugs.length; i++) {
+    for (let j = i + 1; j < sortedBrandSlugs.length; j++) {
+      urls.push(
+        urlEntry(
+          `/merken-vergelijken/${sortedBrandSlugs[i]}-vs-${sortedBrandSlugs[j]}`,
+          0.7,
+          "monthly",
+        ),
+      );
+    }
+  }
   for (const slug of data.evModels) urls.push(urlEntry(`/auto/${slug}`, 0.8, "monthly"));
   for (const slug of data.installationTopics) urls.push(urlEntry(`/installatie/${slug}`, 0.7, "monthly"));
   for (const slug of data.gemeenten) urls.push(urlEntry(`/gemeente/${slug}`, 0.8, "monthly"));
@@ -91,6 +104,7 @@ ${urls.join("\n")}
 
   const counts = {
     standalone: 18,
+    brandPairs: (data.brands.length * (data.brands.length - 1)) / 2,
     chargers: data.chargers.length,
     brands: data.brands.length,
     comparisons: data.comparisons.length,

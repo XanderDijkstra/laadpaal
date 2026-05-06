@@ -12,6 +12,7 @@ import MerkenIndexPage from "@/pages/MerkenIndexPage";
 import MerkDetailPage from "@/pages/MerkDetailPage";
 import VergelijkenIndexPage from "@/pages/VergelijkenIndexPage";
 import VergelijkenDetailPage from "@/pages/VergelijkenDetailPage";
+import MerkenVergelijkenDetailPage from "@/pages/MerkenVergelijkenDetailPage";
 import AutoIndexPage from "@/pages/AutoIndexPage";
 import AutoDetailPage from "@/pages/AutoDetailPage";
 import InstallatiePillarPage from "@/pages/InstallatiePillarPage";
@@ -45,6 +46,7 @@ export default function App() {
       <Route path="/merken/:slug" element={<MerkDetailPage />} />
       <Route path="/vergelijken" element={<VergelijkenIndexPage />} />
       <Route path="/vergelijken/:slug" element={<VergelijkenDetailPage />} />
+      <Route path="/merken-vergelijken/:slug" element={<MerkenVergelijkenDetailPage />} />
       <Route path="/auto" element={<AutoIndexPage />} />
       <Route path="/auto/:slug" element={<AutoDetailPage />} />
       <Route path="/installatie" element={<InstallatiePillarPage />} />
