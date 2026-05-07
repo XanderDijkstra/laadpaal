@@ -145,10 +145,21 @@ function pickConnections(connections) {
   return { maxKw, count, type };
 }
 
+// OCM UsageTypeID — only keep publicly-accessible chargers.
+// 1 Public, 4 Public-Membership, 5 Public-PayAtLocation, 7 Public-NoticeRequired
+const PUBLIC_USAGE_TYPES = new Set([1, 4, 5, 7]);
+// Skip: 2 Private (Restricted), 3 Privately Owned, 6 Private staff/visitors
+
 function normalizeStation(poi, gemeenten) {
   const a = poi.AddressInfo ?? {};
   const province = a.StateOrProvince ?? "";
   if (!VLAAMS_PROVINCIES.has(province)) return null;
+
+  // Drop private/restricted entries (home chargers, staff parkings, …)
+  const usageType = poi.UsageTypeID;
+  if (typeof usageType === "number" && !PUBLIC_USAGE_TYPES.has(usageType)) {
+    return null;
+  }
 
   const postcode = (a.Postcode ?? "").trim();
   const gemeenteSlug = gemeenteSlugForPostcode(postcode, gemeenten);
@@ -156,6 +167,14 @@ function normalizeStation(poi, gemeenten) {
 
   const { maxKw, count, type } = pickConnections(poi.Connections);
   if (maxKw < 7) return null; // skip low-power household sockets
+
+  // Sanity-check coordinates and round to 4 decimals (~11 m precision).
+  // Anything closer than 11m is the same physical site — collapse it later.
+  const lat = Number(a.Latitude);
+  const lng = Number(a.Longitude);
+  if (!Number.isFinite(lat) || !Number.isFinite(lng)) return null;
+  const roundedLat = Math.round(lat * 10000) / 10000;
+  const roundedLng = Math.round(lng * 10000) / 10000;
 
   const operatorName = poi.OperatorInfo?.Title ?? "";
   const operator = normalizeOperator(operatorName);
@@ -168,8 +187,8 @@ function normalizeStation(poi, gemeenten) {
     address: a.AddressLine1 ?? "",
     postcode,
     gemeenteSlug,
-    lat: a.Latitude,
-    lng: a.Longitude,
+    lat: roundedLat,
+    lng: roundedLng,
     maxKw,
     connectors: count,
     type,
@@ -209,22 +228,73 @@ async function main() {
   }
 
   console.log(
-    `[fetch-laadpunten] ${total} OCM POIs gefetcht, ${kept} bewaard (Vlaanderen)`,
+    `[fetch-laadpunten] ${total} OCM POIs gefetcht, ${kept} bewaard na filter (Vlaanderen, publiek, ≥7 kW)`,
   );
 
+  // ── Stap 1: drop "phantom" coördinaten ────────────────────────────────
+  // OCM-entries zonder echte GPS krijgen vaak het stadscentrum als plaatsvervanger.
+  // Wanneer 8+ verschillende stations exact dezelfde lat/lng delen, is dat
+  // bijna zeker een placeholder en geen 8 echte fysieke laadpunten.
+  const PHANTOM_THRESHOLD = 8;
+  const countByCoord = new Map();
+  for (const s of stations) {
+    const k = `${s.lat}|${s.lng}`;
+    countByCoord.set(k, (countByCoord.get(k) ?? 0) + 1);
+  }
+  const phantomKeys = new Set(
+    [...countByCoord.entries()]
+      .filter(([, n]) => n >= PHANTOM_THRESHOLD)
+      .map(([k]) => k),
+  );
+  const real = stations.filter(
+    (s) => !phantomKeys.has(`${s.lat}|${s.lng}`),
+  );
+  console.log(
+    `[fetch-laadpunten] ${stations.length - real.length} phantom-stations gedropt op ${phantomKeys.size} placeholder-coördinaten`,
+  );
+
+  // ── Stap 2: merge stations op zelfde coord+operator ───────────────────
+  // Dezelfde fysieke locatie staat in OCM soms meerdere keren (één per stekker).
+  // Merge ze tot één marker met cumulatief aantal stekkers en max kW.
+  const merged = new Map();
+  for (const s of real) {
+    const k = `${s.lat}|${s.lng}|${s.operator}`;
+    const existing = merged.get(k);
+    if (!existing) {
+      merged.set(k, { ...s });
+      continue;
+    }
+    existing.connectors += s.connectors;
+    existing.maxKw = Math.max(existing.maxKw, s.maxKw);
+    if (existing.type !== s.type) existing.type = "AC+DC";
+    // Verkies een specifieke naam over een generieke "Laadpunt X"
+    if (
+      (existing.name?.startsWith("Laadpunt ") || !existing.name) &&
+      s.name &&
+      !s.name.startsWith("Laadpunt ")
+    ) {
+      existing.name = s.name;
+    }
+  }
+  const finalStations = [...merged.values()];
+  console.log(
+    `[fetch-laadpunten] ${real.length - finalStations.length} duplicaten samengevoegd → ${finalStations.length} unieke locaties`,
+  );
+
+  const stationsOut = finalStations;
   // Sort: gemeente, dan operator, dan id
-  stations.sort(
+  stationsOut.sort(
     (a, b) =>
       a.gemeenteSlug.localeCompare(b.gemeenteSlug) ||
       a.operator.localeCompare(b.operator) ||
       a.id.localeCompare(b.id),
   );
 
-  const json = JSON.stringify(stations, null, 2) + "\n";
+  const json = JSON.stringify(stationsOut, null, 2) + "\n";
   const outPath = path.join(ROOT, "src", "data", "laadpunten.json");
   await fs.writeFile(outPath, json, "utf-8");
   console.log(
-    `[fetch-laadpunten] geschreven naar ${path.relative(ROOT, outPath)} (${kept} stations)`,
+    `[fetch-laadpunten] geschreven naar ${path.relative(ROOT, outPath)} (${stationsOut.length} stations)`,
   );
 }
 
