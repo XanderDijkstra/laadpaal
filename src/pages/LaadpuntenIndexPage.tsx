@@ -4,6 +4,7 @@ import { PageShell } from "@/components/PageShell";
 import { JsonLd } from "@/components/JsonLd";
 import { Pill } from "@/components/ui/Pill";
 import { LaadpuntenLijst } from "@/components/LaadpuntenLijst";
+import { LaadpuntenMap } from "@/components/LaadpuntenMap";
 import { OfferteCta } from "@/components/OfferteCta";
 import { usePageMeta } from "@/hooks/usePageMeta";
 import { SITE } from "@/lib/site";
@@ -74,6 +75,11 @@ export default function LaadpuntenIndexPage() {
         {Object.entries(perProvincie).map(([prov, count]) => (
           <Stat key={prov} label={prov} value={count} />
         ))}
+      </section>
+
+      <section className="mt-10">
+        <h2 className="sr-only">Kaart van publieke laadpalen</h2>
+        <LaadpuntenMap stations={laadpunten} height={520} />
       </section>
 
       <section className="mt-10">

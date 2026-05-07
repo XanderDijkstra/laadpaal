@@ -4,6 +4,7 @@ import { PageShell } from "@/components/PageShell";
 import { JsonLd } from "@/components/JsonLd";
 import { Pill } from "@/components/ui/Pill";
 import { LaadpuntenLijst } from "@/components/LaadpuntenLijst";
+import { LaadpuntenMap } from "@/components/LaadpuntenMap";
 import { OfferteCta } from "@/components/OfferteCta";
 import NotFoundPage from "./NotFoundPage";
 import { usePageMeta } from "@/hooks/usePageMeta";
@@ -101,6 +102,13 @@ export default function LaadpuntenGemeentePage() {
           <Stat label="AC laadpunten" value={acCount} />
           <Stat label="DC snelladers" value={dcCount} />
           <Stat label="Max vermogen" value={`${maxPower} kW`} />
+        </section>
+      ) : null}
+
+      {stations.length > 0 ? (
+        <section className="mt-10">
+          <h2 className="sr-only">Kaart van publieke laadpalen in {g.name}</h2>
+          <LaadpuntenMap stations={stations} height={420} />
         </section>
       ) : null}
 
