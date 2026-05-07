@@ -110,11 +110,7 @@ export default function HomePage() {
             "@type": "WebSite",
             name: SITE.name,
             url: SITE.url,
-            potentialAction: {
-              "@type": "SearchAction",
-              target: `${SITE.url}/zoeken?q={search_term_string}`,
-              "query-input": "required name=search_term_string",
-            },
+            inLanguage: "nl-BE",
           },
           {
             "@context": "https://schema.org",

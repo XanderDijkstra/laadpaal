@@ -1,6 +1,6 @@
 export const SITE = {
   name: "Laadthuis",
-  shortName: "Laadthuis.be",
+  shortName: "Laadthuis",
   domain: "laadthuis.be",
   url: "https://laadthuis.be",
   defaultTitle: "Laadthuis — laadpaal vergelijken in Vlaanderen, 3 gratis offertes",

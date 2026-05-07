@@ -28,7 +28,7 @@ export function SiteHeader() {
           >
             <Zap className="h-4 w-4" strokeWidth={2.5} />
           </span>
-          laadthuis.be
+          Laadthuis
         </Link>
 
         <nav className="hidden lg:flex items-center gap-1">

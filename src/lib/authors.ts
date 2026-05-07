@@ -14,7 +14,7 @@ export const REDACTIE: Author = {
   name: "Redactie Laadthuis",
   jobTitle: "EV-laadinfrastructuur redactie",
   description:
-    "De redactie van Laadthuis.be analyseert publieke specs, eigenaars-reviews via installateursnetwerken in Vlaanderen, en officiële prijslijsten van erkende verdelers. Geen sponsoring, geen affiliate.",
+    "De redactie van Laadthuis analyseert publieke specs, eigenaars-reviews via installateursnetwerken in Vlaanderen, en officiële prijslijsten van erkende verdelers. Geen sponsoring, geen affiliate.",
   url: `${SITE.url}/over-ons`,
 };
 

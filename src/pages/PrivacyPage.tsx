@@ -3,8 +3,8 @@ import { PlaceholderPage } from "@/components/PlaceholderPage";
 export default function PrivacyPage() {
   return (
     <PlaceholderPage
-      pageTitle="Privacybeleid Laadthuis.be"
-      metaDescription="Hoe laadthuis.be omgaat met uw persoonsgegevens — kort, duidelijk en GDPR-conform. Geen verkoop aan derden, geen tracking-cookies."
+      pageTitle="Privacybeleid Laadthuis — uw gegevens"
+      metaDescription="Hoe Laadthuis omgaat met uw persoonsgegevens — kort, duidelijk en GDPR-conform. Geen verkoop aan derden, geen tracking-cookies."
       canonicalPath="/privacy"
       breadcrumbs={[{ label: "Home", href: "/" }, { label: "Privacy" }]}
       lede="Kort en duidelijk: welke gegevens we verzamelen, waarvoor we ze gebruiken, en wat uw rechten zijn."
