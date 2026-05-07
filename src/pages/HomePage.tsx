@@ -77,7 +77,7 @@ const FAQ = [
   },
   {
     q: "Is een AREI-keuring verplicht?",
-    a: "Ja, sinds AREI 2020 vereist elke nieuwe laadpaalinstallatie een keuring door een erkend organisme (Vinçotte, BTV, ACEG…). Kostprijs: €100-€200, vaak inbegrepen in de offerte.",
+    a: "Ja, sinds AREI 2020 vereist elke nieuwe laadpaalinstallatie een keuring door een erkend organisme (Vinçotte, BTV, ACEG…). De keuring is meestal inbegrepen in de offerte van uw installateur.",
   },
   {
     q: "Wat is dynamic load balancing?",
@@ -85,7 +85,7 @@ const FAQ = [
   },
   {
     q: "1-fase of 3-fase laadpaal?",
-    a: "Hangt af van uw aansluiting. 1-fase 40A geeft maximaal 7,4 kW. 3-fase geeft 11 of 22 kW. Verzwaring van 1- naar 3-fase via Fluvius kost typisch €150-€1.200 — vaak terugverdiend door snellere laadtijden.",
+    a: "Hangt af van uw aansluiting. 1-fase 40A geeft maximaal 7,4 kW. 3-fase geeft 11 of 22 kW. Verzwaring van 1- naar 3-fase wordt aangevraagd bij Fluvius — uw installateur kan dit voor u inplannen.",
   },
   {
     q: "Kan ik laden combineren met zonnepanelen?",
@@ -135,15 +135,15 @@ export default function HomePage() {
         <div>
           <Pill tone="success" className="mb-4">
             <CheckCircle2 className="h-3.5 w-3.5" />
-            6% btw vanaf €1.520 all-in
+            6% btw bij installatie in oudere woning
           </Pill>
           <h1 className="font-heading text-3xl md:text-5xl font-bold tracking-tight">
             Laadpaal voor thuis. Ontvang 3 offertes, kies de beste.
           </h1>
           <p className="text-base md:text-lg text-muted-foreground mt-4 max-w-prose">
             Vergelijk gratis offertes van erkende installateurs in uw gemeente.
-            Bespaar tot €400 met 6% btw, krijg minstens 3 jaar garantie, en laad
-            thuis vanaf €0,30/kWh in plaats van €0,60 publiek.
+            Profiteer van 6% btw, krijg minstens 3 jaar garantie, en laad thuis
+            voordeliger dan op een publieke laadpaal.
           </p>
           <div className="mt-6 flex flex-col sm:flex-row gap-3">
             <Link

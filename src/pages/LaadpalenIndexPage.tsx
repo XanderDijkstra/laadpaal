@@ -6,12 +6,12 @@ import { JsonLd } from "@/components/JsonLd";
 import { Pill } from "@/components/ui/Pill";
 import { OfferteCta } from "@/components/OfferteCta";
 import { usePageMeta } from "@/hooks/usePageMeta";
-import { formatEuro, cn } from "@/lib/utils";
+import { cn } from "@/lib/utils";
 import { SITE } from "@/lib/site";
 import { chargers } from "@/data/chargers";
 import { brands } from "@/data/brands";
 
-type SortKey = "name" | "brand" | "maxKw" | "priceAllInFrom" | "warrantyYears";
+type SortKey = "name" | "brand" | "maxKw" | "warrantyYears";
 type SortDir = "asc" | "desc";
 type CableFilter = "all" | "vast" | "socket";
 type PhaseFilter = "all" | "1" | "3";
@@ -19,19 +19,18 @@ type PhaseFilter = "all" | "1" | "3";
 export default function LaadpalenIndexPage() {
   usePageMeta({
     title: `Alle ${chargers.length} laadpalen voor thuis vergeleken`,
-    description: `Vergelijk ${chargers.length} thuislaadpalen van ${brands.length} merken. Filter op vermogen, kabel, MID-meter, app en budget. Alle prijzen inclusief 6% btw.`,
+    description: `Vergelijk ${chargers.length} thuislaadpalen van ${brands.length} merken. Filter op vermogen, kabel, MID-meter en app. Krijg gratis offertes van erkende installateurs.`,
     canonical: `${SITE.url}/laadpalen`,
   });
 
   const [view, setView] = useState<"cards" | "table">("table");
-  const [sortKey, setSortKey] = useState<SortKey>("priceAllInFrom");
+  const [sortKey, setSortKey] = useState<SortKey>("name");
   const [sortDir, setSortDir] = useState<SortDir>("asc");
   const [brandFilter, setBrandFilter] = useState<string>("all");
   const [cableFilter, setCableFilter] = useState<CableFilter>("all");
   const [phaseFilter, setPhaseFilter] = useState<PhaseFilter>("all");
   const [midOnly, setMidOnly] = useState(false);
   const [appOnly, setAppOnly] = useState(false);
-  const [maxBudget, setMaxBudget] = useState<number>(3000);
 
   const filtered = useMemo(() => {
     const result = chargers.filter((c) => {
@@ -40,7 +39,6 @@ export default function LaadpalenIndexPage() {
       if (phaseFilter !== "all" && String(c.phases) !== phaseFilter) return false;
       if (midOnly && !c.midMeter) return false;
       if (appOnly && !c.app) return false;
-      if (c.priceAllInFrom > maxBudget) return false;
       return true;
     });
 
@@ -53,7 +51,7 @@ export default function LaadpalenIndexPage() {
           : String(av).localeCompare(String(bv));
       return sortDir === "asc" ? cmp : -cmp;
     });
-  }, [sortKey, sortDir, brandFilter, cableFilter, phaseFilter, midOnly, appOnly, maxBudget]);
+  }, [sortKey, sortDir, brandFilter, cableFilter, phaseFilter, midOnly, appOnly]);
 
   function toggleSort(key: SortKey) {
     if (sortKey === key) {
@@ -70,7 +68,6 @@ export default function LaadpalenIndexPage() {
     setPhaseFilter("all");
     setMidOnly(false);
     setAppOnly(false);
-    setMaxBudget(3000);
   }
 
   return (
@@ -98,12 +95,14 @@ export default function LaadpalenIndexPage() {
         </h1>
         <p className="text-base md:text-lg text-muted-foreground mt-3 border-l-4 border-primary pl-4 max-w-3xl">
           {chargers.length} modellen van {brands.length} merken. Filter op vermogen,
-          kabel, MID-meter, app en budget. Klik op een kolomtitel om te sorteren.
+          kabel, MID-meter en app. Klik op een kolomtitel om te sorteren. Voor uw
+          installatieprijs vraagt u 3 gratis offertes — werkelijke kost varieert
+          per situatie.
         </p>
       </header>
 
       <div className="mt-8 rounded-md border border-border bg-card p-4 md:p-5">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
           <label className="text-sm">
             <div className="font-medium mb-1">Merk</div>
             <select
@@ -147,21 +146,6 @@ export default function LaadpalenIndexPage() {
               <option value="1">1-fase (max 7,4 kW)</option>
               <option value="3">3-fase (11-22 kW)</option>
             </select>
-          </label>
-
-          <label className="text-sm">
-            <div className="font-medium mb-1">
-              Max budget (all-in): <span className="font-mono">{formatEuro(maxBudget)}</span>
-            </div>
-            <input
-              type="range"
-              min={1000}
-              max={3500}
-              step={100}
-              value={maxBudget}
-              onChange={(e) => setMaxBudget(Number(e.target.value))}
-              className="w-full accent-primary"
-            />
           </label>
         </div>
 
@@ -240,7 +224,6 @@ export default function LaadpalenIndexPage() {
                 <th className="text-center py-2 px-3 font-semibold text-muted-foreground">RFID</th>
                 <th className="text-center py-2 px-3 font-semibold text-muted-foreground">MID</th>
                 <Th label="Garantie" sortKey="warrantyYears" current={sortKey} dir={sortDir} onSort={toggleSort} numeric />
-                <Th label="All-in vanaf" sortKey="priceAllInFrom" current={sortKey} dir={sortDir} onSort={toggleSort} numeric />
                 <th className="py-2 px-3" />
               </tr>
             </thead>
@@ -267,9 +250,6 @@ export default function LaadpalenIndexPage() {
                     {c.midMeter ? <Check className="h-4 w-4 text-success inline" /> : <X className="h-4 w-4 text-muted-foreground inline" />}
                   </td>
                   <td className="py-2 px-3 font-mono">{c.warrantyYears} jaar</td>
-                  <td className="py-2 px-3 font-mono font-semibold">
-                    {formatEuro(c.priceAllInFrom)}
-                  </td>
                   <td className="py-2 px-3 text-right">
                     <Link
                       to={`/laadpalen/${c.slug}`}
@@ -282,7 +262,7 @@ export default function LaadpalenIndexPage() {
               ))}
               {filtered.length === 0 ? (
                 <tr>
-                  <td colSpan={10} className="py-8 text-center text-muted-foreground">
+                  <td colSpan={9} className="py-8 text-center text-muted-foreground">
                     Geen modellen voldoen aan deze filters.{" "}
                     <button onClick={resetFilters} className="text-primary hover:underline">
                       Filters resetten
@@ -313,15 +293,9 @@ export default function LaadpalenIndexPage() {
                 <Pill tone="muted">{c.cable === "vast" ? "Vaste kabel" : "Type 2 socket"}</Pill>
                 {c.midMeter ? <Pill tone="success">MID-meter</Pill> : null}
               </div>
-              <div className="mt-auto pt-4 flex items-end justify-between">
-                <div>
-                  <div className="text-xs text-muted-foreground">All-in vanaf</div>
-                  <div className="font-mono font-bold text-lg">
-                    {formatEuro(c.priceAllInFrom)}
-                  </div>
-                </div>
+              <div className="mt-auto pt-4 flex items-end justify-end">
                 <span className="inline-flex items-center gap-1 text-primary text-sm font-medium">
-                  Bekijk <ArrowRight className="h-4 w-4" />
+                  Bekijk review <ArrowRight className="h-4 w-4" />
                 </span>
               </div>
             </Link>

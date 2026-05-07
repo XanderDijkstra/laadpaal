@@ -5,7 +5,6 @@ import { OfferteCta } from "@/components/OfferteCta";
 import { Pill } from "@/components/ui/Pill";
 import NotFoundPage from "./NotFoundPage";
 import { usePageMeta } from "@/hooks/usePageMeta";
-import { formatEuro } from "@/lib/utils";
 import { SITE } from "@/lib/site";
 import { comparisons } from "@/data/comparisons";
 import { chargers } from "@/data/chargers";
@@ -117,9 +116,9 @@ export default function VergelijkenDetailPage() {
                   <td className="py-2">{b.warrantyYears} jaar</td>
                 </tr>
                 <tr>
-                  <td className="py-2 pr-4 text-muted-foreground">All-in vanaf</td>
-                  <td className="py-2 pr-4 font-mono">{formatEuro(a.priceAllInFrom)}</td>
-                  <td className="py-2 font-mono">{formatEuro(b.priceAllInFrom)}</td>
+                  <td className="py-2 pr-4 text-muted-foreground">App-bediening</td>
+                  <td className="py-2 pr-4">{a.app ? "Ja" : "Nee"}</td>
+                  <td className="py-2">{b.app ? "Ja" : "Nee"}</td>
                 </tr>
               </tbody>
             </table>

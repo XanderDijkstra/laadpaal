@@ -6,7 +6,6 @@ import { OfferteCta } from "@/components/OfferteCta";
 import { Pill } from "@/components/ui/Pill";
 import { Card } from "@/components/ui/Card";
 import { usePageMeta } from "@/hooks/usePageMeta";
-import { formatEuro } from "@/lib/utils";
 import { SITE } from "@/lib/site";
 import { chargers } from "@/data/chargers";
 import { authorJsonLd, publisherJsonLd } from "@/lib/authors";
@@ -32,7 +31,7 @@ const PICKS: Pick[] = [
     category: "Beste budget keuze",
     badge: "BUDGET",
     chargerSlug: "heidelberg-energy-control",
-    why: "Geen app, geen wifi, geen RFID — pure laadhardware uit Duitsland voor onder de €1.100 all-in. Voor wie 's nachts laadt en geen variabel tarief heeft is dit volstrekt voldoende. Lange Duitse staat-van-dienst en eenvoudige installatie.",
+    why: "Geen app, geen wifi, geen RFID — pure laadhardware uit Duitsland in het laagste prijssegment. Voor wie 's nachts laadt en geen variabel tarief heeft is dit volstrekt voldoende. Lange Duitse staat-van-dienst en eenvoudige installatie.",
     ideal: "Eenvoudige opstelling met één EV, vast tarief, geen plannen voor zonneladen of bedrijfswagen-terugbetaling.",
   },
   {
@@ -60,7 +59,7 @@ const PICKS: Pick[] = [
     category: "Beste keuze voor dynamisch tarief",
     badge: "DYNAMIC",
     chargerSlug: "ohme-home-pro",
-    why: "Ohme synchroniseert rechtstreeks met dynamische energieleveranciers (Bolt, ENGIE Drive, TotalEnergies Pulse) en plant uw laadbeurt automatisch in de goedkoopste uren. Bespaart €100-€250/jaar bij een dynamisch tarief — in 1-2 jaar is de meerprijs terugverdiend.",
+    why: "Ohme synchroniseert rechtstreeks met dynamische energieleveranciers (Bolt, ENGIE Drive, TotalEnergies Pulse) en plant uw laadbeurt automatisch in de goedkoopste uren. Verlaagt uw jaarlijkse laadkost merkbaar bij een dynamisch tarief.",
     ideal: "Klanten van Bolt, ENGIE Drive of vergelijkbare dynamische leveranciers die kunnen laden tussen 22u en 7u.",
   },
   {
@@ -161,7 +160,7 @@ export default function BesteLaadpaalPage() {
                   Vermogen
                 </th>
                 <th className="text-left py-2 px-3 font-semibold text-muted-foreground">
-                  All-in vanaf
+                  Sterk in
                 </th>
               </tr>
             </thead>
@@ -180,8 +179,8 @@ export default function BesteLaadpaalPage() {
                   <td className="py-2 px-3 font-mono text-xs">
                     {p.charger.maxKw} kW · {p.charger.phases}-fase
                   </td>
-                  <td className="py-2 px-3 font-mono font-semibold">
-                    {formatEuro(p.charger.priceAllInFrom)}
+                  <td className="py-2 px-3 text-xs text-muted-foreground">
+                    {p.badge}
                   </td>
                 </tr>
               ))}
@@ -207,9 +206,6 @@ export default function BesteLaadpaalPage() {
             <div className="mt-2 text-sm text-muted-foreground">
               {p.charger.brand} · {p.charger.maxKw} kW · {p.charger.phases}-fase ·
               {p.charger.midMeter ? " MID-meter standaard ·" : ""} {p.charger.warrantyYears} jaar garantie
-            </div>
-            <div className="mt-3 font-mono font-bold text-xl">
-              vanaf {formatEuro(p.charger.priceAllInFrom)} all-in
             </div>
 
             <p className="mt-4 leading-relaxed">{p.why}</p>

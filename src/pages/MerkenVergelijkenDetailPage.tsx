@@ -7,7 +7,6 @@ import { Pill } from "@/components/ui/Pill";
 import { Card } from "@/components/ui/Card";
 import NotFoundPage from "./NotFoundPage";
 import { usePageMeta } from "@/hooks/usePageMeta";
-import { formatEuro } from "@/lib/utils";
 import { SITE } from "@/lib/site";
 import { brands } from "@/data/brands";
 import { comparisons } from "@/data/comparisons";
@@ -137,17 +136,6 @@ export default function MerkenVergelijkenDetailPage() {
                 label="Aantal modellen"
                 a={String(sa.models.length)}
                 b={String(sb.models.length)}
-              />
-              <Row
-                label="Prijsrange (all-in)"
-                a={`${formatEuro(sa.minPrice)} – ${formatEuro(sa.maxPrice)}`}
-                b={`${formatEuro(sb.minPrice)} – ${formatEuro(sb.maxPrice)}`}
-              />
-              <Row
-                label="Gem. prijs"
-                a={formatEuro(sa.avgPrice)}
-                b={formatEuro(sb.avgPrice)}
-                highlight={Math.abs(sa.avgPrice - sb.avgPrice) >= 200}
               />
               <Row label="Max vermogen" a={`${sa.maxKw} kW`} b={`${sb.maxKw} kW`} />
               <Row
@@ -319,7 +307,7 @@ function BrandCard({
         <Pill tone="info">
           {stats.models.length} {stats.models.length === 1 ? "model" : "modellen"}
         </Pill>
-        <Pill tone="muted">vanaf {formatEuro(stats.minPrice)}</Pill>
+        <Pill tone="muted">tot {stats.maxKw} kW</Pill>
         <Pill tone={stats.midShare === 1 ? "success" : "muted"}>
           {pct(stats.midShare)} MID
         </Pill>
@@ -397,12 +385,7 @@ function ModelList({
               to={`/laadpalen/${m.slug}`}
               className="block p-3 hover:bg-muted/30"
             >
-              <div className="flex items-center justify-between gap-3">
-                <div className="font-medium">{m.name}</div>
-                <div className="font-mono text-sm">
-                  {formatEuro(m.priceAllInFrom)}
-                </div>
-              </div>
+              <div className="font-medium">{m.name}</div>
               <div className="mt-1 flex flex-wrap gap-1.5">
                 <Pill tone="info" className="text-[10px]">
                   {m.maxKw} kW

@@ -156,9 +156,7 @@ async function main() {
       kicker: c.brand,
       title: c.name,
       line2: `${c.maxKw} kW · ${phases}`,
-      line3: c.priceAllInFrom
-        ? `All-in vanaf ${formatEuro(c.priceAllInFrom)} · 6% btw`
-        : "",
+      line3: "Specs, review en gratis offertes",
       badge: "VERGELIJK",
     });
     await fs.writeFile(

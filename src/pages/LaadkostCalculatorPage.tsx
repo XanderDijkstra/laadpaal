@@ -127,9 +127,15 @@ export default function LaadkostCalculatorPage() {
         </h1>
         <p className="text-base md:text-lg text-muted-foreground mt-3 border-l-4 border-primary pl-4 max-w-3xl">
           Vul uw kilometers, gemiddeld verbruik en hoe vaak u thuis versus
-          publiek laadt — wij berekenen uw jaarlijkse laadkost en vergelijken
-          met een benzineauto. Tarieven gebaseerd op CREG Q1 {new Date().getFullYear()}.
+          publiek laadt — wij berekenen uw indicatieve jaarlijkse laadkost en
+          vergelijken met een benzineauto.
         </p>
+        <div className="mt-4 rounded-md border border-warning/30 bg-warning/5 p-3 text-xs max-w-3xl">
+          <strong>Indicatie, geen offerte.</strong> Tarieven zijn gemiddelden
+          op basis van CREG Q1 {new Date().getFullYear()} en publieke
+          prijslijsten — uw werkelijke laadkost hangt af van uw leverancier,
+          dynamisch tarief, abonnement, laadgedrag en gebruikte laadpas.
+        </div>
       </header>
 
       <div className="mt-10 grid lg:grid-cols-2 gap-6">

@@ -88,8 +88,8 @@ export function SiteFooter() {
 
         <div className="mt-10 pt-6 border-t border-border flex flex-col md:flex-row justify-between gap-3 text-xs text-muted-foreground">
           <p>
-            © {year} {SITE.name}. Alle prijzen incl. 6% btw waar van
-            toepassing.
+            © {year} {SITE.name}. Onafhankelijke laadpaal-vergelijker —
+            geen prijzen, alleen offertes van erkende installateurs.
           </p>
           <div className="flex gap-4">
             <Link to="/privacy" className="hover:text-foreground">

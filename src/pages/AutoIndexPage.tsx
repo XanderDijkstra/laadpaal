@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { PageShell } from "@/components/PageShell";
 import { JsonLd } from "@/components/JsonLd";
 import { OfferteCta } from "@/components/OfferteCta";
+import { EvBrandBadge } from "@/components/EvBrandBadge";
 import { usePageMeta } from "@/hooks/usePageMeta";
 import { SITE } from "@/lib/site";
 import { evModels } from "@/data/evModels";
@@ -45,7 +46,7 @@ export default function AutoIndexPage() {
             to={`/auto/${m.slug}`}
             className="p-4 rounded-md border border-border bg-card hover:border-primary/50 hover:shadow-sm transition"
           >
-            <div className="text-xs text-muted-foreground">{m.brand}</div>
+            <EvBrandBadge brand={m.brand} size="xs" className="mb-2" />
             <div className="font-semibold">{m.name}</div>
             <div className="font-mono text-xs text-muted-foreground mt-1">
               AC max {m.acMaxKw} kW · {m.batteryKwh} kWh

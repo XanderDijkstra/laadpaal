@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Card } from "./ui/Card";
 import { formatEuro } from "@/lib/utils";
-import { Calculator } from "lucide-react";
+import { Calculator, Info } from "lucide-react";
 
 export function VATCalculator() {
   const [price, setPrice] = useState(1800);
@@ -18,7 +18,7 @@ export function VATCalculator() {
         </span>
         <div>
           <h3 className="text-xl font-bold tracking-tight">
-            6% btw — bereken uw besparing
+            6% btw — bereken uw indicatieve besparing
           </h3>
           <p className="text-sm text-muted-foreground">
             Voor woningen ouder dan 10 jaar geldt 6% btw in plaats van 21%.
@@ -26,9 +26,18 @@ export function VATCalculator() {
         </div>
       </div>
 
+      <div className="mt-5 rounded-md border border-warning/30 bg-warning/5 p-3 flex gap-2 text-xs">
+        <Info className="h-4 w-4 text-warning flex-shrink-0 mt-0.5" />
+        <span>
+          <strong>Indicatieve berekening</strong> — werkelijke prijs varieert
+          sterk per situatie (kabellengte, meterkast, type laadpaal,
+          gemeente). Vraag 3 offertes voor uw specifieke kost.
+        </span>
+      </div>
+
       <div className="mt-6">
         <label className="text-sm font-medium">
-          Geschatte all-in prijs (incl. 21% btw)
+          Voorbeeldbedrag all-in (incl. 21% btw)
         </label>
         <div className="mt-2 flex items-center gap-3">
           <span className="font-mono text-base">€</span>
@@ -69,9 +78,8 @@ export function VATCalculator() {
       </div>
 
       <p className="text-xs text-muted-foreground mt-4">
-        Schatting. Definitieve toepassing van het 6%-tarief vereist o.a. een
-        woning ≥ 10 jaar oud, plaatsing door een erkend installateur en
-        bestemming als privéwoning.
+        Toepassing van het 6%-tarief vereist o.a. een woning ≥ 10 jaar oud,
+        plaatsing door een erkend installateur en bestemming als privéwoning.
       </p>
     </Card>
   );

@@ -117,10 +117,13 @@ export default function LaadpuntenIndexPage() {
         <h2 className="text-xl font-bold tracking-tight">
           Tarieven per operator (indicatief)
         </h2>
-        <p className="mt-2 text-sm text-muted-foreground">
-          Werkelijke prijs hangt af van uw laadpas. Bron: publieke prijslijsten
-          januari {new Date().getFullYear()}.
-        </p>
+        <div className="mt-2 rounded-md border border-warning/30 bg-warning/5 p-3 text-xs">
+          <strong>Indicatief — geen offerte.</strong> Bedragen zijn gemiddelden
+          uit publieke prijslijsten van januari {new Date().getFullYear()}. Uw
+          werkelijk tarief hangt af van uw laadpas, abonnement, locatie en
+          tijdstip. Controleer altijd het tarief in de app/op de paal vóór u
+          laadt.
+        </div>
         <div className="mt-4 overflow-x-auto -mx-4 sm:mx-0">
           <table className="w-full text-sm">
             <thead className="border-b border-border bg-muted/40">

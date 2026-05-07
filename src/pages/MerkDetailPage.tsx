@@ -5,7 +5,6 @@ import { OfferteCta } from "@/components/OfferteCta";
 import { Pill } from "@/components/ui/Pill";
 import NotFoundPage from "./NotFoundPage";
 import { usePageMeta } from "@/hooks/usePageMeta";
-import { formatEuro } from "@/lib/utils";
 import { SITE } from "@/lib/site";
 import { brands } from "@/data/brands";
 import { chargers } from "@/data/chargers";
@@ -110,7 +109,8 @@ export default function MerkDetailPage() {
               </div>
               <div className="mt-2 flex items-center gap-3 text-xs">
                 <span className="font-mono">{m.maxKw} kW</span>
-                <span className="font-mono">{formatEuro(m.priceAllInFrom)}</span>
+                <span className="font-mono">{m.phases}-fase</span>
+                {m.midMeter ? <span className="font-mono text-success">MID</span> : null}
               </div>
             </Link>
           ))}

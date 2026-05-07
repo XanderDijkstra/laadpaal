@@ -86,21 +86,7 @@ export function statsForBrand(brand: Brand): BrandStats {
 // Generate a 2-3 sentence verdict highlighting the differentiators between
 // two brands. Picks 2-3 strongest contrasts; deterministic for SSR-safety.
 export function brandVerdict(a: BrandStats, b: BrandStats): string {
-  const cheaper = a.avgPrice < b.avgPrice ? a : b;
-  const expensive = cheaper === a ? b : a;
-  const priceDelta = expensive.avgPrice - cheaper.avgPrice;
-
   const facts: string[] = [];
-
-  if (priceDelta >= 100) {
-    facts.push(
-      `${cheaper.brand.name} ligt gemiddeld €${priceDelta.toLocaleString("nl-BE")} lager qua all-in prijs`,
-    );
-  } else {
-    facts.push(
-      `${a.brand.name} en ${b.brand.name} liggen prijstechnisch dicht bij elkaar`,
-    );
-  }
 
   if (a.midShare !== b.midShare) {
     const winner = a.midShare > b.midShare ? a : b;
@@ -122,22 +108,34 @@ export function brandVerdict(a: BrandStats, b: BrandStats): string {
 
   if (a.maxKw !== b.maxKw) {
     const winner = a.maxKw > b.maxKw ? a : b;
-    if (winner.maxKw === 22 && winner !== (a.maxKw > b.maxKw ? a : b))
-      facts.push("");
-    else
-      facts.push(
-        `${winner.brand.name} biedt modellen tot ${winner.maxKw} kW`,
-      );
+    facts.push(
+      `${winner.brand.name} biedt modellen tot ${winner.maxKw} kW`,
+    );
   }
 
-  return facts.filter(Boolean).slice(0, 3).join(". ") + ".";
+  if (a.appShare !== b.appShare) {
+    const winner = a.appShare > b.appShare ? a : b;
+    if (winner.appShare === 1 && winner !== (a.appShare > b.appShare ? a : b)) {
+      // Skip if winner.appShare also == 1
+    } else if (winner.appShare === 1) {
+      facts.push(
+        `${winner.brand.name} levert app-bediening standaard op alle modellen`,
+      );
+    }
+  }
+
+  if (facts.length === 0) {
+    facts.push(
+      `${a.brand.name} en ${b.brand.name} liggen technisch dicht bij elkaar — kies op merkvoorkeur en model-specifieke specs`,
+    );
+  }
+
+  return facts.slice(0, 3).join(". ") + ".";
 }
 
 // "When to pick brand A" — generates a short bullet list based on stats.
 export function whenToPick(s: BrandStats, other: BrandStats): string[] {
   const out: string[] = [];
-  if (s.avgPrice < other.avgPrice - 100)
-    out.push(`Budget belangrijker dan premium-features`);
   if (s.midShare > other.midShare && s.midShare >= 0.5)
     out.push(`U heeft een bedrijfswagen met werkgever-terugbetaling (MID-meter)`);
   if (s.appShare === 1 && other.appShare < 1)

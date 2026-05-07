@@ -5,9 +5,9 @@ import { Card } from "@/components/ui/Card";
 import { Pill } from "@/components/ui/Pill";
 import { JsonLd } from "@/components/JsonLd";
 import { OfferteCta } from "@/components/OfferteCta";
+import { EvBrandBadge } from "@/components/EvBrandBadge";
 import NotFoundPage from "./NotFoundPage";
 import { usePageMeta } from "@/hooks/usePageMeta";
-import { formatEuro } from "@/lib/utils";
 import { SITE } from "@/lib/site";
 import { chargers } from "@/data/chargers";
 import { brands } from "@/data/brands";
@@ -54,7 +54,7 @@ function DetailContent({
   compatibleEvs: ReturnType<typeof compatibleEvsForCharger>;
 }) {
   const ogImage = `${SITE.url}/og/charger/${charger.slug}.svg`;
-  const desc = `${charger.name} (${charger.maxKw} kW): ${charger.shortDescription} Prijs vanaf ${formatEuro(charger.priceAllInFrom)} all-in incl. 6% btw.`.slice(0, 160);
+  const desc = `${charger.name} review: ${charger.maxKw} kW, ${charger.phases}-fase. ${charger.shortDescription} Vraag offertes voor uw situatie — werkelijke prijs varieert per installateur.`.slice(0, 160);
   usePageMeta({
     title: `${charger.name} review — specs en prijs ${new Date().getFullYear()}`,
     description: desc,
@@ -62,7 +62,6 @@ function DetailContent({
     ogImage,
   });
 
-  const priceValidUntil = `${new Date().getFullYear() + 1}-12-31`;
   const additionalProperty = [
     { "@type": "PropertyValue", name: "Maximaal vermogen", value: `${charger.maxKw} kW`, unitText: "kW" },
     { "@type": "PropertyValue", name: "Aantal fasen", value: `${charger.phases}-fase` },
@@ -103,20 +102,6 @@ function DetailContent({
             category: "EV thuislaadpaal",
             url: `${SITE.url}/laadpalen/${charger.slug}`,
             additionalProperty,
-            offers: {
-              "@type": "Offer",
-              priceCurrency: "EUR",
-              price: charger.priceAllInFrom,
-              priceValidUntil,
-              url: `${SITE.url}/laadpalen/${charger.slug}`,
-              availability: "https://schema.org/InStock",
-              itemCondition: "https://schema.org/NewCondition",
-              seller: {
-                "@type": "Organization",
-                name: SITE.name,
-                url: SITE.url,
-              },
-            },
           },
         ]}
       />
@@ -137,8 +122,8 @@ function DetailContent({
       </header>
 
       <div className="mt-8 grid sm:grid-cols-3 gap-3">
-        <SpecBox label="Hardware vanaf" value={formatEuro(charger.priceFrom)} />
-        <SpecBox label="All-in (incl. 6% btw)" value={formatEuro(charger.priceAllInFrom)} highlight />
+        <SpecBox label="Max. vermogen" value={`${charger.maxKw} kW`} />
+        <SpecBox label="Fasen" value={`${charger.phases}-fase`} highlight />
         <SpecBox label="Garantie" value={`${charger.warrantyYears} jaar`} />
       </div>
 
@@ -209,8 +194,8 @@ function DetailContent({
             >
               <div className="text-xs text-muted-foreground">{alt.brand}</div>
               <div className="font-semibold">{alt.name}</div>
-              <div className="font-mono text-sm mt-1">
-                vanaf {formatEuro(alt.priceAllInFrom)}
+              <div className="text-xs text-muted-foreground mt-1 font-mono">
+                {alt.maxKw} kW · {alt.phases}-fase
               </div>
             </Link>
           ))}
@@ -233,10 +218,11 @@ function DetailContent({
                 to={`/auto/${ev.slug}`}
                 className="p-4 rounded-md border border-border bg-card hover:border-primary/50 transition"
               >
-                <div className="text-xs text-muted-foreground">
-                  {ev.brand} · {ev.year}
+                <div className="flex items-center gap-2">
+                  <EvBrandBadge brand={ev.brand} size="xs" />
+                  <span className="text-xs text-muted-foreground">{ev.year}</span>
                 </div>
-                <div className="font-semibold">{ev.name}</div>
+                <div className="font-semibold mt-1.5">{ev.name}</div>
                 <div className="text-xs text-muted-foreground mt-1 font-mono">
                   {ev.batteryKwh} kWh · {ev.acMaxKw} kW AC
                 </div>

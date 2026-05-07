@@ -13,7 +13,6 @@ import {
   topGuidesForGemeente,
   recommendedChargersForGemeente,
 } from "@/lib/relations";
-import { formatEuro } from "@/lib/utils";
 import { laadpunten } from "@/data/laadpunten";
 
 export default function GemeenteDetailPage() {
@@ -137,9 +136,7 @@ export default function GemeenteDetailPage() {
                 <div className="font-semibold">{c.name}</div>
                 <div className="text-xs text-muted-foreground mt-1 font-mono">
                   {c.maxKw} kW · {c.phases}-fase
-                </div>
-                <div className="font-mono text-sm mt-1">
-                  vanaf {formatEuro(c.priceAllInFrom)}
+                  {c.midMeter ? " · MID" : ""}
                 </div>
               </Link>
             ))}

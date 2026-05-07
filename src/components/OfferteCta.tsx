@@ -89,8 +89,8 @@ export function OfferteCta({
         <ArrowRight className="h-4 w-4" />
       </Link>
       <p className="mt-3 text-xs text-muted-foreground">
-        Geen verplichtingen · Reactie binnen 24 uur · 6% btw automatisch
-        berekend
+        Geen verplichtingen · Reactie binnen 24 uur · Werkelijke prijs in
+        de offerte van uw installateur
       </p>
     </aside>
   );

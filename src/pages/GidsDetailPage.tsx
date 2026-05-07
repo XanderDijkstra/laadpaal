@@ -12,7 +12,6 @@ import { SITE } from "@/lib/site";
 import { guides } from "@/data/guides";
 import { relevantChargersForGuide } from "@/lib/relations";
 import { authorJsonLd, publisherJsonLd } from "@/lib/authors";
-import { formatEuro } from "@/lib/utils";
 
 export default function GidsDetailPage() {
   const { slug } = useParams();
@@ -115,9 +114,6 @@ export default function GidsDetailPage() {
                 <div className="text-xs text-muted-foreground mt-1 font-mono">
                   {c.maxKw} kW · {c.phases}-fase
                   {c.midMeter ? " · MID" : ""}
-                </div>
-                <div className="font-mono text-sm mt-1">
-                  vanaf {formatEuro(c.priceAllInFrom)}
                 </div>
               </Link>
             ))}

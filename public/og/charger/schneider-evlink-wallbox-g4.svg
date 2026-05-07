@@ -11,7 +11,7 @@
     <text x="80" y="160" font-size="28" font-weight="500" fill="#FCD34D" letter-spacing="2">SCHNEIDER ELECTRIC</text>
     <text x="80" y="290" font-size="76" font-weight="800" letter-spacing="-2"><tspan x="80" dy="0">Schneider EVlink Wallbox</tspan><tspan x="80" dy="80">G4</tspan></text>
     <text x="80" y="465" font-size="32" font-weight="500" opacity="0.85">22 kW · 3-fase</text>
-    <text x="80" y="510" font-size="26" font-weight="400" opacity="0.65">All-in vanaf €1.499 · 6% btw</text>
+    <text x="80" y="510" font-size="26" font-weight="400" opacity="0.65">Specs, review en gratis offertes</text>
   </g>
   <g transform="translate(80 555)">
     <rect width="14" height="32" rx="2" fill="#16A34A"/>
