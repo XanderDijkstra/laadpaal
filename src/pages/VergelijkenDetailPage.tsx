@@ -10,6 +10,8 @@ import { SITE } from "@/lib/site";
 import { comparisons } from "@/data/comparisons";
 import { chargers } from "@/data/chargers";
 import { backgroundGuidesForComparison } from "@/lib/relations";
+import { authorJsonLd, publisherJsonLd } from "@/lib/authors";
+import { LAST_UPDATED, formatNlDate } from "@/lib/lastUpdated";
 
 export default function VergelijkenDetailPage() {
   const { slug } = useParams();
@@ -52,12 +54,10 @@ export default function VergelijkenDetailPage() {
                   "@type": "Review",
                   reviewBody: cmp.verdict,
                   name: cmp.title,
-                  datePublished: new Date().toISOString().slice(0, 10),
-                  author: {
-                    "@type": "Organization",
-                    name: SITE.name,
-                    url: SITE.url,
-                  },
+                  datePublished: LAST_UPDATED,
+                  inLanguage: "nl-BE",
+                  author: authorJsonLd(),
+                  publisher: publisherJsonLd(),
                   itemReviewed: {
                     "@type": "Product",
                     name: `${a.name} vs ${b.name}`,
@@ -78,6 +78,9 @@ export default function VergelijkenDetailPage() {
         <p className="text-base md:text-lg text-foreground mt-4 border-l-4 border-primary pl-4">
           <strong>Korte conclusie:</strong> {cmp.verdict}
         </p>
+        <div className="mt-3 text-xs text-muted-foreground">
+          Bijgewerkt {formatNlDate(LAST_UPDATED)} door Redactie Laadthuis
+        </div>
       </header>
 
       {a && b ? (

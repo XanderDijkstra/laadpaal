@@ -15,6 +15,7 @@ import {
   relevantGuidesForCharger,
   compatibleEvsForCharger,
 } from "@/lib/relations";
+import { LAST_UPDATED, formatNlDate } from "@/lib/lastUpdated";
 
 export default function LaadpaalDetailPage() {
   const { slug } = useParams();
@@ -92,6 +93,7 @@ function DetailContent({
             "@type": "Product",
             "@id": `${SITE.url}/laadpalen/${charger.slug}#product`,
             name: charger.name,
+            dateModified: LAST_UPDATED,
             brand: { "@type": "Brand", name: charger.brand },
             manufacturer: { "@type": "Organization", name: charger.brand },
             description: charger.shortDescription,
@@ -129,6 +131,9 @@ function DetailContent({
         <p className="text-base md:text-lg text-muted-foreground mt-3 border-l-4 border-primary pl-4">
           {charger.shortDescription}
         </p>
+        <div className="mt-3 text-xs text-muted-foreground">
+          Bijgewerkt {formatNlDate(LAST_UPDATED)} door Redactie Laadthuis
+        </div>
       </header>
 
       <div className="mt-8 grid sm:grid-cols-3 gap-3">

@@ -44,6 +44,19 @@ function setLink(rel: string, href: string) {
   el.setAttribute("href", href);
 }
 
+function setLinkHreflang(hreflang: string, href: string) {
+  let el = document.querySelector<HTMLLinkElement>(
+    `link[rel="alternate"][hreflang="${hreflang}"]`,
+  );
+  if (!el) {
+    el = document.createElement("link");
+    el.setAttribute("rel", "alternate");
+    el.setAttribute("hreflang", hreflang);
+    document.head.appendChild(el);
+  }
+  el.setAttribute("href", href);
+}
+
 export function usePageMeta(meta: PageMeta) {
   const ogImage = meta.ogImage ?? `${SITE.url}/og/default.svg`;
   const enriched: PageMeta = { ...meta, ogImage };
@@ -62,6 +75,8 @@ export function usePageMeta(meta: PageMeta) {
     if (enriched.canonical) {
       setLink("canonical", enriched.canonical);
       setProperty("og:url", enriched.canonical);
+      setLinkHreflang("nl-be", enriched.canonical);
+      setLinkHreflang("x-default", enriched.canonical);
     }
     setProperty("og:image", enriched.ogImage!);
     setProperty("og:image:width", "1200");
@@ -105,6 +120,12 @@ export function renderHeadTags(meta: PageMeta): string {
     );
     parts.push(
       `<meta property="og:url" content="${escapeAttr(meta.canonical)}" />`,
+    );
+    parts.push(
+      `<link rel="alternate" hreflang="nl-be" href="${escapeAttr(meta.canonical)}" />`,
+    );
+    parts.push(
+      `<link rel="alternate" hreflang="x-default" href="${escapeAttr(meta.canonical)}" />`,
     );
   }
   const ogImage = meta.ogImage ?? `${SITE.url}/og/default.svg`;

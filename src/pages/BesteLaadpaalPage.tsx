@@ -9,6 +9,8 @@ import { usePageMeta } from "@/hooks/usePageMeta";
 import { formatEuro } from "@/lib/utils";
 import { SITE } from "@/lib/site";
 import { chargers } from "@/data/chargers";
+import { authorJsonLd, publisherJsonLd } from "@/lib/authors";
+import { LAST_UPDATED } from "@/lib/lastUpdated";
 
 interface Pick {
   category: string;
@@ -106,10 +108,12 @@ export default function BesteLaadpaalPage() {
             headline: `Beste laadpaal ${year}: 8 winnaars per categorie`,
             description: `Onafhankelijke koopgids ${year}. 36 modellen vergeleken, 8 winnaars per gebruiksprofiel.`,
             datePublished: `${year}-01-15`,
-            dateModified: `${year}-01-15`,
+            dateModified: LAST_UPDATED,
             url: `${SITE.url}/beste-laadpaal`,
-            author: { "@type": "Organization", name: SITE.name },
-            publisher: { "@type": "Organization", name: SITE.name },
+            mainEntityOfPage: `${SITE.url}/beste-laadpaal`,
+            inLanguage: "nl-BE",
+            author: authorJsonLd(),
+            publisher: publisherJsonLd(),
             image: `${SITE.url}/og/default.svg`,
           },
           {

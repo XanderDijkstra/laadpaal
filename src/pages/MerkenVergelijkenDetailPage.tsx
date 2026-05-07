@@ -19,6 +19,8 @@ import {
   whenToPick,
   allBrandPairs,
 } from "@/lib/brandPairs";
+import { authorJsonLd, publisherJsonLd } from "@/lib/authors";
+import { LAST_UPDATED, formatNlDate } from "@/lib/lastUpdated";
 
 export default function MerkenVergelijkenDetailPage() {
   const { slug } = useParams();
@@ -69,11 +71,13 @@ export default function MerkenVergelijkenDetailPage() {
             "@type": "Article",
             headline: `${a.name} vs ${b.name}: welk laadpaal-merk past bij u?`,
             description: verdict,
-            datePublished: `${new Date().getFullYear()}-01-15`,
-            dateModified: `${new Date().getFullYear()}-01-15`,
+            datePublished: LAST_UPDATED,
+            dateModified: LAST_UPDATED,
             url: `${SITE.url}/merken-vergelijken/${pairSlug(aSlug, bSlug)}`,
-            author: { "@type": "Organization", name: SITE.name },
-            publisher: { "@type": "Organization", name: SITE.name },
+            mainEntityOfPage: `${SITE.url}/merken-vergelijken/${pairSlug(aSlug, bSlug)}`,
+            inLanguage: "nl-BE",
+            author: authorJsonLd(),
+            publisher: publisherJsonLd(),
             mentions: [
               { "@type": "Brand", name: a.name },
               { "@type": "Brand", name: b.name },
@@ -103,6 +107,9 @@ export default function MerkenVergelijkenDetailPage() {
         <p className="text-base md:text-lg text-foreground mt-4 border-l-4 border-primary pl-4 max-w-3xl">
           <strong>Korte conclusie:</strong> {verdict}
         </p>
+        <div className="mt-3 text-xs text-muted-foreground">
+          Bijgewerkt {formatNlDate(LAST_UPDATED)} door Redactie Laadthuis
+        </div>
       </header>
 
       <section className="mt-10 grid md:grid-cols-2 gap-4">

@@ -11,6 +11,7 @@ import { usePageMeta } from "@/hooks/usePageMeta";
 import { SITE } from "@/lib/site";
 import { guides } from "@/data/guides";
 import { relevantChargersForGuide } from "@/lib/relations";
+import { authorJsonLd, publisherJsonLd } from "@/lib/authors";
 import { formatEuro } from "@/lib/utils";
 
 export default function GidsDetailPage() {
@@ -55,8 +56,10 @@ export default function GidsDetailPage() {
           datePublished: guide.updated,
           dateModified: guide.updated,
           url: `${SITE.url}/gids/${guide.slug}`,
-          author: { "@type": "Organization", name: SITE.name },
-          publisher: { "@type": "Organization", name: SITE.name },
+          mainEntityOfPage: `${SITE.url}/gids/${guide.slug}`,
+          inLanguage: "nl-BE",
+          author: authorJsonLd(),
+          publisher: publisherJsonLd(),
         }}
       />
       <header>
