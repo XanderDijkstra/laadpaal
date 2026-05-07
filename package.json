@@ -12,8 +12,7 @@
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
     "lint": "eslint . --ext ts,tsx",
-    "fetch:laadpunten": "node scripts/fetch-laadpunten.mjs",
-    "db:migrate": "node scripts/migrate.mjs"
+    "fetch:laadpunten": "node scripts/fetch-laadpunten.mjs"
   },
   "dependencies": {
     "@neondatabase/serverless": "^0.10.0",

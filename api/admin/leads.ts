@@ -1,7 +1,7 @@
 // GET  /api/admin/leads          → list leads (auth-gated)
 // PATCH /api/admin/leads?id=N    → update status / notes
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import { db } from "../_lib/db";
+import { db, ensureSchema } from "../_lib/db";
 import { isAuthenticated } from "../_lib/auth";
 
 const VALID_STATUSES = new Set(["new", "contacted", "matched", "won", "lost", "junk"]);
@@ -12,6 +12,14 @@ export default async function handler(
 ) {
   if (!isAuthenticated(req)) {
     return res.status(401).json({ error: "unauthorized" });
+  }
+
+  // Auto-bootstrap on first admin visit too — no manual migration needed
+  try {
+    await ensureSchema();
+  } catch (err) {
+    console.error("[/api/admin/leads] schema bootstrap failed:", err);
+    return res.status(500).json({ error: "db_unreachable" });
   }
 
   if (req.method === "GET") return list(req, res);

@@ -1,51 +1,7 @@
 // Public POST endpoint — receives a form submission from OfferteForm and
-// stores it in the leads table. Best-effort schema bootstrap on cold start.
+// stores it in the leads table. Schema is auto-created on first request.
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import { db } from "./_lib/db";
-
-let schemaEnsured = false;
-
-async function ensureSchema(): Promise<void> {
-  if (schemaEnsured) return;
-  const sql = db();
-  await sql.query(`CREATE TABLE IF NOT EXISTS leads (
-    id BIGSERIAL PRIMARY KEY,
-    created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
-    status TEXT NOT NULL DEFAULT 'new',
-    postcode TEXT,
-    gemeente TEXT,
-    property TEXT,
-    ev_status TEXT,
-    urgency TEXT,
-    age_house TEXT,
-    charger_location TEXT,
-    meterkast_distance TEXT,
-    electrical_phase TEXT,
-    has_solar TEXT,
-    digital_meter TEXT,
-    vehicle_brand TEXT,
-    desired_kw TEXT,
-    brand_pref JSONB NOT NULL DEFAULT '[]'::jsonb,
-    voornaam TEXT,
-    achternaam TEXT,
-    email TEXT,
-    telefoon TEXT,
-    call_pref BOOLEAN DEFAULT TRUE,
-    score INT,
-    tier TEXT,
-    reasons JSONB NOT NULL DEFAULT '[]'::jsonb,
-    utm_source TEXT,
-    utm_medium TEXT,
-    utm_campaign TEXT,
-    user_agent TEXT,
-    ip TEXT,
-    notes TEXT
-  )`);
-  await sql.query(
-    `CREATE INDEX IF NOT EXISTS leads_created_at_idx ON leads (created_at DESC)`,
-  );
-  schemaEnsured = true;
-}
+import { db, ensureSchema } from "./_lib/db";
 
 function s(v: unknown): string | null {
   if (typeof v !== "string") return null;
