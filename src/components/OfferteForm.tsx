@@ -73,6 +73,7 @@ export function OfferteForm() {
   const [step, setStep] = useState(0);
   const [state, setState] = useState<FormState>(DEFAULT_STATE);
   const [hydrated, setHydrated] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
 
   // Hydrate from localStorage + URL prefills after first render to avoid SSR mismatch
   useEffect(() => {
@@ -157,13 +158,18 @@ export function OfferteForm() {
     }
   }, [step, state, postcodeValid]);
 
-  function next() {
-    if (!stepValid) return;
+  async function next() {
+    if (!stepValid || submitting) return;
     if (step < STEPS.length - 1) {
       setStep((s) => s + 1);
       window.scrollTo({ top: 0, behavior: "smooth" });
     } else {
-      submit();
+      setSubmitting(true);
+      try {
+        await submit();
+      } finally {
+        setSubmitting(false);
+      }
     }
   }
 
@@ -174,7 +180,7 @@ export function OfferteForm() {
     }
   }
 
-  function submit() {
+  async function submit() {
     const result = scoreLead({
       property: state.property,
       ev_status: state.ev_status,
@@ -190,19 +196,51 @@ export function OfferteForm() {
       brand_pref: state.brand_pref,
       email: state.email,
     });
-    // TODO: Supabase insert + Resend email; storing locally for now.
-    const submission = {
-      submittedAt: new Date().toISOString(),
-      state,
-      result,
+
+    const utm = new URLSearchParams(window.location.search);
+    const payload = {
+      ...state,
       gemeente: detectedGemeente?.name ?? null,
+      score: result.score,
+      tier: result.tier,
+      reasons: result.reasons,
+      utm_source: utm.get("utm_source") ?? null,
+      utm_medium: utm.get("utm_medium") ?? null,
+      utm_campaign: utm.get("utm_campaign") ?? null,
     };
+
     try {
-      const all = JSON.parse(
-        window.localStorage.getItem("offerte:submitted:v1") ?? "[]",
-      );
-      all.push(submission);
-      window.localStorage.setItem("offerte:submitted:v1", JSON.stringify(all));
+      const res = await fetch("/api/leads", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    } catch (err) {
+      // Fall back to localStorage so the user is never blocked from submitting
+      // when the API is offline. Admin will reconcile from the table for
+      // anything that arrived; manual recovery from localStorage if needed.
+      console.error("[offerte] POST /api/leads failed:", err);
+      try {
+        const fallback = JSON.parse(
+          window.localStorage.getItem("offerte:submitted:v1") ?? "[]",
+        );
+        fallback.push({
+          submittedAt: new Date().toISOString(),
+          state,
+          result,
+          gemeente: detectedGemeente?.name ?? null,
+        });
+        window.localStorage.setItem(
+          "offerte:submitted:v1",
+          JSON.stringify(fallback),
+        );
+      } catch {
+        /* ignore */
+      }
+    }
+
+    try {
       window.localStorage.removeItem(STORAGE_KEY);
     } catch {
       /* ignore */
@@ -268,17 +306,19 @@ export function OfferteForm() {
           <button
             type="button"
             onClick={next}
-            disabled={!stepValid}
+            disabled={!stepValid || submitting}
             className={cn(
               "inline-flex items-center justify-center gap-2 h-11 px-6 rounded-md font-medium",
-              stepValid
+              stepValid && !submitting
                 ? "bg-primary text-primary-foreground hover:bg-primary/90 shadow-sm"
                 : "bg-muted text-muted-foreground cursor-not-allowed",
             )}
           >
-            {step === STEPS.length - 1
-              ? "Verstuur — ontvang 3 offertes"
-              : "Volgende"}
+            {submitting
+              ? "Versturen…"
+              : step === STEPS.length - 1
+                ? "Verstuur — ontvang 3 offertes"
+                : "Volgende"}
             <ArrowRight className="h-4 w-4" />
           </button>
         </div>

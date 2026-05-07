@@ -53,6 +53,7 @@ async function collectRoutes() {
     "/contact",
     "/privacy",
     "/voorwaarden",
+    "/admin",
   ];
 
   for (const s of chargers) routes.push(`/laadpalen/${s}`);
