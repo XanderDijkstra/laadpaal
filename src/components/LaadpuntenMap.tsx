@@ -76,13 +76,14 @@ export function LaadpuntenMap({
     (async () => {
       if (!containerRef.current) return;
       try {
-        const [{ default: L }] = await Promise.all([
-          import("leaflet"),
-          import("leaflet/dist/leaflet.css"),
-          import("leaflet.markercluster"),
-          import("leaflet.markercluster/dist/MarkerCluster.css"),
-          import("leaflet.markercluster/dist/MarkerCluster.Default.css"),
-        ]);
+        // 1) Leaflet eerst — markercluster leest `window.L` op module-load
+        const { default: L } = await import("leaflet");
+        await import("leaflet/dist/leaflet.css");
+        (window as unknown as { L: typeof L }).L = L;
+        // 2) Pas dan markercluster (die patcht zichzelf op de global L)
+        await import("leaflet.markercluster");
+        await import("leaflet.markercluster/dist/MarkerCluster.css");
+        await import("leaflet.markercluster/dist/MarkerCluster.Default.css");
         if (cancelled || !containerRef.current) return;
 
         const map = L.map(containerRef.current, {
