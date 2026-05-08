@@ -115,6 +115,9 @@ async function fetchPage(offset, limit, country = "BE") {
   url.searchParams.set("compact", "true");
   url.searchParams.set("verbose", "false");
   url.searchParams.set("output", "json");
+  // Stable order by creation date — voorkomt dat dezelfde POI in meerdere
+  // pagina's terugkomt door wisselende sortering tussen calls.
+  url.searchParams.set("sortby", "created_asc");
   url.searchParams.set("key", OCM_KEY);
 
   const res = await fetch(url, {
@@ -237,16 +240,29 @@ async function main() {
 
   const stations = [];
   const ids = new Set();
+  // Track OCM-side POI IDs across all pages — voorkomt dat dezelfde station
+  // tweemaal verwerkt wordt als de pagination-cursor om wat voor reden ook
+  // overlap geeft.
+  const seenOcmIds = new Set();
   let offset = 0;
   const pageSize = 500;
   let kept = 0;
   let total = 0;
+  let pageDupes = 0;
 
   while (true) {
     const page = await fetchPage(offset, pageSize);
     if (!Array.isArray(page) || page.length === 0) break;
     total += page.length;
     for (const poi of page) {
+      // Skip if we've already seen this OCM POI ID in a previous page
+      if (poi && typeof poi.ID === "number") {
+        if (seenOcmIds.has(poi.ID)) {
+          pageDupes += 1;
+          continue;
+        }
+        seenOcmIds.add(poi.ID);
+      }
       const s = normalizeStation(poi, gemeenten);
       if (!s) continue;
       let id = s.id;
@@ -263,7 +279,7 @@ async function main() {
   }
 
   console.log(
-    `[fetch-laadpunten] ${total} OCM POIs gefetcht, ${kept} bewaard na filter (Vlaanderen, publiek, ≥7 kW)`,
+    `[fetch-laadpunten] ${total} OCM POIs gefetcht (${pageDupes} pagina-duplicaten geskipt), ${kept} bewaard na filter (Vlaanderen, publiek, ≥7 kW)`,
   );
   console.log(
     `[fetch-laadpunten] drops: ${dropStats.wrongProvince} ander provincie · ${dropStats.privateUsage} privé · ${dropStats.noGemeente} onbekende gemeente · ${dropStats.lowPower} <7 kW · ${dropStats.badCoords} bad coords`,
@@ -274,17 +290,19 @@ async function main() {
   // Voeg alle stations op dezelfde coord samen tot één marker met cumulatieve
   // stekkers, max kW, en operator-lijst. Werkt ook voor situaties waar één
   // fysieke locatie in OCM meermaals voorkomt (één entry per stekker).
+  // Dedup-key bevat ook de operator zodat verschillende operators op
+  // dezelfde fysieke locatie als aparte markers blijven verschijnen.
+  // Combineer alleen als coord + operator + max-kW alle drie gelijk zijn.
   const merged = new Map();
   for (const s of stations) {
-    const k = `${s.lat}|${s.lng}`;
+    const k = `${s.lat}|${s.lng}|${s.operator}|${s.maxKw}|${s.type}`;
     const existing = merged.get(k);
     if (!existing) {
       merged.set(k, { ...s });
       continue;
     }
+    // Echte dupe (zelfde coord + operator + specs) — tel stekkers op
     existing.connectors += s.connectors;
-    existing.maxKw = Math.max(existing.maxKw, s.maxKw);
-    if (existing.type !== s.type) existing.type = "AC+DC";
     // Verkies een specifieke naam over een generieke "Laadpunt X"
     if (
       (existing.name?.startsWith("Laadpunt ") || !existing.name) &&
