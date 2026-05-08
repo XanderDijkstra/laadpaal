@@ -102,7 +102,7 @@ export default function HomePage() {
   });
 
   return (
-    <PageShell>
+    <PageShell width="flush">
       <JsonLd
         data={[
           {
@@ -130,8 +130,9 @@ export default function HomePage() {
         ]}
       />
 
-      {/* HERO */}
-      <section className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start mt-2">
+      {/* HERO — primary-tinted hero band */}
+      <Band tone="hero">
+        <section className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start py-10 md:py-16">
         <div>
           <Pill tone="success" className="mb-4">
             <CheckCircle2 className="h-3.5 w-3.5" />
@@ -162,7 +163,7 @@ export default function HomePage() {
           </div>
         </div>
 
-        <Card className="p-6 md:p-8">
+        <Card className="p-6 md:p-8 shadow-md">
           <div className="flex items-center gap-2">
             <Zap className="h-5 w-5 text-primary" />
             <h2 className="font-bold text-lg">Snel starten</h2>
@@ -185,10 +186,12 @@ export default function HomePage() {
             ))}
           </ul>
         </Card>
-      </section>
+        </section>
+      </Band>
 
       {/* TRUST STRIP */}
-      <section className="mt-10 md:mt-14 grid grid-cols-2 md:grid-cols-4 gap-4">
+      <Band tone="default">
+        <section className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {[
           { icon: ShieldCheck, label: "30+ erkende installateurs" },
           { icon: CheckCircle2, label: "6% btw automatisch berekend" },
@@ -203,10 +206,15 @@ export default function HomePage() {
             <span className="text-sm font-medium">{label}</span>
           </div>
         ))}
-      </section>
+        </section>
+      </Band>
 
       {/* THREE STEPS */}
-      <section className="mt-14 md:mt-20">
+      <Band tone="muted">
+        <section>
+        <div className="text-xs font-bold tracking-widest text-primary uppercase mb-2">
+          Stap voor stap
+        </div>
         <h2 className="text-2xl md:text-3xl font-bold tracking-tight">
           Hoe het werkt
         </h2>
@@ -237,10 +245,22 @@ export default function HomePage() {
             </Card>
           ))}
         </div>
-      </section>
+        </section>
+      </Band>
 
       {/* CORNERSTONE TOOLS — buying guide + calculator */}
-      <section className="mt-14 md:mt-20 grid md:grid-cols-2 gap-4">
+      <Band tone="default">
+        <div className="text-xs font-bold tracking-widest text-primary uppercase mb-2">
+          Onze tools
+        </div>
+        <h2 className="text-2xl md:text-3xl font-bold tracking-tight">
+          Beslis met cijfers, niet met praatjes
+        </h2>
+        <p className="text-muted-foreground mt-2 max-w-2xl">
+          Onze koopgids en laadkost-calculator helpen u kiezen op basis van
+          uw situatie — geen marketing, alleen feiten.
+        </p>
+        <section className="mt-6 grid md:grid-cols-2 gap-4">
         <Link
           to="/beste-laadpaal"
           className="p-6 rounded-lg border border-border bg-card hover:border-primary/50 transition group"
@@ -277,15 +297,17 @@ export default function HomePage() {
             Open calculator →
           </div>
         </Link>
-      </section>
+        </section>
+      </Band>
 
       {/* VAT CALCULATOR */}
-      <section className="mt-14 md:mt-20">
+      <Band tone="muted">
         <VATCalculator />
-      </section>
+      </Band>
 
       {/* TOP BRANDS */}
-      <Section
+      <Band tone="default">
+        <Section
         title="Toonaangevende laadpaalmerken"
         subtitle="Vergelijk specs en prijzen per merk."
         link={{ href: "/merken", label: "Alle merken" }}
@@ -309,8 +331,10 @@ export default function HomePage() {
           })}
         </div>
       </Section>
+      </Band>
 
       {/* TOP EV MODELS */}
+      <Band tone="muted">
       <Section
         title="Welke laadpaal past bij uw EV?"
         subtitle="Aanbevelingen op basis van laadvermogen en eigenaar-feedback."
@@ -336,8 +360,10 @@ export default function HomePage() {
           })}
         </div>
       </Section>
+      </Band>
 
       {/* TOP GEMEENTEN */}
+      <Band tone="default">
       <Section
         title="Erkende installateurs in uw gemeente"
         subtitle="Vraag offertes aan in uw postcode-gebied."
@@ -362,9 +388,10 @@ export default function HomePage() {
           })}
         </div>
       </Section>
+      </Band>
 
       {/* PREMIE BLOCK */}
-      <section className="mt-14 md:mt-20">
+      <Band tone="accent">
         <Card className="p-6 md:p-8 border-warning/30 bg-warning/5">
           <Pill tone="warning" className="mb-3">
             Stand van zaken 2026
@@ -388,10 +415,14 @@ export default function HomePage() {
             <ArrowRight className="h-4 w-4" />
           </Link>
         </Card>
-      </section>
+      </Band>
 
       {/* FAQ */}
-      <section className="mt-14 md:mt-20">
+      <Band tone="muted">
+        <section>
+        <div className="text-xs font-bold tracking-widest text-primary uppercase mb-2">
+          FAQ
+        </div>
         <h2 className="text-2xl md:text-3xl font-bold tracking-tight">
           Veelgestelde vragen
         </h2>
@@ -408,9 +439,11 @@ export default function HomePage() {
             </details>
           ))}
         </div>
-      </section>
+        </section>
+      </Band>
 
       {/* RECENT GUIDES */}
+      <Band tone="default">
       <Section
         title="Recente gidsen"
         subtitle="Eerlijke, actuele uitleg over laadpalen in Vlaanderen."
@@ -434,16 +467,43 @@ export default function HomePage() {
           ))}
         </div>
       </Section>
+      </Band>
 
       {/* FINAL CTA */}
-      <section className="mt-14 md:mt-20">
+      <Band tone="primary">
         <OfferteCta
           title="Klaar om offertes te ontvangen?"
           subtitle="Vul het formulier in 2 minuten in. We sturen u door naar 3 erkende installateurs in uw gemeente — gratis, vrijblijvend, met 6% btw automatisch berekend."
           cta="Vraag 3 offertes aan"
         />
-      </section>
+      </Band>
     </PageShell>
+  );
+}
+
+// Full-width band wrapper. Constrains content via inner container, paints
+// a background tone, and gives consistent vertical padding so each section
+// reads as a distinct block.
+function Band({
+  tone = "default",
+  children,
+}: {
+  tone?: "default" | "muted" | "hero" | "accent" | "primary";
+  children: React.ReactNode;
+}) {
+  const bgClass = {
+    default: "bg-background",
+    muted: "bg-muted/40",
+    hero: "bg-gradient-to-b from-primary/[0.06] via-background to-background",
+    accent: "bg-warning/5",
+    primary: "bg-primary/5",
+  }[tone];
+  return (
+    <div className={bgClass}>
+      <div className="container max-w-7xl mx-auto px-4 py-12 md:py-16">
+        {children}
+      </div>
+    </div>
   );
 }
 
@@ -459,7 +519,7 @@ function Section({
   children: React.ReactNode;
 }) {
   return (
-    <section className="mt-14 md:mt-20">
+    <section>
       <div className="flex flex-wrap items-end justify-between gap-2">
         <div>
           <h2 className="text-2xl md:text-3xl font-bold tracking-tight">

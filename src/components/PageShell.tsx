@@ -6,7 +6,11 @@ import { Breadcrumbs, type BreadcrumbItem } from "./Breadcrumbs";
 export interface PageShellProps {
   breadcrumbs?: BreadcrumbItem[];
   children: ReactNode;
-  width?: "prose" | "grid";
+  // grid:  centered max-w-7xl container with vertical padding (default)
+  // prose: centered max-w-3xl container for long-form articles
+  // flush: no container — content is rendered edge-to-edge so each
+  //        section can manage its own background + width
+  width?: "prose" | "grid" | "flush";
 }
 
 export function PageShell({
@@ -14,6 +18,16 @@ export function PageShell({
   children,
   width = "grid",
 }: PageShellProps) {
+  if (width === "flush") {
+    return (
+      <div className="min-h-screen flex flex-col bg-background">
+        <SiteHeader />
+        <main className="flex-1">{children}</main>
+        <SiteFooter />
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <SiteHeader />
