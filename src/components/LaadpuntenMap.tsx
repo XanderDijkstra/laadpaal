@@ -52,7 +52,10 @@ function popupHtml(s: ChargingStation): string {
         <span style="background:#eef2f7;color:#0f172a;padding:2px 6px;border-radius:4px">${s.connectors} ${s.connectors === 1 ? "stekker" : "stekkers"}</span>
       </div>
       ${priceLine}
-      <div style="margin-top:8px"><a href="/laadpunten/${escapeHtml(s.gemeenteSlug)}" style="color:#16a34a;font-size:12px;font-weight:600;text-decoration:none">Alle laadpalen in ${escapeHtml(s.gemeenteSlug)} →</a></div>
+      <div style="margin-top:8px;display:flex;flex-direction:column;gap:4px">
+        <a href="/laadpunt/${escapeHtml(s.id)}" style="color:#16a34a;font-size:12px;font-weight:600;text-decoration:none">Meer info, route en alternatieven →</a>
+        <a href="/laadpunten/${escapeHtml(s.gemeenteSlug)}" style="color:#64748b;font-size:11px;text-decoration:none">Alle laadpalen in ${escapeHtml(s.gemeenteSlug)} →</a>
+      </div>
     </div>
   `;
 }

@@ -89,6 +89,24 @@ async function main() {
   for (const slug of data.installationTopics) urls.push(urlEntry(`/installatie/${slug}`, 0.7, "monthly"));
   for (const slug of data.gemeenten) urls.push(urlEntry(`/gemeente/${slug}`, 0.8, "monthly"));
   for (const slug of data.gemeenten) urls.push(urlEntry(`/laadpunten/${slug}`, 0.8, "weekly"));
+
+  // Per-station detail pages
+  try {
+    const stationsRaw = await fs.readFile(
+      path.join(ROOT, "src", "data", "laadpunten.json"),
+      "utf-8",
+    );
+    const stations = JSON.parse(stationsRaw);
+    if (Array.isArray(stations)) {
+      for (const s of stations) {
+        if (s && typeof s.id === "string" && /^[a-z0-9-]+$/.test(s.id)) {
+          urls.push(urlEntry(`/laadpunt/${s.id}`, 0.5, "weekly"));
+        }
+      }
+    }
+  } catch {
+    /* ignore — laadpunten.json may not exist on first run */
+  }
   for (const slug of data.guides) urls.push(urlEntry(`/gids/${slug}`, 0.7, "monthly"));
   for (const slug of data.glossary) urls.push(urlEntry(`/woordenlijst/${slug}`, 0.5, "monthly"));
 

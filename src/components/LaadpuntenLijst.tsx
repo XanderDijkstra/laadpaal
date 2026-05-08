@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import { Link } from "react-router-dom";
 import { ExternalLink, MapPin, Zap } from "lucide-react";
 import { Pill } from "./ui/Pill";
 import { laadpunten, haversine } from "@/data/laadpunten";
@@ -191,7 +192,12 @@ function Row({
           <div className="text-xs text-muted-foreground uppercase tracking-wide">
             {tariff.name}
           </div>
-          <div className="font-semibold">{station.name}</div>
+          <Link
+            to={`/laadpunt/${station.id}`}
+            className="font-semibold hover:text-primary"
+          >
+            {station.name}
+          </Link>
           <div className="text-sm text-muted-foreground mt-1">
             {station.address}
             {station.address ? ", " : ""}

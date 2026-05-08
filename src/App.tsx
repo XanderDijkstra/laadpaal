@@ -8,6 +8,7 @@ import BesteLaadpaalPage from "@/pages/BesteLaadpaalPage";
 import LaadkostCalculatorPage from "@/pages/LaadkostCalculatorPage";
 import LaadpuntenIndexPage from "@/pages/LaadpuntenIndexPage";
 import LaadpuntenGemeentePage from "@/pages/LaadpuntenGemeentePage";
+import LaadpuntDetailPage from "@/pages/LaadpuntDetailPage";
 import MerkenIndexPage from "@/pages/MerkenIndexPage";
 import MerkDetailPage from "@/pages/MerkDetailPage";
 import VergelijkenIndexPage from "@/pages/VergelijkenIndexPage";
@@ -43,6 +44,7 @@ export default function App() {
       <Route path="/laadkost-berekenen" element={<LaadkostCalculatorPage />} />
       <Route path="/laadpunten" element={<LaadpuntenIndexPage />} />
       <Route path="/laadpunten/:slug" element={<LaadpuntenGemeentePage />} />
+      <Route path="/laadpunt/:id" element={<LaadpuntDetailPage />} />
       <Route path="/merken" element={<MerkenIndexPage />} />
       <Route path="/merken/:slug" element={<MerkDetailPage />} />
       <Route path="/vergelijken" element={<VergelijkenIndexPage />} />

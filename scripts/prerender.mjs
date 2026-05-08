@@ -70,6 +70,27 @@ async function collectRoutes() {
   for (const s of installationTopics) routes.push(`/installatie/${s}`);
   for (const s of gemeenten) routes.push(`/gemeente/${s}`);
   for (const s of gemeenten) routes.push(`/laadpunten/${s}`);
+
+  // Per-station detail pages — read ids from laadpunten.json
+  try {
+    const stationsRaw = await fs.readFile(
+      path.join(ROOT, "src", "data", "laadpunten.json"),
+      "utf-8",
+    );
+    const stations = JSON.parse(stationsRaw);
+    if (Array.isArray(stations)) {
+      for (const s of stations) {
+        if (s && typeof s.id === "string" && /^[a-z0-9-]+$/.test(s.id)) {
+          routes.push(`/laadpunt/${s.id}`);
+        }
+      }
+    }
+  } catch (err) {
+    console.warn(
+      "[prerender] kon laadpunten.json niet lezen:",
+      err?.message ?? err,
+    );
+  }
   for (const s of guides) routes.push(`/gids/${s}`);
   for (const s of glossary) routes.push(`/woordenlijst/${s}`);
 
