@@ -145,19 +145,22 @@ function pickConnections(connections) {
   return { maxKw, count, type };
 }
 
-// OCM UsageTypeID — only keep publicly-accessible chargers.
-// 1 Public, 4 Public-Membership, 5 Public-PayAtLocation, 7 Public-NoticeRequired
-const PUBLIC_USAGE_TYPES = new Set([1, 4, 5, 7]);
-// Skip: 2 Private (Restricted), 3 Privately Owned, 6 Private staff/visitors
+// OCM UsageTypeID — drop alleen wat expliciet privé/gerestricteerd is.
+// Alles anders (incl. 0 = Unknown / niet gespecificeerd) houden we.
+//   2  Private (Restricted Access)
+//   3  Privately Owned - Notice Required
+//   6  Private - For Staff/Visitors/Customers
+//   8  Privately Owned - For Staff
+const PRIVATE_USAGE_TYPES = new Set([2, 3, 6, 8]);
 
 function normalizeStation(poi, gemeenten) {
   const a = poi.AddressInfo ?? {};
   const province = a.StateOrProvince ?? "";
   if (!VLAAMS_PROVINCIES.has(province)) return null;
 
-  // Drop private/restricted entries (home chargers, staff parkings, …)
+  // Drop expliciet privé entries (thuisladers, staff parkings, …)
   const usageType = poi.UsageTypeID;
-  if (typeof usageType === "number" && !PUBLIC_USAGE_TYPES.has(usageType)) {
+  if (typeof usageType === "number" && PRIVATE_USAGE_TYPES.has(usageType)) {
     return null;
   }
 
@@ -231,34 +234,14 @@ async function main() {
     `[fetch-laadpunten] ${total} OCM POIs gefetcht, ${kept} bewaard na filter (Vlaanderen, publiek, ≥7 kW)`,
   );
 
-  // ── Stap 1: drop "phantom" coördinaten ────────────────────────────────
-  // OCM-entries zonder echte GPS krijgen vaak het stadscentrum als plaatsvervanger.
-  // Wanneer 8+ verschillende stations exact dezelfde lat/lng delen, is dat
-  // bijna zeker een placeholder en geen 8 echte fysieke laadpunten.
-  const PHANTOM_THRESHOLD = 8;
-  const countByCoord = new Map();
+  // ── Stap 1: dedup per coördinaat (verzamel alle stations op zelfde plek) ─
+  // Coordinaten zijn al afgerond op 4 decimalen (~11 m) in normalizeStation.
+  // Voeg alle stations op dezelfde coord samen tot één marker met cumulatieve
+  // stekkers, max kW, en operator-lijst. Werkt ook voor situaties waar één
+  // fysieke locatie in OCM meermaals voorkomt (één entry per stekker).
+  const merged = new Map();
   for (const s of stations) {
     const k = `${s.lat}|${s.lng}`;
-    countByCoord.set(k, (countByCoord.get(k) ?? 0) + 1);
-  }
-  const phantomKeys = new Set(
-    [...countByCoord.entries()]
-      .filter(([, n]) => n >= PHANTOM_THRESHOLD)
-      .map(([k]) => k),
-  );
-  const real = stations.filter(
-    (s) => !phantomKeys.has(`${s.lat}|${s.lng}`),
-  );
-  console.log(
-    `[fetch-laadpunten] ${stations.length - real.length} phantom-stations gedropt op ${phantomKeys.size} placeholder-coördinaten`,
-  );
-
-  // ── Stap 2: merge stations op zelfde coord+operator ───────────────────
-  // Dezelfde fysieke locatie staat in OCM soms meerdere keren (één per stekker).
-  // Merge ze tot één marker met cumulatief aantal stekkers en max kW.
-  const merged = new Map();
-  for (const s of real) {
-    const k = `${s.lat}|${s.lng}|${s.operator}`;
     const existing = merged.get(k);
     if (!existing) {
       merged.set(k, { ...s });
@@ -276,10 +259,23 @@ async function main() {
       existing.name = s.name;
     }
   }
-  const finalStations = [...merged.values()];
+  const dedup = [...merged.values()];
   console.log(
-    `[fetch-laadpunten] ${real.length - finalStations.length} duplicaten samengevoegd → ${finalStations.length} unieke locaties`,
+    `[fetch-laadpunten] ${stations.length} entries gemerged → ${dedup.length} unieke locaties`,
   );
+
+  // ── Stap 2: drop alleen extreme phantom-coords ───────────────────────
+  // Na dedup is elke locatie 1 marker. Maar als één marker 50+ stekkers heeft,
+  // is dat bijna zeker een placeholder voor "GPS onbekend", niet één station
+  // met 50 plugs. Drop alleen die buitensporige gevallen.
+  const PHANTOM_CONNECTORS = 50;
+  const finalStations = dedup.filter((s) => s.connectors < PHANTOM_CONNECTORS);
+  const dropped = dedup.length - finalStations.length;
+  if (dropped > 0) {
+    console.log(
+      `[fetch-laadpunten] ${dropped} extreme phantom-locaties gedropt (≥${PHANTOM_CONNECTORS} stekkers op één coord)`,
+    );
+  }
 
   const stationsOut = finalStations;
   // Sort: gemeente, dan operator, dan id
