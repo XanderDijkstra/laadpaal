@@ -121,7 +121,10 @@ async function fetchPage(offset, limit, country = "BE") {
     headers: { "User-Agent": "laadthuis.be/0.1 (build script)" },
   });
   if (!res.ok) {
-    throw new Error(`OCM fetch failed: ${res.status} ${res.statusText}`);
+    const text = await res.text().catch(() => "");
+    throw new Error(
+      `OCM fetch failed: ${res.status} ${res.statusText}${text ? ` — ${text.slice(0, 200)}` : ""}`,
+    );
   }
   return res.json();
 }
@@ -153,29 +156,52 @@ function pickConnections(connections) {
 //   8  Privately Owned - For Staff
 const PRIVATE_USAGE_TYPES = new Set([2, 3, 6, 8]);
 
+// Counters voor diagnostische output — geeft inzicht in waar entries
+// uitgefilterd worden tijdens normalisatie.
+const dropStats = {
+  wrongProvince: 0,
+  privateUsage: 0,
+  noGemeente: 0,
+  lowPower: 0,
+  badCoords: 0,
+};
+
 function normalizeStation(poi, gemeenten) {
   const a = poi.AddressInfo ?? {};
   const province = a.StateOrProvince ?? "";
-  if (!VLAAMS_PROVINCIES.has(province)) return null;
+  if (!VLAAMS_PROVINCIES.has(province)) {
+    dropStats.wrongProvince += 1;
+    return null;
+  }
 
   // Drop expliciet privé entries (thuisladers, staff parkings, …)
   const usageType = poi.UsageTypeID;
   if (typeof usageType === "number" && PRIVATE_USAGE_TYPES.has(usageType)) {
+    dropStats.privateUsage += 1;
     return null;
   }
 
   const postcode = (a.Postcode ?? "").trim();
   const gemeenteSlug = gemeenteSlugForPostcode(postcode, gemeenten);
-  if (!gemeenteSlug) return null; // outside our gemeente set
+  if (!gemeenteSlug) {
+    dropStats.noGemeente += 1;
+    return null;
+  }
 
   const { maxKw, count, type } = pickConnections(poi.Connections);
-  if (maxKw < 7) return null; // skip low-power household sockets
+  if (maxKw < 7) {
+    dropStats.lowPower += 1;
+    return null;
+  }
 
   // Sanity-check coordinates and round to 4 decimals (~11 m precision).
   // Anything closer than 11m is the same physical site — collapse it later.
   const lat = Number(a.Latitude);
   const lng = Number(a.Longitude);
-  if (!Number.isFinite(lat) || !Number.isFinite(lng)) return null;
+  if (!Number.isFinite(lat) || !Number.isFinite(lng)) {
+    dropStats.badCoords += 1;
+    return null;
+  }
   const roundedLat = Math.round(lat * 10000) / 10000;
   const roundedLng = Math.round(lng * 10000) / 10000;
 
@@ -200,6 +226,11 @@ function normalizeStation(poi, gemeenten) {
 }
 
 async function main() {
+  console.log(
+    `[fetch-laadpunten] OCM_API_KEY ${
+      OCM_KEY ? `present (${OCM_KEY.slice(0, 6)}…${OCM_KEY.slice(-4)})` : "MISSING"
+    }`,
+  );
   const gemeenten = await readGemeenten();
   console.log(`[fetch-laadpunten] ${gemeenten.length} Vlaams gemeenten geladen`);
 
@@ -232,6 +263,9 @@ async function main() {
 
   console.log(
     `[fetch-laadpunten] ${total} OCM POIs gefetcht, ${kept} bewaard na filter (Vlaanderen, publiek, ≥7 kW)`,
+  );
+  console.log(
+    `[fetch-laadpunten] drops: ${dropStats.wrongProvince} ander provincie · ${dropStats.privateUsage} privé · ${dropStats.noGemeente} onbekende gemeente · ${dropStats.lowPower} <7 kW · ${dropStats.badCoords} bad coords`,
   );
 
   // ── Stap 1: dedup per coördinaat (verzamel alle stations op zelfde plek) ─
