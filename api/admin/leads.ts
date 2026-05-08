@@ -1,8 +1,8 @@
 // GET  /api/admin/leads          → list leads (auth-gated)
 // PATCH /api/admin/leads?id=N    → update status / notes
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import { db, ensureSchema } from "../_lib/db";
-import { isAuthenticated } from "../_lib/auth";
+import { db, ensureSchema } from "../_lib/db.js";
+import { isAuthenticated } from "../_lib/auth.js";
 
 const VALID_STATUSES = new Set(["new", "contacted", "matched", "won", "lost", "junk"]);
 
@@ -52,7 +52,7 @@ async function list(req: VercelRequest, res: VercelResponse) {
     params.push(limit);
     const where = conditions.length ? `WHERE ${conditions.join(" AND ")}` : "";
 
-    const rows = await sql.query(
+    const rows = await sql(
       `SELECT id, created_at, status, tier, score,
               postcode, gemeente, voornaam, achternaam, email, telefoon,
               property, ev_status, urgency, vehicle_brand, brand_pref,
@@ -66,7 +66,7 @@ async function list(req: VercelRequest, res: VercelResponse) {
       params,
     );
 
-    const summary = await sql.query(
+    const summary = await sql(
       `SELECT
          COUNT(*)::int AS total,
          COUNT(*) FILTER (WHERE status = 'new')::int AS new,
@@ -115,7 +115,7 @@ async function update(req: VercelRequest, res: VercelResponse) {
 
   try {
     const sql = db();
-    const rows = await sql.query(
+    const rows = await sql(
       `UPDATE leads SET ${sets.join(", ")} WHERE id = $${params.length} RETURNING id, status, notes`,
       params,
     );

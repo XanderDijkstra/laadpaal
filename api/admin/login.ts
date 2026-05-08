@@ -1,6 +1,6 @@
 // Admin login — POST { password } → 200 + Set-Cookie on success.
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import { passwordCorrect, makeSessionCookie } from "../_lib/auth";
+import { passwordCorrect, makeSessionCookie } from "../_lib/auth.js";
 
 export default async function handler(
   req: VercelRequest,

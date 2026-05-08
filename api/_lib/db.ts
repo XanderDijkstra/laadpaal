@@ -27,7 +27,7 @@ export function ensureSchema(): Promise<void> {
   if (schemaPromise) return schemaPromise;
   schemaPromise = (async () => {
     const sql = db();
-    await sql.query(`CREATE TABLE IF NOT EXISTS leads (
+    await sql(`CREATE TABLE IF NOT EXISTS leads (
       id BIGSERIAL PRIMARY KEY,
       created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
       status TEXT NOT NULL DEFAULT 'new',
@@ -60,16 +60,16 @@ export function ensureSchema(): Promise<void> {
       ip TEXT,
       notes TEXT
     )`);
-    await sql.query(
+    await sql(
       `CREATE INDEX IF NOT EXISTS leads_created_at_idx ON leads (created_at DESC)`,
     );
-    await sql.query(
+    await sql(
       `CREATE INDEX IF NOT EXISTS leads_status_idx ON leads (status)`,
     );
-    await sql.query(
+    await sql(
       `CREATE INDEX IF NOT EXISTS leads_tier_idx ON leads (tier)`,
     );
-    await sql.query(
+    await sql(
       `CREATE INDEX IF NOT EXISTS leads_postcode_idx ON leads (postcode)`,
     );
   })().catch((err) => {

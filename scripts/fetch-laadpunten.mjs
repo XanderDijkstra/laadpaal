@@ -194,16 +194,17 @@ function normalizeStation(poi, gemeenten) {
     return null;
   }
 
-  // Sanity-check coordinates and round to 4 decimals (~11 m precision).
-  // Anything closer than 11m is the same physical site — collapse it later.
+  // Sanity-check coordinates and round to 6 decimals (~0.11 m precision).
+  // Fine enough that genuinely distinct stations stay distinct, while still
+  // collapsing exact-duplicate entries from OCM.
   const lat = Number(a.Latitude);
   const lng = Number(a.Longitude);
   if (!Number.isFinite(lat) || !Number.isFinite(lng)) {
     dropStats.badCoords += 1;
     return null;
   }
-  const roundedLat = Math.round(lat * 10000) / 10000;
-  const roundedLng = Math.round(lng * 10000) / 10000;
+  const roundedLat = Math.round(lat * 1000000) / 1000000;
+  const roundedLng = Math.round(lng * 1000000) / 1000000;
 
   const operatorName = poi.OperatorInfo?.Title ?? "";
   const operator = normalizeOperator(operatorName);

@@ -1,7 +1,7 @@
 // Public POST endpoint — receives a form submission from OfferteForm and
 // stores it in the leads table. Schema is auto-created on first request.
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import { db, ensureSchema } from "./_lib/db";
+import { db, ensureSchema } from "./_lib/db.js";
 
 function s(v: unknown): string | null {
   if (typeof v !== "string") return null;
@@ -45,7 +45,7 @@ export default async function handler(
     const ua = (req.headers["user-agent"] as string | undefined) ?? null;
     const ip = clientIp(req);
 
-    const result = await sql.query(
+    const result = await sql(
       `INSERT INTO leads (
         postcode, gemeente, property, ev_status, urgency, age_house,
         charger_location, meterkast_distance, electrical_phase, has_solar,
