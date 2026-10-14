@@ -31,9 +31,11 @@ import PrivacyPage from "@/pages/PrivacyPage";
 import VoorwaardenPage from "@/pages/VoorwaardenPage";
 import AdminPage from "@/pages/AdminPage";
 import NotFoundPage from "@/pages/NotFoundPage";
+import { Analytics } from "@/components/Analytics";
 
 export default function App() {
   return (
+    <>
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/offerte" element={<OffertePage />} />
@@ -68,5 +70,7 @@ export default function App() {
       <Route path="/admin" element={<AdminPage />} />
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
+    <Analytics />
+    </>
   );
 }

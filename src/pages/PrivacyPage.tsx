@@ -1,10 +1,11 @@
 import { PlaceholderPage } from "@/components/PlaceholderPage";
+import { CookieSettingsButton } from "@/components/Analytics";
 
 export default function PrivacyPage() {
   return (
     <PlaceholderPage
       pageTitle="Privacybeleid Laadthuis — uw gegevens"
-      metaDescription="Hoe Laadthuis omgaat met uw persoonsgegevens — kort, duidelijk en GDPR-conform. Geen verkoop aan derden, geen tracking-cookies."
+      metaDescription="Hoe Laadthuis omgaat met uw persoonsgegevens — kort, duidelijk en GDPR-conform. Geen verkoop aan derden; Google Analytics alleen na uw toestemming."
       canonicalPath="/privacy"
       breadcrumbs={[{ label: "Home", href: "/" }, { label: "Privacy" }]}
       lede="Kort en duidelijk: welke gegevens we verzamelen, waarvoor we ze gebruiken, en wat uw rechten zijn."
@@ -29,6 +30,24 @@ export default function PrivacyPage() {
         <h2 className="text-xl font-bold tracking-tight">Bewaartijd</h2>
         <p className="mt-2 text-muted-foreground">
           Maximaal 12 maanden, daarna automatisch verwijderd.
+        </p>
+      </section>
+      <section>
+        <h2 className="text-xl font-bold tracking-tight">Cookies en Google Analytics</h2>
+        <p className="mt-2 text-muted-foreground">
+          Alleen als u op &ldquo;Accepteren&rdquo; klikt, gebruiken we Google
+          Analytics (Google Ireland Ltd.) om te meten hoe bezoekers de website
+          gebruiken, zoals welke pagina&rsquo;s bekeken worden. Google plaatst
+          daarvoor de cookies <code>_ga</code> en <code>_ga_*</code>{" "}
+          (bewaartermijn maximaal 2 jaar). Weigert u, dan wordt Google
+          Analytics niet geladen en worden er geen cookies geplaatst. Uw keuze
+          bewaren we lokaal in uw browser.
+        </p>
+        <p className="mt-2 text-muted-foreground">
+          U kunt uw keuze op elk moment wijzigen of uw toestemming intrekken:
+        </p>
+        <p className="mt-3">
+          <CookieSettingsButton />
         </p>
       </section>
       <section>
