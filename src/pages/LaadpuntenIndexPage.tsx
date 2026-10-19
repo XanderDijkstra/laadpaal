@@ -25,12 +25,10 @@ export default function LaadpuntenIndexPage() {
     return acc;
   }, {});
 
-  // Top gemeenten met meeste laadpunten
-  const topGemeenten = [...gemeenten]
-    .map((g) => ({ ...g, count: laadpunten.filter((p) => p.gemeenteSlug === g.slug).length }))
-    .filter((g) => g.count > 0)
-    .sort((a, b) => b.count - a.count)
-    .slice(0, 12);
+  const gemeentenMetLaadpunten = new Set(laadpunten.map((p) => p.gemeenteSlug)).size;
+
+  // Hub: every /laadpunten/:gemeente page, grouped per provincie
+  const PROVINCIES = [...new Set(gemeenten.map((g) => g.provincie))].sort();
 
   return (
     <PageShell
@@ -58,7 +56,7 @@ export default function LaadpuntenIndexPage() {
 
       <header>
         <Pill tone="success" className="mb-2">
-          {laadpunten.length} laadpunten · {topGemeenten.length} gemeenten
+          {laadpunten.length} laadpunten · {gemeentenMetLaadpunten} gemeenten
         </Pill>
         <h1 className="font-heading text-3xl md:text-5xl font-bold tracking-tight">
           Publieke laadpalen in Vlaanderen
@@ -94,21 +92,35 @@ export default function LaadpuntenIndexPage() {
           Iedere gemeente heeft een eigen pagina met postcode-zoeker en
           afstand-berekening.
         </p>
-        <div className="mt-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
-          {topGemeenten.map((g) => (
-            <Link
-              key={g.slug}
-              to={`/laadpunten/${g.slug}`}
-              className="p-3 rounded-md border border-border bg-card hover:border-primary/50 transition flex items-center justify-between text-sm"
-            >
-              <span>
-                <span className="font-medium">{g.name}</span>
-                <span className="text-muted-foreground ml-2 text-xs">
-                  {g.count} laadpunten
-                </span>
-              </span>
-              <ArrowRight className="h-4 w-4 text-primary" />
-            </Link>
+        <div className="mt-6 space-y-6">
+          {PROVINCIES.map((prov) => (
+            <div key={prov}>
+              <h3 className="font-semibold">{prov}</h3>
+              <div className="mt-2 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
+                {gemeenten
+                  .filter((g) => g.provincie === prov)
+                  .map((g) => ({
+                    ...g,
+                    count: laadpunten.filter((p) => p.gemeenteSlug === g.slug).length,
+                  }))
+                  .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name))
+                  .map((g) => (
+                    <Link
+                      key={g.slug}
+                      to={`/laadpunten/${g.slug}`}
+                      className="p-3 rounded-md border border-border bg-card hover:border-primary/50 transition flex items-center justify-between text-sm"
+                    >
+                      <span>
+                        <span className="font-medium">{g.name}</span>
+                        <span className="text-muted-foreground ml-2 text-xs">
+                          {g.count} laadpunten
+                        </span>
+                      </span>
+                      <ArrowRight className="h-4 w-4 text-primary" />
+                    </Link>
+                  ))}
+              </div>
+            </div>
           ))}
         </div>
         <Link

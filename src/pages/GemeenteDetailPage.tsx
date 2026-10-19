@@ -20,18 +20,28 @@ export default function GemeenteDetailPage() {
   const g = gemeenten.find((x) => x.slug === slug);
   if (!g) return <NotFoundPage />;
 
-  const neighbors = gemeenten
-    .filter((x) => x.provincie === g.provincie && x.slug !== g.slug)
-    .slice(0, 5);
+  // All other gemeenten in the same provincie, largest first — every
+  // gemeente page links to its whole provincie cluster.
+  const provincieGemeenten = gemeenten
+    .filter((x) => x.provincie === g.provincie)
+    .sort((a, b) => b.population - a.population);
+  const neighbors = provincieGemeenten.filter((x) => x.slug !== g.slug);
+  const populationRank =
+    provincieGemeenten.findIndex((x) => x.slug === g.slug) + 1;
   const topGuides = topGuidesForGemeente();
   const recommended = recommendedChargersForGemeente();
-  const publicStationCount = laadpunten.filter(
-    (p) => p.gemeenteSlug === g.slug,
-  ).length;
+  const stations = laadpunten.filter((p) => p.gemeenteSlug === g.slug);
+  const publicStationCount = stations.length;
+  const dcStationCount = stations.filter((s) => s.type !== "AC").length;
+  const maxStationKw = stations.reduce((m, s) => Math.max(m, s.maxKw), 0);
+  const postcodeLabel =
+    g.postcodes.length === 1
+      ? `postcode ${g.postcodes[0]}`
+      : `postcodes ${g.postcodes.join(", ")}`;
 
   usePageMeta({
-    title: `Laadpaal installateur ${g.name} — gratis offertes`,
-    description: `Erkende laadpaal-installateurs in ${g.name} (${g.provincie}). Vergelijk gratis 3 offertes, profiteer van 6% btw en eventuele lokale premies.`,
+    title: `Laadpaal installateur ${g.name} (${g.postcodes[0]}) — gratis offertes`,
+    description: `Laadpaal laten plaatsen in ${g.name} (${g.provincie}, ${g.postcodes.length === 1 ? "postcode" : "postcodes"} ${g.postcodes.slice(0, 3).join(", ")}${g.postcodes.length > 3 ? " …" : ""})? ${publicStationCount} ${publicStationCount === 1 ? "publiek laadpunt" : "publieke laadpunten"}, netbeheerder ${g.netbeheerder}. Vergelijk 3 gratis offertes.`,
     canonical: `${SITE.url}/gemeente/${g.slug}`,
   });
 
@@ -58,9 +68,17 @@ export default function GemeenteDetailPage() {
           Laadpaal-installateurs in {g.name}
         </h1>
         <p className="text-base md:text-lg text-muted-foreground mt-3 border-l-4 border-primary pl-4">
-          {g.name} telt {formatNumber(g.population)} inwoners en ligt in{" "}
-          {g.provincie}. Hier vindt u alles voor uw thuislaadpaal: lokale info,
-          richtprijzen en een directe match met erkende installateurs.
+          {g.name} telt ongeveer {formatNumber(g.population)} inwoners ({postcodeLabel})
+          en is daarmee de{" "}
+          {populationRank === 1 ? "grootste" : `${populationRank}e grootste`} van de{" "}
+          {provincieGemeenten.length} gemeenten in {g.provincie} die Laadthuis
+          behandelt.
+          Netbeheerder is {g.netbeheerder}.{" "}
+          {publicStationCount > 0
+            ? `In onze databank ${publicStationCount === 1 ? "staat 1 publieke laadlocatie" : `staan ${publicStationCount} publieke laadlocaties`} in ${g.name}${dcStationCount > 0 ? `, waarvan ${dcStationCount} met DC-snelladen` : ""}, tot ${maxStationKw} kW.`
+            : `In onze databank staan nog geen publieke laadlocaties in ${g.name}.`}{" "}
+          Hieronder vindt u lokale info, populaire laadpalen en een directe
+          match met erkende installateurs.
         </p>
       </header>
 
@@ -175,7 +193,9 @@ export default function GemeenteDetailPage() {
 
       {neighbors.length > 0 ? (
         <section className="mt-10">
-          <h2 className="text-xl font-bold tracking-tight">Nabijgelegen gemeenten</h2>
+          <h2 className="text-xl font-bold tracking-tight">
+            Andere gemeenten in {g.provincie}
+          </h2>
           <div className="mt-3 flex flex-wrap gap-2">
             {neighbors.map((n) => (
               <Link
@@ -187,6 +207,18 @@ export default function GemeenteDetailPage() {
               </Link>
             ))}
           </div>
+          <p className="mt-4 text-sm">
+            <Link to="/gemeente" className="text-primary hover:underline">
+              Alle gemeenten in Vlaanderen →
+            </Link>{" "}
+            <span className="text-muted-foreground">·</span>{" "}
+            <Link
+              to={`/laadpunten/${g.slug}`}
+              className="text-primary hover:underline"
+            >
+              Publieke laadpalen in {g.name} →
+            </Link>
+          </p>
         </section>
       ) : null}
 

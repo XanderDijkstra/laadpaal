@@ -1,0 +1,1946 @@
+{
+ "/": {
+  "hash": "ca7c488e8149ac5bbf168289067841ed867a8ac6",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/offerte": {
+  "hash": "b42b99ef8b5dc711ab185a21183070d95e237328",
+  "lastmod": "2026-04-29T13:40:21Z"
+ },
+ "/beste-laadpaal": {
+  "hash": "a31e31335f5499de9c90756f8dbbff1a9db6ae6f",
+  "lastmod": "2026-05-07T11:42:46Z"
+ },
+ "/laadkost-berekenen": {
+  "hash": "477ab702fca8845ea93e1dc2463111837754632f",
+  "lastmod": "2026-05-07T11:42:46Z"
+ },
+ "/laadpunten": {
+  "hash": "73554145bc0c7d75eb4e90d270efc8302e0d5ef7",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/laadpalen": {
+  "hash": "02c3ce14ab3f9fc43d9eb8b7d44144e47b0528c5",
+  "lastmod": "2026-05-07T11:42:46Z"
+ },
+ "/vergelijken": {
+  "hash": "bd4eb8b7b1cca719a45f1ae455cbed705444de9e",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken": {
+  "hash": "7f3f5eaa52bd35726839229b89287dd27dd7a88c",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken": {
+  "hash": "060f0ce5b3115563fee0360f69a1f7bdf46673e9",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/auto": {
+  "hash": "65fc416a68e80c42c7b0c0c092b2fd9a66803cb5",
+  "lastmod": "2026-05-07T11:42:46Z"
+ },
+ "/installatie": {
+  "hash": "4c53675a7aac3129e427b20070c718ed7d3f3f23",
+  "lastmod": "2026-05-06T17:44:10Z"
+ },
+ "/gemeente": {
+  "hash": "3bf195ea7f55411c1a3cda04923bd18aa172dcfe",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/gids": {
+  "hash": "12ac86e657410e9c9b0c19dc7f9e4d7c83080eb0",
+  "lastmod": "2026-05-06T17:44:10Z"
+ },
+ "/woordenlijst": {
+  "hash": "3ce7096f451d9ec87c7ef95d5a027ffbee663cfe",
+  "lastmod": "2026-04-29T13:40:21Z"
+ },
+ "/over-ons": {
+  "hash": "29a290c15b3bbec3daafdf65e843d771f7cce2fe",
+  "lastmod": "2026-05-07T11:17:53Z"
+ },
+ "/voor-installateurs": {
+  "hash": "36fa4b7b5267bc1d0727c7522766c8ad639d13d3",
+  "lastmod": "2026-05-06T18:28:05Z"
+ },
+ "/contact": {
+  "hash": "0af5a41c05db20467862c2bb40f45a7a9609d46a",
+  "lastmod": "2026-05-06T18:28:05Z"
+ },
+ "/privacy": {
+  "hash": "4c2224c369d426ebe02c0bd659a048bd85c39da8",
+  "lastmod": "2026-10-14T14:39:46Z"
+ },
+ "/voorwaarden": {
+  "hash": "571005f5f33fbc0053ee88b100b7752475386b22",
+  "lastmod": "2026-05-07T11:17:53Z"
+ },
+ "/laadpalen/zaptec-go": {
+  "hash": "e1cedae795cbf1b7473d7cbdb6d82f9925209d9d",
+  "lastmod": "2026-05-07T11:42:46Z"
+ },
+ "/laadpalen/zaptec-go-2": {
+  "hash": "0c0ec9f3ed6d2692bac91bf5e7c3c0c905dabfdf",
+  "lastmod": "2026-05-07T11:42:46Z"
+ },
+ "/laadpalen/zaptec-pro": {
+  "hash": "e952600a914613aed1609ba5dd764c80afb60802",
+  "lastmod": "2026-05-07T11:42:46Z"
+ },
+ "/laadpalen/easee-charge-up": {
+  "hash": "a1f9c22b4cb3c99afb92ed3ee7cfc9825eccb504",
+  "lastmod": "2026-05-07T11:42:46Z"
+ },
+ "/laadpalen/easee-charge-core": {
+  "hash": "848edbe0c12fbdd2cfedbd4c03c4405840acb07d",
+  "lastmod": "2026-05-07T11:42:46Z"
+ },
+ "/laadpalen/easee-charge-max": {
+  "hash": "b92934d43c4ad78106caa1c9c658618458ddfa38",
+  "lastmod": "2026-05-07T11:42:46Z"
+ },
+ "/laadpalen/wallbox-pulsar-plus": {
+  "hash": "43263f2f8719bb99c870b182f3a3a54bd04cde04",
+  "lastmod": "2026-05-07T11:42:46Z"
+ },
+ "/laadpalen/wallbox-copper-sb": {
+  "hash": "ee4ead27b67fbd2b380cfb674767416bc4f5997a",
+  "lastmod": "2026-05-07T11:42:46Z"
+ },
+ "/laadpalen/alfen-eve-single-pro-line": {
+  "hash": "3c3d69a64cf3b8245d21b0034d460393121ecf4c",
+  "lastmod": "2026-05-07T11:42:46Z"
+ },
+ "/laadpalen/alfen-eve-double-pro-line": {
+  "hash": "88cf5b994085b213a5ef20df087a2ab771da9188",
+  "lastmod": "2026-05-07T11:42:46Z"
+ },
+ "/laadpalen/peblar-home": {
+  "hash": "5d8e5b1a3c3ba924b75bede32238d4604718bcfc",
+  "lastmod": "2026-05-07T11:42:46Z"
+ },
+ "/laadpalen/peblar-business": {
+  "hash": "a3c3752489af06260e816b12e6cf51bec7760a89",
+  "lastmod": "2026-05-07T11:42:46Z"
+ },
+ "/laadpalen/smappee-ev-wall": {
+  "hash": "64d383e79bbddf1a9bf3f748877f1b304582703e",
+  "lastmod": "2026-05-07T11:42:46Z"
+ },
+ "/laadpalen/tesla-wall-connector": {
+  "hash": "07962fa1866cc791cf53e7a45afbf034a88b78b0",
+  "lastmod": "2026-05-07T11:42:46Z"
+ },
+ "/laadpalen/abb-terra-ac-w22": {
+  "hash": "8c6d27c06ce736961b111b090bec57dae530fe5e",
+  "lastmod": "2026-05-07T11:42:46Z"
+ },
+ "/laadpalen/abb-terra-ac-w11": {
+  "hash": "74904758e3d5ef00837cceac5ce123285701a549",
+  "lastmod": "2026-05-07T11:42:46Z"
+ },
+ "/laadpalen/schneider-evlink-wallbox-g4": {
+  "hash": "62957eb625b570f8a0739c0c5c00e629ca9e3985",
+  "lastmod": "2026-05-07T11:42:46Z"
+ },
+ "/laadpalen/schneider-evlink-home": {
+  "hash": "37c3af07300260859e252d41beb6d2d6c1f1dfb8",
+  "lastmod": "2026-05-07T11:42:46Z"
+ },
+ "/laadpalen/webasto-pure": {
+  "hash": "0cd82da36b237212368cd7fadeffa125801b0f90",
+  "lastmod": "2026-05-07T11:42:46Z"
+ },
+ "/laadpalen/webasto-live-plus": {
+  "hash": "2a2ce220a3de70416731a6bc3635c822f85aac8b",
+  "lastmod": "2026-05-07T11:42:46Z"
+ },
+ "/laadpalen/webasto-turbodx": {
+  "hash": "6235b0eef96820a5a43766cf5fbe136fb9d9c9d4",
+  "lastmod": "2026-05-07T11:42:46Z"
+ },
+ "/laadpalen/keba-kecontact-p30": {
+  "hash": "47cfdfee1b08ba6101b56224725c86f8b46b3b6f",
+  "lastmod": "2026-05-07T11:42:46Z"
+ },
+ "/laadpalen/keba-kecontact-p40": {
+  "hash": "7120b36dbc757c6e7f3e488180d7e98d1cd71fee",
+  "lastmod": "2026-05-07T11:42:46Z"
+ },
+ "/laadpalen/mennekes-amtron-compact-2s": {
+  "hash": "61de7ecafc53a26930085f71f71eb5bc86afe26e",
+  "lastmod": "2026-05-07T11:42:46Z"
+ },
+ "/laadpalen/mennekes-amtron-charge-control": {
+  "hash": "7141ce373ff8acbcf0b67be1ef1dd19881320bd5",
+  "lastmod": "2026-05-07T11:42:46Z"
+ },
+ "/laadpalen/evbox-elvi": {
+  "hash": "0d52eed725e2284ca93ae90934d7e6e8e4545b11",
+  "lastmod": "2026-05-07T11:42:46Z"
+ },
+ "/laadpalen/evbox-liviqo": {
+  "hash": "67f8f4e0c0736adaba6962e998f023cc03651ed1",
+  "lastmod": "2026-05-07T11:42:46Z"
+ },
+ "/laadpalen/hager-witty-start": {
+  "hash": "2f63ae762a3b50221c378a22187839fe38e090ec",
+  "lastmod": "2026-05-07T11:42:46Z"
+ },
+ "/laadpalen/hager-witty-park": {
+  "hash": "3be9f75b0e5637987d23f8633194a27a5d63728d",
+  "lastmod": "2026-05-07T11:42:46Z"
+ },
+ "/laadpalen/heidelberg-energy-control": {
+  "hash": "3044408fcc1b91063d14867a317295cb96d2bf23",
+  "lastmod": "2026-05-07T11:42:46Z"
+ },
+ "/laadpalen/heidelberg-home-eco": {
+  "hash": "02d308e093a95f81a13061884521a69ca6c6bdb9",
+  "lastmod": "2026-05-07T11:42:46Z"
+ },
+ "/laadpalen/ohme-home-pro": {
+  "hash": "a787681088b2f77a6398a813e5b05f47f93b6db6",
+  "lastmod": "2026-05-07T11:42:46Z"
+ },
+ "/laadpalen/ohme-epod": {
+  "hash": "672dc1090c0f88681dfd25781a4d0f2d28d1f0a1",
+  "lastmod": "2026-05-07T11:42:46Z"
+ },
+ "/laadpalen/go-e-charger-gemini-22": {
+  "hash": "d9b918166c314b47cd57beb0516555f6eb3be1be",
+  "lastmod": "2026-05-07T11:42:46Z"
+ },
+ "/laadpalen/go-e-charger-gemini-flex": {
+  "hash": "a122a1f9f49f59b060ee7b18206f882efcad06b6",
+  "lastmod": "2026-05-07T11:42:46Z"
+ },
+ "/laadpalen/myenergi-zappi": {
+  "hash": "aa562808dd8404161f96fb099e834bcd09da6644",
+  "lastmod": "2026-05-07T11:42:46Z"
+ },
+ "/merken/zaptec": {
+  "hash": "e4785957d65559541a85715f83e15dacaa98c489",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken/easee": {
+  "hash": "6c6a650c08d83759480232728316814233155604",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken/wallbox": {
+  "hash": "6246a9c034037dac180fad3f1fa99f2e99d2d0f0",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken/alfen": {
+  "hash": "b994ef853ab5bd9b19cfe2da179cac8a0a7c04f8",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken/peblar": {
+  "hash": "7fbb95e8f08d1c946861712a0d368953a9e35d97",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken/smappee": {
+  "hash": "482dee5ee4539fc12391ef6fd71e68e80b3ba833",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken/tesla": {
+  "hash": "b35cdd54afbf04a96a339132d707f0fa1bb9c9c6",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken/myenergi": {
+  "hash": "d4141d25f5ba26d50dfcad182766661fd4ad74a4",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken/abb": {
+  "hash": "6456c5d6f6457ab8b3fbad4738ce05225abeb9ea",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken/schneider": {
+  "hash": "756fd5f4a8559a1c55bef0d8cc3186e52ddeb841",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken/webasto": {
+  "hash": "0dc188cc768a37b8cc01b1f127c8aa220643d546",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken/keba": {
+  "hash": "ae2aa9ebfbc1dbabfe0bfc7da03a65bb5cfd1dbe",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken/mennekes": {
+  "hash": "c8d72396f455e3a40b51c88f113fb1b0f2772790",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken/evbox": {
+  "hash": "1a30d893384593732a09b66e009849813c2e5dde",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken/hager": {
+  "hash": "dbf8e01b7517f6a6cfef90499357e33b6554baa2",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken/heidelberg": {
+  "hash": "c5e96bbc85c3b41e89016cfab762a5a77c44e022",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken/ohme": {
+  "hash": "07a42c7b898b212fcee4f61f3039849f4acd9607",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken/go-e": {
+  "hash": "704f0187c2acc0b2cffb01682047d97c04a161db",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/vergelijken/zaptec-go-vs-easee-charge-core": {
+  "hash": "96f3e6c732d4229c092a9ae7c9cc6c64cdbb54bb",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/vergelijken/zaptec-go-vs-zaptec-go-2": {
+  "hash": "d3622fdf494ef59cc55964ef4288e4c7ba0adb29",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/vergelijken/easee-charge-core-vs-charge-max": {
+  "hash": "cc2820ef44ff9e43a2468fb242fa05936ce1eca2",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/vergelijken/zaptec-vs-wallbox": {
+  "hash": "62259d722778d2513ec328c460494da27fa8ac45",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/vergelijken/wallbox-vs-alfen": {
+  "hash": "ab777db7adf644cbe0fa109471e2861b69cd5830",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/vergelijken/peblar-vs-zaptec": {
+  "hash": "ea2a1e1aca5e97fad06726e6e0a5935683f398af",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/vergelijken/tesla-wall-connector-vs-zaptec-go": {
+  "hash": "de3d24c68f2cf7d25f35a3228ac316f433a81010",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/vergelijken/11kw-vs-22kw-laadpaal": {
+  "hash": "8ffbad015c2ace58cd310f6f46fad25b77b32415",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/vergelijken/vaste-kabel-vs-socket": {
+  "hash": "ce2d7170348a36c2411d01d524158a6c7d3de03d",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/vergelijken/smappee-vs-zaptec": {
+  "hash": "2926f4459f1392bb79c0bb0eb6a10b8a54fbf7ff",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/vergelijken/abb-terra-ac-vs-alfen-pro-line": {
+  "hash": "2d2d15ee55a7c003e2bd4ccebc7784bf7aa75bb2",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/vergelijken/keba-p30-vs-zaptec-pro": {
+  "hash": "807f0d79271d143fd60843ca1552619858e59908",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/vergelijken/ohme-home-pro-vs-easee-charge-up": {
+  "hash": "b70bb6d72ce35deca82c39b2ea5981f88ccc5159",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/vergelijken/heidelberg-vs-easee-charge-up": {
+  "hash": "a86aef4119dd618b1ae3581f7d8d8d0a28be69eb",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/vergelijken/go-e-gemini-vs-zaptec-go-2": {
+  "hash": "766e5109eba5f74708ea22202ae30d44acf83749",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/vergelijken/mennekes-amtron-vs-wallbox-pulsar": {
+  "hash": "764deb6b971836ea8e21ab4f5adeb0b50a0ef79f",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/vergelijken/evbox-elvi-vs-easee-charge-core": {
+  "hash": "edba319175fdea202cd04bc3c702fdf766f896e3",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/vergelijken/schneider-evlink-vs-easee-charge-up": {
+  "hash": "b50a82d60527fd919ad8955307672b80a71bb4c2",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/vergelijken/webasto-pure-vs-heidelberg": {
+  "hash": "981b091ad176e6fe96d16ea96e412f3b62b65cbf",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/abb-vs-alfen": {
+  "hash": "2fed3510453430cb428c7a9e92ad56a3a025f2f9",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/abb-vs-easee": {
+  "hash": "ba6f5d7d77bbf491838f1fa56fb8d1f42e1cc3b4",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/abb-vs-evbox": {
+  "hash": "02df0cf9fe3516751b2ff6e47eeb012e2e85fddf",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/abb-vs-go-e": {
+  "hash": "675d1634b501f470e292a3eabd9f392f04ef54b4",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/abb-vs-hager": {
+  "hash": "e3c1ea7837c6b2026f18d61d46fc3244e9f23755",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/abb-vs-heidelberg": {
+  "hash": "678a9c9c12c1bc20a5befcc04cf218ca207dc3c6",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/abb-vs-keba": {
+  "hash": "73d4c934c4050ecbe74c72303544698f68445dbb",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/abb-vs-mennekes": {
+  "hash": "c5fbb930036ed1540a713cee80cf92ba21a283ec",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/abb-vs-myenergi": {
+  "hash": "059682b2059473e6739bd9fbef9f84e677541596",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/abb-vs-ohme": {
+  "hash": "3074a2865fb6dff9b79d2586381b2f2455d52eb1",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/abb-vs-peblar": {
+  "hash": "96a6bb1ca47b8163a16e233334d5dae308d93ef3",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/abb-vs-schneider": {
+  "hash": "3bd7ea3b95cab9759eedca375aaad462dd947a46",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/abb-vs-smappee": {
+  "hash": "fe69c16ca57a82eb246afcd6941619bf902d8157",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/abb-vs-tesla": {
+  "hash": "e3a15c0991f3709f6fa7cad5b174e3d5ae28022c",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/abb-vs-wallbox": {
+  "hash": "efb7c097a533f4126182378ed51c986b5e451a33",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/abb-vs-webasto": {
+  "hash": "407f833895a47dce06908494c300f5947bd94bc0",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/abb-vs-zaptec": {
+  "hash": "d37c4fd4e3413583e6d186d450108f7b170411eb",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/alfen-vs-easee": {
+  "hash": "7c9338953a232b7d457f981575e2062e5caea605",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/alfen-vs-evbox": {
+  "hash": "0e0971c60da49b560a4aeceed89a40f7736cb635",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/alfen-vs-go-e": {
+  "hash": "ef61972fb22a2e309e8ac847f668266678d48612",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/alfen-vs-hager": {
+  "hash": "d51e0d32b74d73af80759be86f3299674aba9ee1",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/alfen-vs-heidelberg": {
+  "hash": "434688d9ace166bcfc201717872e7112f63c52fd",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/alfen-vs-keba": {
+  "hash": "eda437533a0870b992a163ded0584ad23f6f0dcc",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/alfen-vs-mennekes": {
+  "hash": "c24fde32c3149c91b582a650c45adb89de669858",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/alfen-vs-myenergi": {
+  "hash": "433ca5ce50c3a0496644e7fa599a0f68eccfab6b",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/alfen-vs-ohme": {
+  "hash": "ab021107211ef371d33baa279f0091e8a3e7d31e",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/alfen-vs-peblar": {
+  "hash": "d832a5763d7521e07f582a892ee4684cf3c342c5",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/alfen-vs-schneider": {
+  "hash": "42a78e57a41130e441cd282b6a933757d0b5cd1d",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/alfen-vs-smappee": {
+  "hash": "d831ae4bac99828b370807f5541c89614c35021c",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/alfen-vs-tesla": {
+  "hash": "95418d3ed338e0a85357914d549ccc0c307bce91",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/alfen-vs-wallbox": {
+  "hash": "f701ec6970c73662cd24fa76186e1cfe1d476bbc",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/alfen-vs-webasto": {
+  "hash": "7346e8c763e2b9763df421405f7491650dbc1f0b",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/alfen-vs-zaptec": {
+  "hash": "77b9b824d94bbaed1cc1f6f95abb41439d18a9a4",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/easee-vs-evbox": {
+  "hash": "736e13f3a21b5d3874393729fb433021b5aca1c5",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/easee-vs-go-e": {
+  "hash": "75d180673ce9b856fc67c924dff20e59b4931539",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/easee-vs-hager": {
+  "hash": "76fa50d8835a7f3838a45825eca0bc4279249d5e",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/easee-vs-heidelberg": {
+  "hash": "ccf5e0ee44030f888565f7b8de79655d8e59dbfa",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/easee-vs-keba": {
+  "hash": "fd9a6222d71219652fc4b86ed8293b87af4a7fd4",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/easee-vs-mennekes": {
+  "hash": "838e2165fde6a104dd6f221598f7249a11ddde4e",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/easee-vs-myenergi": {
+  "hash": "1c8b9e994936b2890c5c8aa7fe3d745f11dbd6cb",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/easee-vs-ohme": {
+  "hash": "f33b46cad1ef0a875be586329e1478a302a39cea",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/easee-vs-peblar": {
+  "hash": "a3517984ec5212014b222942af9ff1a241e166ad",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/easee-vs-schneider": {
+  "hash": "8c20d64013d4e98568a154318e51c3c4b27de17f",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/easee-vs-smappee": {
+  "hash": "16b35064d206be1417eaa86e315839b6fd57bea6",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/easee-vs-tesla": {
+  "hash": "c3aa8bab636fbedf01bfc3d5f02c7bf22573f65f",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/easee-vs-wallbox": {
+  "hash": "8659cb63e721dc463303ea39e7571246dc4a458a",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/easee-vs-webasto": {
+  "hash": "d485a062f0367fc33affb3865a96e7e715d70821",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/easee-vs-zaptec": {
+  "hash": "ce572e6219446756b46831f888f84d22391f7fc6",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/evbox-vs-go-e": {
+  "hash": "b7bfa4341825437d50ad6113c2e7f5b84a2ff150",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/evbox-vs-hager": {
+  "hash": "f253949ffa6f68ca114e5822d33a69e87c2c9d9e",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/evbox-vs-heidelberg": {
+  "hash": "0a2040842faafb764a56139038e738133b612c55",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/evbox-vs-keba": {
+  "hash": "732d92e0c6d69b0b5da98154f417230e48b8d1d4",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/evbox-vs-mennekes": {
+  "hash": "8aedf16d2f3469f714c202c8ebf873244a371fc7",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/evbox-vs-myenergi": {
+  "hash": "e1f2fce27616c2a75d63428c1d5fcb15f38e9cc9",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/evbox-vs-ohme": {
+  "hash": "c4cd4cbe9d523b640225b859c626bef87966fa1f",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/evbox-vs-peblar": {
+  "hash": "640af8d36e175125ef322613db3577e7f595db21",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/evbox-vs-schneider": {
+  "hash": "b8d9382c4bc250d1f491f01f7b5dd9b5fcda0ca2",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/evbox-vs-smappee": {
+  "hash": "f289752791d1151a09337f9eb421025301c6befb",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/evbox-vs-tesla": {
+  "hash": "238bce10a5f134a1fc508ea9f26e024b587dc9df",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/evbox-vs-wallbox": {
+  "hash": "afcc0d167238f26553af31af34012a9df8aa56a9",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/evbox-vs-webasto": {
+  "hash": "c7e635625b5faeffb890ea5738b6db264b98f496",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/evbox-vs-zaptec": {
+  "hash": "06606f09e58eac26e2b42d188eba0bf537c7867d",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/go-e-vs-hager": {
+  "hash": "1258b8984bb8ec99d5f6ad9baa68200b84cf73c5",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/go-e-vs-heidelberg": {
+  "hash": "560bc5c49598c6185f849fcfabb3e7d34294f83b",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/go-e-vs-keba": {
+  "hash": "0ff99356fbe31474fb558a58670b95caa86abbe1",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/go-e-vs-mennekes": {
+  "hash": "09b1feb4e7e2605d417f5f37fe69b634d8a4b918",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/go-e-vs-myenergi": {
+  "hash": "9e2177a173da10dc524e162fef2b1fc3ccadc8b6",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/go-e-vs-ohme": {
+  "hash": "c0bfcf57512834643c3126413ebf85b8ac830f7f",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/go-e-vs-peblar": {
+  "hash": "ea39349123a0c52a16780fba869b36f68d01f5d3",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/go-e-vs-schneider": {
+  "hash": "027272ac29370efb3acbb0edccf7077df5b77642",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/go-e-vs-smappee": {
+  "hash": "7e769ffd89b36720bbcb4c90afa8260f26cd4014",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/go-e-vs-tesla": {
+  "hash": "7d530e4d9a50fb8961e8499f80cf7f68ef896c62",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/go-e-vs-wallbox": {
+  "hash": "948b280460f22e259c8431337f9291bc00bd0929",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/go-e-vs-webasto": {
+  "hash": "6bd1374b40387b90183036862061f392512a0ec5",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/go-e-vs-zaptec": {
+  "hash": "24ae06c486b0565084da1aa300fc86c100e3f03a",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/hager-vs-heidelberg": {
+  "hash": "0a754deee9cd2b48bef8d348041f080e3048c7f9",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/hager-vs-keba": {
+  "hash": "257981ff77a3fd16f48a937ff997e23917f27ce0",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/hager-vs-mennekes": {
+  "hash": "2aba643c34a786d8450f7e73a8bf71033cf9044c",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/hager-vs-myenergi": {
+  "hash": "d1416d69f42c41b27c5eda0fcef915b866e5d9fe",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/hager-vs-ohme": {
+  "hash": "f9acdab9cf145b81e51f6d21a06321130a173282",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/hager-vs-peblar": {
+  "hash": "665d09eee4d77d287b4b8ef7462389c7c9467346",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/hager-vs-schneider": {
+  "hash": "3238f2b17f6d6b92ff726c90d1bcd8df1d8f9aa2",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/hager-vs-smappee": {
+  "hash": "a894a83eb2de476f6b42e781288e4b48f3150e97",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/hager-vs-tesla": {
+  "hash": "1c13c348b3fb31186440a47a7bbefdde512c79e9",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/hager-vs-wallbox": {
+  "hash": "597f0786777b57b717b05ebeeec701e08edb1030",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/hager-vs-webasto": {
+  "hash": "37344d10a9098547acdaf32a2d1284af0ca98dd1",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/hager-vs-zaptec": {
+  "hash": "cb2c404dfcd7833110c4de6e8ca190bb4c03a478",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/heidelberg-vs-keba": {
+  "hash": "a28360c574721ad10f2bb24d8898da44cfdbb9fc",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/heidelberg-vs-mennekes": {
+  "hash": "e97b2b74850520e6667a3c51d23b3e8d4d75ac74",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/heidelberg-vs-myenergi": {
+  "hash": "cce366401bc64f2d68950a609a497c7686ab9789",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/heidelberg-vs-ohme": {
+  "hash": "de9a6f5d10e9204b7ad0eeb390318cb73be6d647",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/heidelberg-vs-peblar": {
+  "hash": "990d8ed53cbbc47463118023a997911e608df907",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/heidelberg-vs-schneider": {
+  "hash": "33dd3c9e198169f5f0e286bd45a8e25e0acae00b",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/heidelberg-vs-smappee": {
+  "hash": "6e2a53f559d9e712fcb2d0a8c08716d770dd703f",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/heidelberg-vs-tesla": {
+  "hash": "fd5df83fe9fe976829e1d97805a08e64862c33ce",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/heidelberg-vs-wallbox": {
+  "hash": "d2aa686eaaf0748e32a2665d46f0c660a4cc1dc4",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/heidelberg-vs-webasto": {
+  "hash": "db5a72544b1400e249d99c0b7c8b62f3056fbfbf",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/heidelberg-vs-zaptec": {
+  "hash": "d6d1183d5d011c6be22404067f1f173fe7b0064c",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/keba-vs-mennekes": {
+  "hash": "2c45ba9c47d03f7336a00d3f73ebca3e1740403d",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/keba-vs-myenergi": {
+  "hash": "fbb3e97a435a733f65fe03d6dbdb7c7461629f38",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/keba-vs-ohme": {
+  "hash": "d2caa4799f0b12c65642908df63ea88161ee4694",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/keba-vs-peblar": {
+  "hash": "66e3f1561c5d6c4ebd085a5cc4d10f3ab107861d",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/keba-vs-schneider": {
+  "hash": "3de17c6f73adc338a0608b4d5a288e43d8309137",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/keba-vs-smappee": {
+  "hash": "e799ea6e6ce183c5636ad9edf18940367205b37e",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/keba-vs-tesla": {
+  "hash": "e0c394c75a50705f2d00e66dd15346b2ebab6498",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/keba-vs-wallbox": {
+  "hash": "0eccaf14c5991f6738cb0a3ede5d1752281fa903",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/keba-vs-webasto": {
+  "hash": "9dadf8ffc8dda7426a2319423d7a8b3e5bd51978",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/keba-vs-zaptec": {
+  "hash": "97e138506563141014b3334a23f60744045251f4",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/mennekes-vs-myenergi": {
+  "hash": "bec0e8ab890ce090f7b04f66d5ee0f8282779bee",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/mennekes-vs-ohme": {
+  "hash": "97b3944da149cb4f58eac78223cb5575bde31b5f",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/mennekes-vs-peblar": {
+  "hash": "48ab86252924288c2abac8c410d9c535bda80006",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/mennekes-vs-schneider": {
+  "hash": "ae71f90aeb4c37e5e91a17472b93037087d71db0",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/mennekes-vs-smappee": {
+  "hash": "f94edba9624ec8f19e6274b27ae9dcc789dd2f2c",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/mennekes-vs-tesla": {
+  "hash": "4e66de117d0a4acab58d0d3626e22d9934c24d43",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/mennekes-vs-wallbox": {
+  "hash": "a8c3d5890e1375a51d89c638de1c914297c160ed",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/mennekes-vs-webasto": {
+  "hash": "39527aa3a4ab47599a45764a9f3ffc87dd73b129",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/mennekes-vs-zaptec": {
+  "hash": "b5a902e6574a0d1cb514d6a70b8b1bb1ac24497d",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/myenergi-vs-ohme": {
+  "hash": "850611cb7fdff2b5dfc5b9e0710f2bd6f4a90fc5",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/myenergi-vs-peblar": {
+  "hash": "300cbf8194d6d18209c88d8bc687b7cfc35d5066",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/myenergi-vs-schneider": {
+  "hash": "3d57d4056e4e1b585e6cc0282acae7c87f46ca80",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/myenergi-vs-smappee": {
+  "hash": "44cb57c535464e15e21aa0d2a07e13ada7b3a9db",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/myenergi-vs-tesla": {
+  "hash": "7ba6793906fe40ef27a97e38f278dcecec6658ae",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/myenergi-vs-wallbox": {
+  "hash": "b95fcae95b0a5821fad135fb55f34d3501dbd803",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/myenergi-vs-webasto": {
+  "hash": "30bad32b76e7891484382b5ae8ad9379c2f22fc1",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/myenergi-vs-zaptec": {
+  "hash": "dfa6878637e8986b1371a06851866ad6b43bd494",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/ohme-vs-peblar": {
+  "hash": "8afb06ca4aa51ef34862674a812feb0e495ad135",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/ohme-vs-schneider": {
+  "hash": "6fa9e6ed078fc9aa09742f1f56850af6b3f18016",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/ohme-vs-smappee": {
+  "hash": "4422419752537a87369b34aed9cb27a98ce2b570",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/ohme-vs-tesla": {
+  "hash": "a600adfa1701e5bd5796043ab3eb83a4849072a0",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/ohme-vs-wallbox": {
+  "hash": "aa8d197a8781455e89c4b413be6e75048a14bebb",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/ohme-vs-webasto": {
+  "hash": "3a74989b1d73a09988f668a9cba5acee43949979",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/ohme-vs-zaptec": {
+  "hash": "fd3bd1871c9e00607c7b3c2fd7aa3ef68cd7212c",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/peblar-vs-schneider": {
+  "hash": "6c3196dde543ec63f364294bee5624f850d662a3",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/peblar-vs-smappee": {
+  "hash": "d9af08bd36ee93788aae2a89a4715b3e130462f5",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/peblar-vs-tesla": {
+  "hash": "3f09ebc22a90244e1d47e2c56a9118437056dc84",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/peblar-vs-wallbox": {
+  "hash": "94312d9ba3cdd81a2b27d3b3d9f36912cc16eaf8",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/peblar-vs-webasto": {
+  "hash": "851530ae77519e6bc70db9387d9320208a6e45cf",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/peblar-vs-zaptec": {
+  "hash": "477c99fbd9d037f829c74b1d9816cecee8bfaa8e",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/schneider-vs-smappee": {
+  "hash": "1701ed1e35284547f230ab7c6633ce2f0d31aaca",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/schneider-vs-tesla": {
+  "hash": "2274cff30ab06a2ec52657033f1b02bbe5548436",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/schneider-vs-wallbox": {
+  "hash": "0876e7ca783d7b18e84dd58605f120e36bdddb2d",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/schneider-vs-webasto": {
+  "hash": "5cfcd94eb863722766c2d31d85c63e0f8f124bbe",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/schneider-vs-zaptec": {
+  "hash": "0f053268c681d9c74fe05b94f392324d796bbe25",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/smappee-vs-tesla": {
+  "hash": "1a1e8f6ac2116d1a3f1528b2805750a0ef381d00",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/smappee-vs-wallbox": {
+  "hash": "7241e18fbac8c48d8800dda256fd447a798fc784",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/smappee-vs-webasto": {
+  "hash": "67416b12aa98aa8e94d22b6559271c172f8da939",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/smappee-vs-zaptec": {
+  "hash": "9f26937db2b103faee8ff5e196f5c00611276796",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/tesla-vs-wallbox": {
+  "hash": "79925e4627d58bc039b52265bb7712c24ea85905",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/tesla-vs-webasto": {
+  "hash": "f4ee2df6dc1ab51aa4f1195b7bb3098276013a33",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/tesla-vs-zaptec": {
+  "hash": "0ec55c745d35d041654d8c1cd19304fb0255f22c",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/wallbox-vs-webasto": {
+  "hash": "236307277533cdad861756861a2bd2393337c6f4",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/wallbox-vs-zaptec": {
+  "hash": "1c68bdd714bdc122b703d56f40aa4149bdac46ee",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/merken-vergelijken/webasto-vs-zaptec": {
+  "hash": "ace1b7ec55ad7da93d5ad75137b99f9bbd42c7ac",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/auto/tesla-model-y": {
+  "hash": "f497c79513cc82c61dfa56596af1feb386e0d356",
+  "lastmod": "2026-05-07T11:42:46Z"
+ },
+ "/auto/tesla-model-3": {
+  "hash": "e7c0d9997f956fb0cdd40c5ec32c66691603fc93",
+  "lastmod": "2026-05-07T11:42:46Z"
+ },
+ "/auto/bmw-i4": {
+  "hash": "a5163540a387cb2264840066a3985ba7f4b18479",
+  "lastmod": "2026-05-07T11:42:46Z"
+ },
+ "/auto/bmw-ix1": {
+  "hash": "a10a75dfdcf8996d8a34f7c999b67cab5f983774",
+  "lastmod": "2026-05-07T11:42:46Z"
+ },
+ "/auto/bmw-ix3": {
+  "hash": "3b95dfe639384a288bdcab52abfa2f2a83a65501",
+  "lastmod": "2026-05-07T11:42:46Z"
+ },
+ "/auto/volvo-ex30": {
+  "hash": "cd4fdcc909c787b0c69644eb010cf8138feab776",
+  "lastmod": "2026-05-07T11:42:46Z"
+ },
+ "/auto/volvo-ex40": {
+  "hash": "4cc152e8a01dffaa35726189dbae42960d3eb382",
+  "lastmod": "2026-05-07T11:42:46Z"
+ },
+ "/auto/audi-q4-e-tron": {
+  "hash": "747268e7cb79bf7e1e12d6743c52e3af09f89769",
+  "lastmod": "2026-05-07T11:42:46Z"
+ },
+ "/auto/mercedes-eqa": {
+  "hash": "c741f41e834e7382ae678bfd1b271c9215f774fa",
+  "lastmod": "2026-05-07T11:42:46Z"
+ },
+ "/auto/mercedes-eqb": {
+  "hash": "a4abf60e65e009ec50456386a32a7c2e629ae9c8",
+  "lastmod": "2026-05-07T11:42:46Z"
+ },
+ "/auto/vw-id3": {
+  "hash": "65e6501d44a893b65c197c927c7cfa5c95108dee",
+  "lastmod": "2026-05-07T11:42:46Z"
+ },
+ "/auto/vw-id4": {
+  "hash": "4d57c7e10c24119581249e5e96b3a4488f4b5166",
+  "lastmod": "2026-05-07T11:42:46Z"
+ },
+ "/auto/vw-id5": {
+  "hash": "54eac1f67df58a1ba34bc0a35a1f316342a6427b",
+  "lastmod": "2026-05-07T11:42:46Z"
+ },
+ "/auto/hyundai-ioniq-5": {
+  "hash": "060e29a9961c8e492c548f53fd78cc9ef164c39f",
+  "lastmod": "2026-05-07T11:42:46Z"
+ },
+ "/auto/hyundai-ioniq-6": {
+  "hash": "ece7955ddf606e73c13fcc8c8f91ce02ddf180d1",
+  "lastmod": "2026-05-07T11:42:46Z"
+ },
+ "/auto/kia-ev6": {
+  "hash": "141a8ee090b352e446629ba9b1a4168cb28c0dd6",
+  "lastmod": "2026-05-07T11:42:46Z"
+ },
+ "/auto/kia-ev9": {
+  "hash": "fed7f35b7fb1d0635bf9969492f9009847d32dcd",
+  "lastmod": "2026-05-07T11:42:46Z"
+ },
+ "/auto/skoda-enyaq": {
+  "hash": "02505536046efbbc7552393542341fe17b446904",
+  "lastmod": "2026-05-07T11:42:46Z"
+ },
+ "/auto/renault-megane-e-tech": {
+  "hash": "0df87aa5488e856f306bd524ec520541a7051da8",
+  "lastmod": "2026-05-07T11:42:46Z"
+ },
+ "/auto/peugeot-e-208": {
+  "hash": "533d10fb993e9f6b1587e865642a91f12217f99a",
+  "lastmod": "2026-05-07T11:42:46Z"
+ },
+ "/auto/peugeot-e-2008": {
+  "hash": "78da470d234e7d365a6b561eeef95f782240f462",
+  "lastmod": "2026-05-07T11:42:46Z"
+ },
+ "/auto/polestar-2": {
+  "hash": "76051ac874e2243ddfeaf38bbb653bcac8bed428",
+  "lastmod": "2026-05-07T11:42:46Z"
+ },
+ "/auto/cupra-born": {
+  "hash": "493a03a4cbc434301e097ef0d720935e06067213",
+  "lastmod": "2026-05-07T11:42:46Z"
+ },
+ "/auto/porsche-taycan": {
+  "hash": "649cb9f4968d8d4ea628e44153a2907d6fb508ef",
+  "lastmod": "2026-05-07T11:42:46Z"
+ },
+ "/auto/mg4": {
+  "hash": "097f05a7316fd971bb430d65913f562cf837617f",
+  "lastmod": "2026-05-07T11:42:46Z"
+ },
+ "/installatie/kosten": {
+  "hash": "a7d5b1a0abff8f7c7188aca5034773ca607bcfb8",
+  "lastmod": "2026-05-06T17:44:10Z"
+ },
+ "/installatie/arei-keuring": {
+  "hash": "9a764dced90882920a9b0538650025f0123bfcfc",
+  "lastmod": "2026-05-06T17:44:10Z"
+ },
+ "/installatie/1-fase-vs-3-fase": {
+  "hash": "98f85f1caf5eba298d39e9ab748a15b0706d20fc",
+  "lastmod": "2026-05-06T17:44:10Z"
+ },
+ "/installatie/verzwaring-fluvius": {
+  "hash": "6d2bf8663097e0e5d2f928fa538e367678d4a207",
+  "lastmod": "2026-05-06T17:44:10Z"
+ },
+ "/installatie/kabellengte": {
+  "hash": "f6ea0729b733b96f25f00fad959cd3194bcc9841",
+  "lastmod": "2026-05-06T17:44:10Z"
+ },
+ "/installatie/montagepaal": {
+  "hash": "3ddb20e958b7d579d2db0a381df5a32934849894",
+  "lastmod": "2026-05-06T17:44:10Z"
+ },
+ "/installatie/app-connectiviteit": {
+  "hash": "b2549a37e9f9073b8ec5ba296bf8fbf13a4e27d1",
+  "lastmod": "2026-05-06T17:44:10Z"
+ },
+ "/installatie/ocpp": {
+  "hash": "5ea3b8a73b9fb3f6cde4c0ac675ff616c96dd96d",
+  "lastmod": "2026-05-06T17:44:10Z"
+ },
+ "/installatie/dynamic-load-balancing": {
+  "hash": "d6902772e91ace203c9d16f481b545148b7d3133",
+  "lastmod": "2026-05-06T17:44:10Z"
+ },
+ "/installatie/zonneladen": {
+  "hash": "f3e83cf60132786f6b6d66280ec209281ae091ef",
+  "lastmod": "2026-05-06T17:44:10Z"
+ },
+ "/installatie/v2g": {
+  "hash": "3b1a20a42cf3ab074e92e495e2507543d16c9f64",
+  "lastmod": "2026-05-06T17:44:10Z"
+ },
+ "/installatie/mid-meter": {
+  "hash": "7c9aab573fd3c5ba33d5742a3e6f79ed6f51ad55",
+  "lastmod": "2026-05-06T17:44:10Z"
+ },
+ "/gemeente/antwerpen": {
+  "hash": "b4c0aae2e1bda1b3c3c034a67ae9daccf638cd32",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/gemeente/gent": {
+  "hash": "c62d533923e2fa67b2d6fd08a0bb1fa3e921a1cf",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/gemeente/brugge": {
+  "hash": "37ea92268dbe8eb8a9e3116e1a2a0a16285c9e84",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/gemeente/leuven": {
+  "hash": "2c1f25a3c5a55323676cc7a2affe5051d509f88b",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/gemeente/mechelen": {
+  "hash": "66ebc79b13df3fca7af6adc1494e93e372c585ff",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/gemeente/aalst": {
+  "hash": "c6e9c19814210c8670b6b3dfd5d38778b83e516b",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/gemeente/sint-niklaas": {
+  "hash": "785439c0817901fb02b0ff98f91a95a9f54baab6",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/gemeente/kortrijk": {
+  "hash": "c72ce2b489842327cfb4c21741f984713217dc5f",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/gemeente/hasselt": {
+  "hash": "60c0b6335d2fb9d63fdf4a6018fba73dcb2f3655",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/gemeente/oostende": {
+  "hash": "ac7fe9dc1a54c0a4c00fb904e2d952207c8d836e",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/gemeente/genk": {
+  "hash": "98f8c586687011242c32a81ff08d861ab9cc514a",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/gemeente/roeselare": {
+  "hash": "eca40098c69ee8cd0cb8648e459b4dc68d3f1a89",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/gemeente/turnhout": {
+  "hash": "cecc6596eaeaa870ea152ee94abbb179ad943e5e",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/gemeente/mortsel": {
+  "hash": "0c5a36d35d52e1bba0ac74ff46bca3c907a6ae2b",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/gemeente/lokeren": {
+  "hash": "3a5d950afcccece648e1ecfdfa5442e2cec7235e",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/gemeente/vilvoorde": {
+  "hash": "5baf2d4785ea59de43ac9ce373881d1af18cffbd",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/gemeente/beveren": {
+  "hash": "3a992ab924b995a664b46e8c6d6f082289e34325",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/gemeente/geel": {
+  "hash": "fe2edfa9ebd420a82ac0e46022ab1be227fe2f69",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/gemeente/heist-op-den-berg": {
+  "hash": "debd1bd164d254e716b6758ff655a117cf1161a8",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/gemeente/lier": {
+  "hash": "d00cf9bcd1e58c016432bd9006159b87e70719c3",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/gemeente/tienen": {
+  "hash": "9311597898b1688ab1b7bcf2b1cf6a78c56a3584",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/gemeente/beringen": {
+  "hash": "406aaaeb6cd43b4d53698bb5c669a4a1c2cc3f06",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/gemeente/sint-truiden": {
+  "hash": "bf7fe92d688a9102891cfd9810cf0bc890633909",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/gemeente/knokke-heist": {
+  "hash": "3bf7afcf5b5eff6f821db4c60cfc7fff0106ff0b",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/gemeente/brasschaat": {
+  "hash": "f4c2d5c0c7cf3c76e42dd4751de935c4a5f2325d",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/gemeente/schoten": {
+  "hash": "fea91a7eac1f9ec41ae0514f52ac63590c8de2dd",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/gemeente/deinze": {
+  "hash": "00c034745c7264bc271181a58d91fd0650e21e86",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/gemeente/halle": {
+  "hash": "ce5f609a659a451cf29907f4d3e1a0970a9c33b2",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/gemeente/diest": {
+  "hash": "b2926e2c0e09c72356e254bd3feed210a58f1ec6",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/gemeente/wevelgem": {
+  "hash": "ce75f5416104d9ce6721f35a8d0319aff6d243fa",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/gemeente/waregem": {
+  "hash": "eb22968d746de990d95fd8dc38e83c3f982fa4fb",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/gemeente/tongeren": {
+  "hash": "432a928f337eb3736d8474d6f46061547e153ddb",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/gemeente/lommel": {
+  "hash": "c503bb4c197965e907cf8afc6430237ed87c3d0e",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/gemeente/ninove": {
+  "hash": "fdbdbaf2be4c19e73d489a38c12434ebb5a3da5e",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/gemeente/tervuren": {
+  "hash": "f7bda3b214fb18e62e8f870196e4221a41a9e4e5",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/gemeente/mol": {
+  "hash": "ee70426c6e7eb7e4db385ff46a2005c32e924520",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/gemeente/bilzen": {
+  "hash": "b98dc427b1ab78e454d5c136761bdbcd0198b566",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/gemeente/maasmechelen": {
+  "hash": "f004839488e0cb5e189fca4172c11125ccaaf8a4",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/gemeente/ieper": {
+  "hash": "dee635858f8b79e7d2b2ad7563fc3e8a6b52e9a4",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/gemeente/dendermonde": {
+  "hash": "4c5f76ae4841d83bebe22ef7f02df83f89f2f719",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/gemeente/herentals": {
+  "hash": "9c874a09c8c55cafaf1700777a3851e0c130f711",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/gemeente/asse": {
+  "hash": "a6a57aee2e9cadb15ea88c1fe4cac796c37a8e7e",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/gemeente/diepenbeek": {
+  "hash": "51786c1640b0ef83861bc25556788378216800ae",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/gemeente/boom": {
+  "hash": "37084021e541807c3a309a8efe7b7447d86da1cd",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/gemeente/zaventem": {
+  "hash": "0984728c0ae35da25f43ba4de512e1a498a2b286",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/gemeente/aarschot": {
+  "hash": "3ecf7ef59c4bbf5d2a48a9850c698264a6b4d9d6",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/gemeente/zottegem": {
+  "hash": "3e6e044dbd4398b94d1ea0a356ce9f12a84dd22b",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/gemeente/tessenderlo": {
+  "hash": "fea1ba299e9e4c601afa5d08caba845e0e5a35a8",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/gemeente/houthalen-helchteren": {
+  "hash": "d17dd51dfd41b58aecfaf5199e56c0376bba4629",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/gemeente/wetteren": {
+  "hash": "a3bdc605352cae143e8f25054e18b85f7bb282ff",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/laadpunten/antwerpen": {
+  "hash": "5e9445a1873c94145bf1f8523724aa4bf1ba060c",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/laadpunten/gent": {
+  "hash": "f5c8b25dc20b907cc5e5af774111146972ea8819",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/laadpunten/brugge": {
+  "hash": "5753bcab32b91585448a480cf42dc4f145210bfb",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/laadpunten/leuven": {
+  "hash": "3ffc8471a3f3e18ca7460008a020a56314f22864",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/laadpunten/mechelen": {
+  "hash": "bc9012fd65b556953284faf8afc9137a78ea33ae",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/laadpunten/aalst": {
+  "hash": "a1c92d6e52a11a497fe4cc3ddde536be3512d413",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/laadpunten/sint-niklaas": {
+  "hash": "6b8ddb8961042dc42d71041217f5c5f7eb0c6ff1",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/laadpunten/kortrijk": {
+  "hash": "0ff070c339d43c8af3a227d23ab9be9028745deb",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/laadpunten/hasselt": {
+  "hash": "49c4ee94a5b479ad8202b67b4748225c81fd3603",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/laadpunten/oostende": {
+  "hash": "4f419cc462adf68a671d4c3ecac225339937c481",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/laadpunten/genk": {
+  "hash": "108a08511da34203c0bb0898fd1664831aa3eb84",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/laadpunten/roeselare": {
+  "hash": "b50447c54d67cb752522aea743ff9c33c9de4af9",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/laadpunten/turnhout": {
+  "hash": "3bd909b2067c4e4740c7b2ee2bc0817d22bcb766",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/laadpunten/mortsel": {
+  "hash": "9f9d1673d1861ab8250bf4440022be216978d0de",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/laadpunten/lokeren": {
+  "hash": "e176af844fab0dcd85f5a4102f00a49e9978fe64",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/laadpunten/vilvoorde": {
+  "hash": "eb7d94c235f72223033ec7cd964ce9345f752b40",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/laadpunten/beveren": {
+  "hash": "1c58cae9c0f5b9c653ee80af06ec46c86960200d",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/laadpunten/geel": {
+  "hash": "b88875eae391e7412382e26680a3b86888dc3bca",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/laadpunten/heist-op-den-berg": {
+  "hash": "5c7fd686e5a70a0723dc62caf9fec3e6839a8da7",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/laadpunten/lier": {
+  "hash": "dfb9e47ec461a4b3a1f06f425753d243be0314d5",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/laadpunten/tienen": {
+  "hash": "f22ca44c0dd5c77cfea46ee51dcaec6d1ff1e31e",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/laadpunten/beringen": {
+  "hash": "57c9523faf6648ef259cd840ede43451ac84811a",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/laadpunten/sint-truiden": {
+  "hash": "d010989059f7d0c0489d8e2c629bbed5fe3754f5",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/laadpunten/knokke-heist": {
+  "hash": "c13aa9f951dfeae836dc32dc44b5c91cb1b7ec83",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/laadpunten/brasschaat": {
+  "hash": "5d07a2ae627ede088c031c50add97f651ee71baa",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/laadpunten/schoten": {
+  "hash": "dcc174a510e323abf3f0e85b36e0f0897e4401e6",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/laadpunten/deinze": {
+  "hash": "935831a924f06c2425213a901634ac69b635b94a",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/laadpunten/halle": {
+  "hash": "1d9de4fd37e8384845ca57efcee7841a46085ec0",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/laadpunten/diest": {
+  "hash": "56f05c546073b049d10fa584a471f2b5995d8990",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/laadpunten/wevelgem": {
+  "hash": "b7059acef5ab94187f61e255716dba5a3aabd13e",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/laadpunten/waregem": {
+  "hash": "e8f30f879e872fd3336efa86a2be665d5fee7f72",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/laadpunten/tongeren": {
+  "hash": "ff3d303a13cf97659803e9999394753b3a94ec42",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/laadpunten/lommel": {
+  "hash": "fa06060fc22d52a226945b455b1e0dfb56ef9190",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/laadpunten/ninove": {
+  "hash": "f3657adb596d792668f40a4c1bac57bbbde65875",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/laadpunten/tervuren": {
+  "hash": "4223a50cd2bd01fda394558f7c6cab62854da21e",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/laadpunten/mol": {
+  "hash": "320053ccf06d72c854e4acca5452146d895ff9bd",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/laadpunten/bilzen": {
+  "hash": "32ec9223a40a10a9ca8c72a935db6490a19476c5",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/laadpunten/maasmechelen": {
+  "hash": "c2aea4e2ff4964fa756ae0083233bbcdbe2c267e",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/laadpunten/ieper": {
+  "hash": "ccfb68c7919e267b24d25bd0626c3fe8485ea215",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/laadpunten/dendermonde": {
+  "hash": "d808d0e5c8aec5fff068f73d09526201440fd1c8",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/laadpunten/herentals": {
+  "hash": "0b63b5e050f7d2118e301e16b668117cae37b2a9",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/laadpunten/asse": {
+  "hash": "c63b170bc3085e4d5a8e38de0b0f740ff1065dd5",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/laadpunten/diepenbeek": {
+  "hash": "28034193fa0879658e16390328db819e96c780c1",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/laadpunten/boom": {
+  "hash": "945bf3af3932021f655db0ecb3a574d3acd5bdd7",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/laadpunten/zaventem": {
+  "hash": "90feb86a28ed6150bb73496c7c4e41787ef2e0e8",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/laadpunten/aarschot": {
+  "hash": "fe030d098d11b5f7b4e8f81e9965cfe7ef642002",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/laadpunten/zottegem": {
+  "hash": "30e95effd66bccf829bf7e6c9498b4bec977e7e8",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/laadpunten/tessenderlo": {
+  "hash": "bd95db37993db42b1137bfd67fc9d9735978eb03",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/laadpunten/houthalen-helchteren": {
+  "hash": "5e16ea069d8849476e65953cda0f1a55cdbd6ebd",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/laadpunten/wetteren": {
+  "hash": "05bfe8dbf2eeb8d5157a8e4771e6abe261bf6fb5",
+  "lastmod": "2026-10-19T08:02:53Z"
+ },
+ "/laadpunt/antwerpen-centraal-pr": {
+  "hash": "5b85b8e9bdbf8bcc7d1a1240f437f68e704b1d1e",
+  "lastmod": "2026-05-08T00:25:04Z"
+ },
+ "/laadpunt/antwerpen-meir": {
+  "hash": "e010228732e586df231d40e88a764ebaf4a1249b",
+  "lastmod": "2026-05-08T00:25:04Z"
+ },
+ "/laadpunt/antwerpen-zuid": {
+  "hash": "a920c2231a419b6f3815de95f3a41ed4834d5acf",
+  "lastmod": "2026-05-08T00:25:04Z"
+ },
+ "/laadpunt/antwerpen-linkeroever": {
+  "hash": "8915dd299a9c2b9277d7e8af4c4f2174e94bb634",
+  "lastmod": "2026-05-08T00:25:04Z"
+ },
+ "/laadpunt/antwerpen-luchtbal": {
+  "hash": "6fa2069e7ae2cb3929fd735d0e364a3318e26e8a",
+  "lastmod": "2026-05-08T00:25:04Z"
+ },
+ "/laadpunt/antwerpen-singel": {
+  "hash": "ea8cf74d23bd28bb090f667492f68d78a2a7d11a",
+  "lastmod": "2026-05-08T00:25:04Z"
+ },
+ "/laadpunt/mechelen-vrijbroek": {
+  "hash": "23b4d9a94b8a00d6e0a5ea60ce214f75150272f6",
+  "lastmod": "2026-05-08T00:25:04Z"
+ },
+ "/laadpunt/mechelen-station": {
+  "hash": "500516440f0ae0c50622d0e6cda4fa12bdac92db",
+  "lastmod": "2026-05-08T00:25:04Z"
+ },
+ "/laadpunt/mechelen-nh": {
+  "hash": "8dc80819aa3f99935d730961353b327f8a724d32",
+  "lastmod": "2026-05-08T00:25:04Z"
+ },
+ "/laadpunt/turnhout-grote-markt": {
+  "hash": "1a823d56b8dd89a52fb920d831c857f4f5c22628",
+  "lastmod": "2026-05-08T00:25:04Z"
+ },
+ "/laadpunt/turnhout-e34": {
+  "hash": "437abfa09a06d9c52c1ba8ecc32df2b020f34a44",
+  "lastmod": "2026-05-08T00:25:04Z"
+ },
+ "/laadpunt/geel-markt": {
+  "hash": "26c8d1d12de41bff9fe4d22d10d3aac4a948f65d",
+  "lastmod": "2026-05-08T00:25:04Z"
+ },
+ "/laadpunt/mol-ginderbuiten": {
+  "hash": "a6c9999bb5c7453377d39759dc6d455bb4f351a1",
+  "lastmod": "2026-05-08T00:25:04Z"
+ },
+ "/laadpunt/lier-zimmerplein": {
+  "hash": "063c0e9f3eeb3d4222e7a08dc5074ccd40d3909b",
+  "lastmod": "2026-05-08T00:25:04Z"
+ },
+ "/laadpunt/herentals-grote-markt": {
+  "hash": "08f6743082da61c6291917bf25941da2daece6f7",
+  "lastmod": "2026-05-08T00:25:04Z"
+ },
+ "/laadpunt/mortsel-shopping": {
+  "hash": "f30d579b2128553a6ec9798b4b603f07fe61913f",
+  "lastmod": "2026-05-08T00:25:04Z"
+ },
+ "/laadpunt/brasschaat-bredabaan": {
+  "hash": "a6330d720f335a0275cd61571a472c0fa1f31b88",
+  "lastmod": "2026-05-08T00:25:04Z"
+ },
+ "/laadpunt/schoten-paalplein": {
+  "hash": "65ff0c8f493fe268146d38079f46409799485fd6",
+  "lastmod": "2026-05-08T00:25:04Z"
+ },
+ "/laadpunt/boom-rupel": {
+  "hash": "b4637d8971d6d4c1f412e435a4b13c7710dea8a6",
+  "lastmod": "2026-05-08T00:25:04Z"
+ },
+ "/laadpunt/heist-op-den-berg-statie": {
+  "hash": "ff2e4864327b224dfbca18dbd6b7e7d433b40c85",
+  "lastmod": "2026-05-08T00:25:04Z"
+ },
+ "/laadpunt/gent-sint-pieters": {
+  "hash": "5c228f662a3e0c861cb7a7cb357071b2ab93680c",
+  "lastmod": "2026-05-08T00:25:04Z"
+ },
+ "/laadpunt/gent-zuid": {
+  "hash": "9b248da2f380cb6232c3e805b97d025ea2f93a0c",
+  "lastmod": "2026-05-08T00:25:04Z"
+ },
+ "/laadpunt/gent-flanders-expo": {
+  "hash": "31add1c0ab1f5b1416b199e38636b0190a7b5458",
+  "lastmod": "2026-05-08T00:25:04Z"
+ },
+ "/laadpunt/gent-watersportbaan": {
+  "hash": "ef3905a133fa03a9767bba3afc25694eda32adf0",
+  "lastmod": "2026-05-08T00:25:04Z"
+ },
+ "/laadpunt/gent-uz": {
+  "hash": "e7084df364e83a6625d0560a5691056dcd892ea8",
+  "lastmod": "2026-05-08T00:25:04Z"
+ },
+ "/laadpunt/aalst-tragel": {
+  "hash": "5eb858e5c3c6598fa99a42b41e647567f4b964f6",
+  "lastmod": "2026-05-08T00:25:04Z"
+ },
+ "/laadpunt/aalst-keppestraat": {
+  "hash": "872f33ad1508eff3c8b190d84b3ad25b35b1064b",
+  "lastmod": "2026-05-08T00:25:04Z"
+ },
+ "/laadpunt/sint-niklaas-grote-markt": {
+  "hash": "6e7555a5440d455515f11390d1e029be07e85954",
+  "lastmod": "2026-05-08T00:25:04Z"
+ },
+ "/laadpunt/sint-niklaas-e17": {
+  "hash": "37af6d7188a16cb2c462e3c86eb74e540a6d58ba",
+  "lastmod": "2026-05-08T00:25:04Z"
+ },
+ "/laadpunt/lokeren-station": {
+  "hash": "87e7cc40dd8bc1b83db6e2aacb50fa26877c547e",
+  "lastmod": "2026-05-08T00:25:04Z"
+ },
+ "/laadpunt/beveren-grote-markt": {
+  "hash": "e48460e70728dad7ad7968153da1502b6a7e615c",
+  "lastmod": "2026-05-08T00:25:04Z"
+ },
+ "/laadpunt/dendermonde-grote-markt": {
+  "hash": "5b47982ceb1a707a65f69041996a1b86acc9ccf9",
+  "lastmod": "2026-05-08T00:25:04Z"
+ },
+ "/laadpunt/deinze-markt": {
+  "hash": "ed2ffdbd008afc5601665988e2ec320a38233cd2",
+  "lastmod": "2026-05-08T00:25:04Z"
+ },
+ "/laadpunt/ninove-graanmarkt": {
+  "hash": "2212fc0e64b528a6e00cb48519046beddf560f41",
+  "lastmod": "2026-05-08T00:25:04Z"
+ },
+ "/laadpunt/wetteren-markt": {
+  "hash": "f9ebeeca4bbfeb758e108d21118da2ac0262ef38",
+  "lastmod": "2026-05-08T00:25:04Z"
+ },
+ "/laadpunt/zottegem-markt": {
+  "hash": "c00ff3f0b6413d03bebf7e9955269685d71faa75",
+  "lastmod": "2026-05-08T00:25:04Z"
+ },
+ "/laadpunt/brugge-station": {
+  "hash": "a81d07e0645124bde6aa59c0c0f8614e896f1f49",
+  "lastmod": "2026-05-08T00:25:04Z"
+ },
+ "/laadpunt/brugge-katelijne": {
+  "hash": "e27ca2159e44f2f2d0a0311808ccf0d25b902168",
+  "lastmod": "2026-05-08T00:25:04Z"
+ },
+ "/laadpunt/brugge-canada-square": {
+  "hash": "37ccebe3f1e8d76e9d9125d58d6b7e590713b99a",
+  "lastmod": "2026-05-08T00:25:04Z"
+ },
+ "/laadpunt/kortrijk-grote-markt": {
+  "hash": "40e5624ade64174ba2fedbc801b109ed1b7675a2",
+  "lastmod": "2026-05-08T00:25:04Z"
+ },
+ "/laadpunt/kortrijk-xpo": {
+  "hash": "eb71fa39d0720a215a50f6f408c5176d41f391e1",
+  "lastmod": "2026-05-08T00:25:04Z"
+ },
+ "/laadpunt/oostende-station": {
+  "hash": "3733e23b98e0795c08004941f325af34f6363485",
+  "lastmod": "2026-05-08T00:25:04Z"
+ },
+ "/laadpunt/oostende-zeedijk": {
+  "hash": "be89ab6b59c27c3ebd1514e25a719bb44e0f5b0d",
+  "lastmod": "2026-05-08T00:25:04Z"
+ },
+ "/laadpunt/roeselare-grote-markt": {
+  "hash": "72468522395349b839b686f77a70ddffaef12a3b",
+  "lastmod": "2026-05-08T00:25:04Z"
+ },
+ "/laadpunt/knokke-zeedijk": {
+  "hash": "a83cb142a22650533341937fe60fe60f1b5ea914",
+  "lastmod": "2026-05-08T00:25:04Z"
+ },
+ "/laadpunt/knokke-casino": {
+  "hash": "fd264549cfecc33f000a3f2b1df225eb3cedcc85",
+  "lastmod": "2026-05-08T00:25:04Z"
+ },
+ "/laadpunt/wevelgem-luchthaven": {
+  "hash": "0c7da414700c83ec25fd32017edd4441cc870713",
+  "lastmod": "2026-05-08T00:25:04Z"
+ },
+ "/laadpunt/waregem-expo": {
+  "hash": "be408b94e965c8b211bd66e5556f65c855363d6a",
+  "lastmod": "2026-05-08T00:25:04Z"
+ },
+ "/laadpunt/ieper-grote-markt": {
+  "hash": "b247279acd153d8f6cd350ca870819ec7e3891a8",
+  "lastmod": "2026-05-08T00:25:04Z"
+ },
+ "/laadpunt/hasselt-kapermolen": {
+  "hash": "d455ab8f738b36ef23eabbae91e56c635aac9494",
+  "lastmod": "2026-05-08T00:25:04Z"
+ },
+ "/laadpunt/hasselt-grote-markt": {
+  "hash": "a4c380e11f51d39c86256a80e7dad6a33771152e",
+  "lastmod": "2026-05-08T00:25:04Z"
+ },
+ "/laadpunt/hasselt-corda": {
+  "hash": "f03e797093c479955b7f939daa456dcf4bbd117a",
+  "lastmod": "2026-05-08T00:25:04Z"
+ },
+ "/laadpunt/genk-shopping-1": {
+  "hash": "fa6812fad5d15be7cc6a3a43051714d9594ff053",
+  "lastmod": "2026-05-08T00:25:04Z"
+ },
+ "/laadpunt/genk-c-mine": {
+  "hash": "c6409818fa3e973cea1e4ff9a8c44f12747e1a0a",
+  "lastmod": "2026-05-08T00:25:04Z"
+ },
+ "/laadpunt/tongeren-veemarkt": {
+  "hash": "b841beb9239b4a8b5c464650933987ff1041e516",
+  "lastmod": "2026-05-08T00:25:04Z"
+ },
+ "/laadpunt/sint-truiden-grote-markt": {
+  "hash": "5f9ab7e35952f7b8af7ee6b368d2c4ad1f5683ac",
+  "lastmod": "2026-05-08T00:25:04Z"
+ },
+ "/laadpunt/lommel-de-soeverein": {
+  "hash": "9158a9983eae41b197bba30c65afa7a26e831d3a",
+  "lastmod": "2026-05-08T00:25:04Z"
+ },
+ "/laadpunt/beringen-be-mine": {
+  "hash": "08ade6afc7f343abee3ab9fb69beec0288bf28fb",
+  "lastmod": "2026-05-08T00:25:04Z"
+ },
+ "/laadpunt/maasmechelen-village": {
+  "hash": "0aa5cc83a48c18e3ce4e35816ea05b3f2e79d9c6",
+  "lastmod": "2026-05-08T00:25:04Z"
+ },
+ "/laadpunt/bilzen-markt": {
+  "hash": "d292a217c1c04442842e345d941d81f5cbe15e90",
+  "lastmod": "2026-05-08T00:25:04Z"
+ },
+ "/laadpunt/houthalen-helchteren-grote-baan": {
+  "hash": "49567b8397e86fb52fd9793c10349c1125bd2f2e",
+  "lastmod": "2026-05-08T00:25:04Z"
+ },
+ "/laadpunt/diepenbeek-uhasselt": {
+  "hash": "979e13c90741f9054cf3065cce6450008fe4216b",
+  "lastmod": "2026-05-08T00:25:04Z"
+ },
+ "/laadpunt/tessenderlo-markt": {
+  "hash": "21a9f74abe0d238b1460af001c392ff721198e87",
+  "lastmod": "2026-05-08T00:25:04Z"
+ },
+ "/laadpunt/leuven-vaartkom": {
+  "hash": "e09d9b35847c1a83619bc7d0f706b8c293d3491d",
+  "lastmod": "2026-05-08T00:25:04Z"
+ },
+ "/laadpunt/leuven-philipssite": {
+  "hash": "413518d807c653a111826cdb50651d432484a979",
+  "lastmod": "2026-05-08T00:25:04Z"
+ },
+ "/laadpunt/leuven-uz": {
+  "hash": "55479bb23f086b1241a0089f71f3ead2e2a4764d",
+  "lastmod": "2026-05-08T00:25:04Z"
+ },
+ "/laadpunt/vilvoorde-station": {
+  "hash": "7a408d4d983d840b877a4d25430122f5eb1ea1de",
+  "lastmod": "2026-05-08T00:25:04Z"
+ },
+ "/laadpunt/zaventem-airport": {
+  "hash": "409c9aee36d9893724758482822ebf1dfd5c3944",
+  "lastmod": "2026-05-08T00:25:04Z"
+ },
+ "/laadpunt/halle-grote-markt": {
+  "hash": "8016e7b60a225b4398813ac071dd82eabd5fc29e",
+  "lastmod": "2026-05-08T00:25:04Z"
+ },
+ "/laadpunt/tienen-grote-markt": {
+  "hash": "8d8adf06d6fa6a96cbc58677ef3fda9ed110ca46",
+  "lastmod": "2026-05-08T00:25:04Z"
+ },
+ "/laadpunt/asse-marktplein": {
+  "hash": "08651cae0a1372768a51407232bed42f4818112d",
+  "lastmod": "2026-05-08T00:25:04Z"
+ },
+ "/laadpunt/tervuren-park": {
+  "hash": "5ca0c6ec56272c13d5e16abed072eecbd54d6651",
+  "lastmod": "2026-05-08T00:25:04Z"
+ },
+ "/laadpunt/diest-grote-markt": {
+  "hash": "0ea0092d5f4a91205e03d259fc89caf6de89724e",
+  "lastmod": "2026-05-08T00:25:04Z"
+ },
+ "/laadpunt/aarschot-grote-markt": {
+  "hash": "4278dfeab593224b737aa31d96c4813d4e531061",
+  "lastmod": "2026-05-08T00:25:04Z"
+ },
+ "/gids/laadpaal-premie-2026": {
+  "hash": "cf8ec8bc427893f6ea1c495ce9efeb624135dce2",
+  "lastmod": "2026-05-07T11:42:46Z"
+ },
+ "/gids/6-procent-btw-laadpaal": {
+  "hash": "a1b3de92d3b41a5ad1e97b9f65589fdebae02157",
+  "lastmod": "2026-05-07T11:42:46Z"
+ },
+ "/gids/laadpaal-kosten-totaal": {
+  "hash": "29fb6639f2ae7f9a14ba96e4161a99cfdb60ee85",
+  "lastmod": "2026-05-07T11:42:46Z"
+ },
+ "/gids/1-fase-vs-3-fase-laadpaal": {
+  "hash": "de6a73ba990c652e20c8831b0a90b275054e2cd6",
+  "lastmod": "2026-05-07T11:42:46Z"
+ },
+ "/gids/arei-keuring-laadpaal": {
+  "hash": "91c6fb0a7b6ef42c288193c5b3f31a3de75eed86",
+  "lastmod": "2026-05-07T11:42:46Z"
+ },
+ "/gids/laadpaal-en-zonnepanelen": {
+  "hash": "58a2d6c7d69dde4bfbc236d0b7dd3774c40caaa6",
+  "lastmod": "2026-05-07T11:42:46Z"
+ },
+ "/gids/dynamic-load-balancing": {
+  "hash": "50ba2903bf22afa4764dde0a7263ff0512ed7583",
+  "lastmod": "2026-05-07T11:42:46Z"
+ },
+ "/gids/verzwaring-fluvius-laadpaal": {
+  "hash": "59195d7ea7871dfc4e0ae39cf9372cbdf3971f9c",
+  "lastmod": "2026-05-07T11:42:46Z"
+ },
+ "/gids/capaciteitstarief-laadpaal": {
+  "hash": "94962dbaec3bdb2dd9ed065d2274518556964212",
+  "lastmod": "2026-05-07T11:42:46Z"
+ },
+ "/gids/laadpaal-appartement": {
+  "hash": "42d1a43a448d3e55febbc96c1b851ae6195530a8",
+  "lastmod": "2026-05-07T11:42:46Z"
+ },
+ "/gids/laadpaal-huur": {
+  "hash": "2f1d38574bf925cd8e428767b27ee974bcd1680b",
+  "lastmod": "2026-05-07T11:42:46Z"
+ },
+ "/gids/bedrijfswagen-laadpaal-thuis": {
+  "hash": "e6511dafeb144fc19f83c3b4b9df0ce406875231",
+  "lastmod": "2026-05-07T11:42:46Z"
+ },
+ "/gids/mid-meter-laadpaal": {
+  "hash": "a256cb13f752bee070323491745ab75d50d81cac",
+  "lastmod": "2026-05-07T11:42:46Z"
+ },
+ "/gids/slimme-laadpaal-vs-basis": {
+  "hash": "8516a87ec5348bfc7f0772b78c2e30cb428fc643",
+  "lastmod": "2026-05-07T11:42:46Z"
+ },
+ "/gids/laadpaal-onderhoud": {
+  "hash": "1fe983d703f795505ea97f5c50eb108f7d0daafb",
+  "lastmod": "2026-05-07T11:42:46Z"
+ },
+ "/woordenlijst/type-2-stekker": {
+  "hash": "0e16dfa479cf4750287c5b28f49381c94c17a325",
+  "lastmod": "2026-05-06T17:44:10Z"
+ },
+ "/woordenlijst/ccs-stekker": {
+  "hash": "8ce7e7fae13b55fd4f6cedd4e6213bbe18e2fbab",
+  "lastmod": "2026-05-06T17:44:10Z"
+ },
+ "/woordenlijst/ac-vs-dc-laden": {
+  "hash": "d0569f3b503f35acf51f34464ca3ace51d6879b9",
+  "lastmod": "2026-05-06T17:44:10Z"
+ },
+ "/woordenlijst/kw-vs-kwh": {
+  "hash": "18a03e867b4176c71be9d1102fa5243b5c43293d",
+  "lastmod": "2026-05-06T17:44:10Z"
+ },
+ "/woordenlijst/mid-meter": {
+  "hash": "1f8adad18cd2f6e96ed65447ffb48df4b5a1ea96",
+  "lastmod": "2026-05-06T17:44:10Z"
+ },
+ "/woordenlijst/ocpp": {
+  "hash": "2ee6b56402c90e8f7a94b60bd9296798435b5cfd",
+  "lastmod": "2026-05-06T17:44:10Z"
+ },
+ "/woordenlijst/rfid-authenticatie": {
+  "hash": "d4a599a4b3b83154032ab875c0ceb57640206195",
+  "lastmod": "2026-05-06T17:44:10Z"
+ },
+ "/woordenlijst/fasebalancering": {
+  "hash": "ff8c7c91aa157e3594f33191ac858c3cfd3ff269",
+  "lastmod": "2026-05-06T17:44:10Z"
+ },
+ "/woordenlijst/dynamic-load-balancing": {
+  "hash": "2d2510176de2f4367df83b9de5077fbef59b50ed",
+  "lastmod": "2026-05-06T17:44:10Z"
+ },
+ "/woordenlijst/wallbox": {
+  "hash": "ea3e2c3cb0be1bcce1097b62133fef27d4cec88f",
+  "lastmod": "2026-05-06T17:44:10Z"
+ },
+ "/woordenlijst/ldb": {
+  "hash": "3464253f698a03a49156ba59c34c98f8182b952a",
+  "lastmod": "2026-05-06T17:44:10Z"
+ },
+ "/woordenlijst/dlb": {
+  "hash": "962738c2e56d57165954f010f8d6fd9c1e0c74c1",
+  "lastmod": "2026-05-06T17:44:10Z"
+ },
+ "/woordenlijst/areikeuring": {
+  "hash": "76afa7d242025bfce85781f48bd9d61d5eb1d3e5",
+  "lastmod": "2026-05-06T17:44:10Z"
+ },
+ "/woordenlijst/capaciteitstarief": {
+  "hash": "fc2415264fa57c8f15b6ceb47ac4b306035d8b70",
+  "lastmod": "2026-05-06T17:44:10Z"
+ },
+ "/woordenlijst/fluvius": {
+  "hash": "f5cf8f623dfe5fc959f66f0236aabf32637857f2",
+  "lastmod": "2026-05-06T17:44:10Z"
+ }
+}

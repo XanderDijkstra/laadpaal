@@ -11,6 +11,8 @@ import { chargers } from "@/data/chargers";
 import { backgroundGuidesForComparison } from "@/lib/relations";
 import { authorJsonLd, publisherJsonLd } from "@/lib/authors";
 import { LAST_UPDATED, formatNlDate } from "@/lib/lastUpdated";
+import { brands } from "@/data/brands";
+import { pairSlug } from "@/lib/brandPairs";
 
 export default function VergelijkenDetailPage() {
   const { slug } = useParams();
@@ -20,6 +22,23 @@ export default function VergelijkenDetailPage() {
   const a = chargers.find((c) => c.slug === cmp.a);
   const b = chargers.find((c) => c.slug === cmp.b);
   const backgroundGuides = backgroundGuidesForComparison(cmp);
+
+  // Related comparisons: same brand(s) first, then the rest of the list.
+  const cmpBrands = new Set(
+    [a?.brandSlug, b?.brandSlug].filter((x): x is string => Boolean(x)),
+  );
+  const sharesBrand = (c: (typeof comparisons)[number]) =>
+    [c.a, c.b].some((s) => {
+      const ch = chargers.find((x) => x.slug === s);
+      return ch ? cmpBrands.has(ch.brandSlug) : false;
+    });
+  const others = comparisons.filter((c) => c.slug !== cmp.slug);
+  const relatedComparisons = [
+    ...others.filter(sharesBrand),
+    ...others.filter((c) => !sharesBrand(c)),
+  ].slice(0, 6);
+  const brandA = brands.find((br) => br.slug === a?.brandSlug);
+  const brandB = brands.find((br) => br.slug === b?.brandSlug);
 
   usePageMeta({
     title: `${cmp.title} | ${SITE.shortName}`,
@@ -31,7 +50,7 @@ export default function VergelijkenDetailPage() {
     <PageShell
       breadcrumbs={[
         { label: "Home", href: "/" },
-        { label: "Vergelijken" },
+        { label: "Vergelijken", href: "/vergelijken" },
         { label: cmp.title },
       ]}
       width="prose"
@@ -174,19 +193,30 @@ export default function VergelijkenDetailPage() {
       <section className="mt-10">
         <h2 className="text-xl font-bold tracking-tight">Andere vergelijkingen</h2>
         <div className="mt-4 grid sm:grid-cols-2 gap-3">
-          {comparisons
-            .filter((c) => c.slug !== cmp.slug)
-            .slice(0, 4)
-            .map((c) => (
-              <Link
-                key={c.slug}
-                to={`/vergelijken/${c.slug}`}
-                className="p-4 rounded-md border border-border bg-card hover:border-primary/50"
-              >
-                <div className="font-semibold">{c.title}</div>
-              </Link>
-            ))}
+          {relatedComparisons.map((c) => (
+            <Link
+              key={c.slug}
+              to={`/vergelijken/${c.slug}`}
+              className="p-4 rounded-md border border-border bg-card hover:border-primary/50"
+            >
+              <div className="font-semibold">{c.title}</div>
+            </Link>
+          ))}
         </div>
+        {brandA && brandB && brandA.slug !== brandB.slug ? (
+          <Link
+            to={`/merken-vergelijken/${pairSlug(brandA.slug, brandB.slug)}`}
+            className="mt-3 inline-flex text-primary text-sm hover:underline"
+          >
+            Volledige merk-vergelijking {brandA.name} vs {brandB.name} →
+          </Link>
+        ) : null}
+        <Link
+          to="/vergelijken"
+          className="mt-3 ml-4 inline-flex text-primary text-sm hover:underline"
+        >
+          Alle vergelijkingen →
+        </Link>
       </section>
 
       <div className="mt-12">
