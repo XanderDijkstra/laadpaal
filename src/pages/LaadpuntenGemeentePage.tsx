@@ -11,6 +11,7 @@ import { usePageMeta } from "@/hooks/usePageMeta";
 import { SITE } from "@/lib/site";
 import { gemeenten } from "@/data/gemeenten";
 import { laadpunten } from "@/data/laadpunten";
+import { getTariff } from "@/data/operatorTariffs";
 
 export default function LaadpuntenGemeentePage() {
   const { slug } = useParams();
@@ -21,10 +22,21 @@ export default function LaadpuntenGemeentePage() {
   const acCount = stations.filter((s) => s.type !== "DC").length;
   const dcCount = stations.filter((s) => s.type !== "AC").length;
   const maxPower = stations.reduce((m, s) => Math.max(m, s.maxKw), 0);
+  const connectorCount = stations.reduce((n, s) => n + s.connectors, 0);
+  const operatorNames = [
+    ...new Set(
+      stations
+        .filter((s) => s.operator !== "onbekend")
+        .map((s) => getTariff(s.operator).name),
+    ),
+  ].sort();
 
   usePageMeta({
-    title: `Publieke laadpalen ${g.name} — ${stations.length} stations met tarief`,
-    description: `${stations.length} publieke laadpalen in ${g.name} (${g.provincie}). Vul uw postcode in voor afstand tot het dichtstbijzijnde laadpunt, inclusief tarief per kWh per operator.`,
+    title: `Publieke laadpalen ${g.name} — ${stations.length} ${stations.length === 1 ? "station" : "stations"} met tarief`,
+    description:
+      stations.length > 0
+        ? `${stations.length} ${stations.length === 1 ? "publieke laadpaal" : "publieke laadpalen"} in ${g.name} (${g.provincie}): ${acCount} AC, ${dcCount} DC, tot ${maxPower} kW${operatorNames.length > 0 ? ` (${operatorNames.slice(0, 3).join(", ")})` : ""}. Afstand vanaf uw postcode en tarief per kWh.`.slice(0, 165)
+        : `Publieke laadpalen in ${g.name} (${g.provincie}): nog geen stations in onze databank. Bekijk laadpalen in andere ${g.provincie}-gemeenten of plaats een thuislaadpaal.`,
     canonical: `${SITE.url}/laadpunten/${g.slug}`,
   });
 
@@ -34,8 +46,7 @@ export default function LaadpuntenGemeentePage() {
       ...x,
       count: laadpunten.filter((p) => p.gemeenteSlug === x.slug).length,
     }))
-    .filter((x) => x.count > 0)
-    .slice(0, 6);
+    .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name));
 
   return (
     <PageShell
@@ -92,7 +103,7 @@ export default function LaadpuntenGemeentePage() {
         <p className="text-base md:text-lg text-muted-foreground mt-3 border-l-4 border-primary pl-4 max-w-3xl">
           {stations.length === 0
             ? `Wij hebben nog geen publieke laadpalen geregistreerd voor ${g.name}. Bekijk de naburige gemeenten of overweeg een eigen thuislaadpaal.`
-            : `${stations.length} publieke laadpalen in ${g.name}. Sorteer op afstand vanaf uw postcode en zie het indicatieve tarief per operator.`}
+            : `${stations.length} publieke ${stations.length === 1 ? "laadlocatie" : "laadlocaties"} in ${g.name} met samen ${connectorCount} ${connectorCount === 1 ? "stekker" : "stekkers"}: ${acCount} met AC-laden en ${dcCount} met DC-snelladen, tot ${maxPower} kW${operatorNames.length > 0 ? `. Operators: ${operatorNames.join(", ")}` : ""}. Sorteer op afstand vanaf uw postcode en zie het indicatieve tarief per operator.`}
         </p>
       </header>
 
@@ -116,16 +127,17 @@ export default function LaadpuntenGemeentePage() {
         <LaadpuntenLijst
           gemeenteSlug={g.slug}
           initialPostcode={g.postcodes[0] ?? ""}
+          limit={Math.max(stations.length, 1)}
         />
       </section>
 
       {neighbors.length > 0 ? (
         <section className="mt-12">
           <h2 className="text-xl font-bold tracking-tight">
-            Nabijgelegen gemeenten
+            Andere gemeenten in {g.provincie}
           </h2>
           <p className="mt-2 text-sm text-muted-foreground">
-            Andere {g.provincie}-gemeenten met publieke laadpalen.
+            Publieke laadpalen in de andere {g.provincie}-gemeenten.
           </p>
           <div className="mt-4 grid grid-cols-2 md:grid-cols-3 gap-2">
             {neighbors.map((n) => (
@@ -144,6 +156,12 @@ export default function LaadpuntenGemeentePage() {
               </Link>
             ))}
           </div>
+          <Link
+            to="/laadpunten"
+            className="mt-3 inline-flex text-primary text-sm hover:underline"
+          >
+            Alle publieke laadpalen in Vlaanderen →
+          </Link>
         </section>
       ) : null}
 

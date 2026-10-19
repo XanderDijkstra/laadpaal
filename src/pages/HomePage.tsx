@@ -18,6 +18,7 @@ import { brands } from "@/data/brands";
 import { evModels } from "@/data/evModels";
 import { gemeenten } from "@/data/gemeenten";
 import { guides } from "@/data/guides";
+import { HUBS } from "@/lib/hubs";
 
 const TOP_BRANDS = [
   "zaptec",
@@ -467,6 +468,29 @@ export default function HomePage() {
           ))}
         </div>
       </Section>
+      </Band>
+
+      {/* HUBS — crawlable index of every section */}
+      <Band tone="muted">
+        <Section
+          title="Alles op Laadthuis"
+          subtitle="Elk overzicht met alle modellen, merken, vergelijkingen en gemeenten."
+        >
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
+            {HUBS.map((hub) => (
+              <Link
+                key={hub.href}
+                to={hub.href}
+                className="p-4 rounded-md border border-border bg-card hover:border-primary/50 hover:shadow-sm transition"
+              >
+                <div className="font-semibold">{hub.label}</div>
+                <div className="text-xs text-muted-foreground mt-0.5">
+                  {hub.count}
+                </div>
+              </Link>
+            ))}
+          </div>
+        </Section>
       </Band>
 
       {/* FINAL CTA */}

@@ -9,6 +9,8 @@ const COLS = [
       { label: "Beste laadpaal 2026", href: "/beste-laadpaal" },
       { label: "Alle modellen", href: "/laadpalen" },
       { label: "Alle merken", href: "/merken" },
+      { label: "Model-vergelijkingen", href: "/vergelijken" },
+      { label: "Merk vs merk", href: "/merken-vergelijken" },
       { label: "Per auto", href: "/auto" },
     ],
   },
@@ -35,6 +37,7 @@ const COLS = [
     links: [
       { label: "Laadkost berekenen", href: "/laadkost-berekenen" },
       { label: "Gids", href: "/gids" },
+      { label: "Woordenlijst", href: "/woordenlijst" },
       { label: "Over ons", href: "/over-ons" },
       { label: "Voor installateurs", href: "/voor-installateurs" },
     ],

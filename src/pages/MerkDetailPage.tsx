@@ -11,8 +11,6 @@ import { chargers } from "@/data/chargers";
 import { comparisonsForBrand } from "@/lib/relations";
 import { pairSlug } from "@/lib/brandPairs";
 
-const POPULAR_PEERS = ["easee", "zaptec", "wallbox", "alfen", "tesla", "myenergi"];
-
 export default function MerkDetailPage() {
   const { slug } = useParams();
   const brand = brands.find((b) => b.slug === slug);
@@ -20,10 +18,10 @@ export default function MerkDetailPage() {
 
   const models = chargers.filter((c) => c.brandSlug === brand.slug);
   const brandComparisons = comparisonsForBrand(brand.slug);
+  // Link to every brand-vs-brand page featuring this brand.
   const peerBrands = brands
     .filter((b) => b.slug !== brand.slug)
-    .filter((b) => POPULAR_PEERS.includes(b.slug) || POPULAR_PEERS.includes(brand.slug))
-    .slice(0, 6);
+    .sort((a, b) => a.name.localeCompare(b.name));
 
   const ogImage = `${SITE.url}/og/brand/${brand.slug}.svg`;
   usePageMeta({
@@ -148,7 +146,7 @@ export default function MerkDetailPage() {
             {brand.name} vergelijken met andere merken
           </h2>
           <p className="mt-2 text-sm text-muted-foreground">
-            Side-by-side overzicht van prijs, MID-meter en garantie tussen {brand.name} en populaire alternatieven.
+            Side-by-side overzicht van vermogen, MID-meter en garantie tussen {brand.name} en de {peerBrands.length} andere merken.
           </p>
           <div className="mt-4 grid grid-cols-2 sm:grid-cols-3 gap-2">
             {peerBrands.map((peer) => (
@@ -165,6 +163,12 @@ export default function MerkDetailPage() {
               </Link>
             ))}
           </div>
+          <Link
+            to="/merken-vergelijken"
+            className="mt-3 inline-flex text-primary text-sm hover:underline"
+          >
+            Alle merk-vergelijkingen →
+          </Link>
         </section>
       ) : null}
 

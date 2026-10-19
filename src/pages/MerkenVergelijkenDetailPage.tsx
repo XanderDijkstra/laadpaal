@@ -44,22 +44,37 @@ export default function MerkenVergelijkenDetailPage() {
     return cA && cB;
   });
 
-  const otherPairs = allBrandPairs()
-    .filter((p) => p !== pairSlug(aSlug, bSlug))
-    .filter((p) => p.includes(aSlug) || p.includes(bSlug))
-    .slice(0, 6);
+  // Every other pair featuring brand A or brand B — server-rendered so each
+  // of the C(N, 2) pair pages is linked from all its sibling pages.
+  const currentPair = pairSlug(aSlug, bSlug);
+  const pairsWith = (brandSlug: string) =>
+    allBrandPairs()
+      .filter((p) => p !== currentPair)
+      .filter((p) => parsePairSlug(p)?.includes(brandSlug) ?? false);
+  const otherPairsA = pairsWith(aSlug);
+  const otherPairsB = pairsWith(bSlug);
+
+  const descParts = [
+    `${a.name} (${sa.models.length} ${sa.models.length === 1 ? "model" : "modellen"}, tot ${sa.maxKw} kW, ${pct(sa.midShare)} MID)`,
+    `vs ${b.name} (${sb.models.length} ${sb.models.length === 1 ? "model" : "modellen"}, tot ${sb.maxKw} kW, ${pct(sb.midShare)} MID):`,
+    "garantie, app-bediening en alle modellen naast elkaar.",
+  ];
+  const description =
+    descParts.join(" ").length <= 165
+      ? descParts.join(" ")
+      : `${descParts[0]} vs ${b.name} (${sb.models.length} ${sb.models.length === 1 ? "model" : "modellen"}, tot ${sb.maxKw} kW, ${pct(sb.midShare)} MID) vergeleken.`;
 
   usePageMeta({
-    title: `${a.name} vs ${b.name}: welk laadpaal-merk past bij u?`,
-    description: `${a.name} versus ${b.name} laadpalen vergeleken: prijs, vermogen, MID-meter, garantie. ${verdict}`.slice(0, 160),
-    canonical: `${SITE.url}/merken-vergelijken/${pairSlug(aSlug, bSlug)}`,
+    title: `${a.name} vs ${b.name}: ${sa.models.length} vs ${sb.models.length} laadpaalmodellen`,
+    description,
+    canonical: `${SITE.url}/merken-vergelijken/${currentPair}`,
   });
 
   return (
     <PageShell
       breadcrumbs={[
         { label: "Home", href: "/" },
-        { label: "Merken", href: "/merken" },
+        { label: "Merk-vergelijkingen", href: "/merken-vergelijken" },
         { label: `${a.name} vs ${b.name}` },
       ]}
     >
@@ -105,6 +120,11 @@ export default function MerkenVergelijkenDetailPage() {
         </h1>
         <p className="text-base md:text-lg text-foreground mt-4 border-l-4 border-primary pl-4 max-w-3xl">
           <strong>Korte conclusie:</strong> {verdict}
+        </p>
+        <p className="text-base text-muted-foreground mt-4 max-w-3xl">
+          {brandSummary(a, sa)} {brandSummary(b, sb)} Hieronder ziet u de
+          specificaties naast elkaar, alle modellen en wanneer u voor welk
+          merk kiest.
         </p>
         <div className="mt-3 text-xs text-muted-foreground">
           Bijgewerkt {formatNlDate(LAST_UPDATED)} door Redactie Laadthuis
@@ -222,34 +242,21 @@ export default function MerkenVergelijkenDetailPage() {
         </section>
       ) : null}
 
-      {otherPairs.length > 0 ? (
-        <section className="mt-10">
-          <h2 className="text-xl md:text-2xl font-bold tracking-tight">
-            Andere merk-vergelijkingen
-          </h2>
-          <div className="mt-4 grid sm:grid-cols-2 md:grid-cols-3 gap-2">
-            {otherPairs.map((p) => {
-              const [x, y] = parsePairSlug(p) ?? ["", ""];
-              const bx = brands.find((br) => br.slug === x);
-              const by = brands.find((br) => br.slug === y);
-              if (!bx || !by) return null;
-              return (
-                <Link
-                  key={p}
-                  to={`/merken-vergelijken/${p}`}
-                  className="p-3 rounded-md border border-border bg-card hover:border-primary/50 transition text-sm flex items-center justify-between"
-                >
-                  <span>
-                    {bx.name} <span className="text-muted-foreground">vs</span>{" "}
-                    {by.name}
-                  </span>
-                  <ArrowRight className="h-4 w-4 text-primary" />
-                </Link>
-              );
-            })}
-          </div>
-        </section>
-      ) : null}
+      <section className="mt-10">
+        <h2 className="text-xl md:text-2xl font-bold tracking-tight">
+          Andere merk-vergelijkingen
+        </h2>
+        <div className="mt-4 grid md:grid-cols-2 gap-6">
+          <OtherPairs title={`Meer ${a.name} vergelijkingen`} pairs={otherPairsA} />
+          <OtherPairs title={`Meer ${b.name} vergelijkingen`} pairs={otherPairsB} />
+        </div>
+        <Link
+          to="/merken-vergelijken"
+          className="mt-4 inline-flex items-center gap-1 text-primary text-sm font-medium hover:underline"
+        >
+          Alle merk-vergelijkingen <ArrowRight className="h-3.5 w-3.5" />
+        </Link>
+      </section>
 
       <div className="mt-12">
         <OfferteCta
@@ -259,6 +266,45 @@ export default function MerkenVergelijkenDetailPage() {
       </div>
     </PageShell>
   );
+}
+
+function OtherPairs({ title, pairs }: { title: string; pairs: string[] }) {
+  return (
+    <div>
+      <div className="text-sm font-semibold mb-2">{title}</div>
+      <div className="flex flex-wrap gap-2">
+        {pairs.map((p) => {
+          const [x, y] = parsePairSlug(p) ?? ["", ""];
+          const bx = brands.find((br) => br.slug === x);
+          const by = brands.find((br) => br.slug === y);
+          if (!bx || !by) return null;
+          return (
+            <Link
+              key={p}
+              to={`/merken-vergelijken/${p}`}
+              className="px-3 py-1.5 rounded-md border border-border bg-card hover:border-primary/50 transition text-sm"
+            >
+              {bx.name} <span className="text-muted-foreground">vs</span>{" "}
+              {by.name}
+            </Link>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+// One data-driven sentence per brand for the intro — only values that exist
+// in brands.ts / chargers.ts.
+function brandSummary(
+  brand: (typeof brands)[number],
+  stats: ReturnType<typeof statsForBrand>,
+): string {
+  const n = stats.models.length;
+  const origin = brand.founded
+    ? `${brand.country}, sinds ${brand.founded}`
+    : brand.country;
+  return `${brand.name} (${origin}) heeft ${n} ${n === 1 ? "model" : "modellen"} in ons aanbod, tot ${stats.maxKw} kW, met MID-meter op ${pct(stats.midShare)} en app-bediening op ${pct(stats.appShare)} van de modellen en tot ${stats.warrantyMax} jaar garantie.`;
 }
 
 function pct(share: number): string {

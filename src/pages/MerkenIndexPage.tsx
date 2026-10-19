@@ -11,8 +11,7 @@ import { chargers } from "@/data/chargers";
 export default function MerkenIndexPage() {
   usePageMeta({
     title: `Laadpaalmerken in België — een overzicht | ${SITE.shortName}`,
-    description:
-      "8 toonaangevende merken in Vlaanderen: Zaptec, Easee, Wallbox, Alfen, Peblar, Smappee, Tesla, MyEnergi.",
+    description: `${brands.length} laadpaalmerken in Vlaanderen met ${chargers.length} modellen: Zaptec, Easee, Wallbox, Alfen, Peblar, Smappee, Tesla, MyEnergi en meer.`,
     canonical: `${SITE.url}/merken`,
   });
 
@@ -64,6 +63,14 @@ export default function MerkenIndexPage() {
           );
         })}
       </div>
+
+      <p className="mt-8 text-sm text-muted-foreground">
+        Twijfelt u tussen twee merken?{" "}
+        <Link to="/merken-vergelijken" className="text-primary hover:underline">
+          Bekijk alle merk-vergelijkingen
+        </Link>
+        .
+      </p>
 
       <div className="mt-16">
         <OfferteCta />

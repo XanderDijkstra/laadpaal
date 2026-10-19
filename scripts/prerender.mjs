@@ -43,6 +43,7 @@ async function collectRoutes() {
     "/laadpalen",
     "/merken",
     "/vergelijken",
+    "/merken-vergelijken",
     "/auto",
     "/installatie",
     "/gemeente",

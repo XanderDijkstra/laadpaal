@@ -90,7 +90,7 @@ export default function VergelijkenIndexPage() {
           })}
         </div>
         <Link
-          to={`/merken-vergelijken/${pairSlug("easee", "zaptec")}`}
+          to="/merken-vergelijken"
           className="mt-3 inline-flex text-primary text-sm hover:underline"
         >
           Alle merk-vergelijkingen →
